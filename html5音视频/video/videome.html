@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<link rel="stylesheet" href="css/style.css" />
+<style>
+	*{padding:0;margin:0;border:0;}
+	.btn{
+		position:fixed;
+		left:20px;
+		top:20px;
+		padding: 10px;
+	}
+	.phone-container{
+		height:700px;
+		width:400px;
+		margin:0 auto;
+		/* background: url(./timg.jpg); */
+		background: #000;
+		background-size:100% 100%;
+	}
+	.lay-hover{
+		position: absolute;
+		left: 0px;
+		bottom: 0px;
+		width: 58px;
+		height: 20px;
+		background: #000000;
+	}
+</style>
+</head>
+<body>
+	<button class="btn" onclick="play()">播放</button>
+	<div class="phone-container">
+		<div style="height:150px;"></div>
+		<div style="width: 400px;margin:0 auto;position: relative;">
+			<video width="400" height="240" src="./dabeizhou.mp4" autoplay='true'></video>
+			<div class="lay-hover"></div>
+		</div>
+	</div>
+	
+	<script>
+		function play(){
+			document.getElementsByTagName('video')[0].play()
+		}
+
+	</script>
+</body>
+</html>

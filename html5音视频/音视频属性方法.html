@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<style>
+	*{padding:0;margin:0}
+	ul,li{list-style:none;}
+	.hover{color:red}
+	.content{width:560px;height:360px;border:1px solid red;overflow:auto;padding:10px;}
+</style>
+</head>
+<body>
+
+	<video id="video1" controls="controls" autoplay="autoplay">
+		<source id="mp4_src" src="mov_bbb.mp4" type="video/mp4">
+		<source id="ogg_src" src="mov_bbb.ogg" type="video/ogg">
+		Your browser does not support HTML5 video.
+	</video>
+
+	<audio id="audio" controls="controls">
+		<source id="audio1" src="01.mp3" type="audio/mp3">
+	</audio>
+
+	<a href="javascript:void(0);" onclick="currentSrc()">获取currentSrc</a>
+	<a href="javascript:void(0);" onclick="defaultMuted()">获取defaultMuted</a>
+	<a href="javascript:void(0);" onclick="networkState">获取networkState</a>
+	<a href="javascript:void(0);" onclick="controls()">获取controls</a>
+	<a href="javascript:void(0);" onclick="readyState()">获取readyState</a>
+	<script type="text/javascript" src="js.js"></script>
+	<script type="text/javascript">
+		var audioDom = document.getElementById("audio");
+		/*
+		//audio|video.controls=true|false
+		//audio|video.play()|paused();
+		//currentSrc属性返回当前音频/视频的 URL(完整路径)
+		//currentTime 属性设置或返回音频/视频播放的当前位置（以秒计）,当设置该属性时，播放会跳跃到指定的位置。
+		//defaultMuted 属性设置或返回音频/视频是否默认静音。
+							1.0 正常速度
+							0.5 半速（更慢）
+							2.0 倍速（更快）
+							-1.0 向后，正常速度
+							-0.5 向后，半速
+		networkState 属性返回音频/视频的当前网络状态（activity）
+							0 = NETWORK_EMPTY - 音频/视频尚未初始化
+							1 = NETWORK_IDLE - 音频/视频是活动的且已选取资源，但并未使用网络
+							2 = NETWORK_LOADING - 浏览器正在下载数据
+							3 = NETWORK_NO_SOURCE - 未找到音频/视频来源
+		readyState 属性返回音频/视频的当前就绪状态。
+							0 = HAVE_NOTHING - 没有关于音频/视频是否就绪的信息
+							1 = HAVE_METADATA - 关于音频/视频就绪的元数据
+							2 = HAVE_CURRENT_DATA - 关于当前播放位置的数据是可用的，但没有足够的数据来播放下一帧/毫秒
+							3 = HAVE_FUTURE_DATA - 当前及至少下一帧的数据是可用的
+							4 = HAVE_ENOUGH_DATA - 可用数据足以开始播放
+		*/
+		function currentSrc(){ 
+			alert(audioDom.currentSrc);
+		}
+		function defaultMuted(){ 
+			alert(audioDom.defaultMuted);
+		} 
+		function networkState(){ 
+			alert(audioDom.networkState);
+		} 
+		function readyState(){ 
+			alert(audioDom.readyState);
+		} 
+		function controls(){ 
+			alert(audioDom.controls);
+		} 
+		audioDom.onplay = function() {
+			alert("The video has started to play");
+		};
+	</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<style>
+	*{padding:0;margin:0}
+	.content{width:400px;height:500px;padding:10px 20px 10px 10px;margin:100px auto;overflow:hidden;position:relative;border:1px solid #eee;}
+	.content .rbar{position:absolute;right:4px;top:0;width:2px;height:520px;background:#000;}
+	.content .rbtn{position:absolute;right:0;top:0;width:10px;height:30px;background:#666;border-radius:5px;}
+	.box{overflow:hidden;position:absolute;left:10px;top:10px;width:400px;height:500px;}
+	.box h4{text-align:center;}
+</style>
+</head>
+<body>
+	<div class="content" id="content">
+		<div class="rbar"></div>
+		<div class="rbtn" id="rbtn"></div>
+		<div class="box" id="box">
+			<div class="main">
+				<h4>第二步：加载必须的 JS 文件。</h4>
+				需要加载的文件有如下几个：jQuery、jQuery UI， jquery.mousewheel.min.js 和 jquery.mCustomScrollbar.js 这四个。
+				jQuery 和 jQuery UI 是必须的， jquery.mousewheel.min.js 是用来提供滚动支持的，jquery.mCustomScrollbar.js 则是插件的主文件。
+				*注：加载顺序也要按照上面代码的顺序，如果不注意加载的顺序，可能会导致失败，原因请看本人的：网页中代码的顺序是不可忽略的细节。
+				可以把这段代码放在文档的底部来缩短加载网页内容的时间。这里使用了 Google 的 CDN 加速服务来加载 jQuery 和 jQuery UI，当然你也可以把这两个库上传到自己的服务器上。另外注意下 jQuery UI 这个插件被作者精简了，只包含这个插件必须的模块，大小也只有 43KB。
+				如果当你在使用类似 Google 或者 Sina 的常用 Javascript 库的加速服务的话，更推荐采用下面的这种 fallback 的写法，如果 CDN 的 JavaScript 代码没有加载成功，就会引用本地的库，而不会导致插件无法使用：需要加载的文件有如下几个：jQuery、jQuery UI， jquery.mousewheel.min.js 和 jquery.mCustomScrollbar.js 这四个。
+				jQuery 和 jQuery UI 是必须的， jquery.mousewheel.min.js 是用来提供滚动支持的，jquery.mCustomScrollbar.js 则是插件的主文件。
+				*注：加载顺序也要按照上面代码的顺序，如果不注意加载的顺序，可能会导致失败，原因请看本人的：网页中代码的顺序是不可忽略的细节。
+				可以把这段代码放在文档的底部来缩短加载网页内容的时间。这里使用了 Google 的 CDN 加速服务来加载 jQuery 和 jQuery UI，当然你也可以把这两个库上传到自己的服务器上。另外注意下 jQuery UI 这个插件被作者精简了，只包含这个插件必须的模块，大小也只有 43KB。
+				如果当你在使用类似 Google 或者 Sina 的常用 Javascript 库的加速服务的话，更推荐采用下面的这种 fallback 的写法，如果 CDN 的 JavaScript 代码没有加载成功，就会引用本地的库，而不会导致插件无法使用：需要加载的文件有如下几个：jQuery、jQuery UI， jquery.mousewheel.min.js 和 jquery.mCustomScrollbar.js 这四个。
+				jQuery 和 jQuery UI 是必须的， jquery.mousewheel.min.js 是用来提供滚动支持的，jquery.mCustomScrollbar.js 则是插件的主文件。
+				*注：加载顺序也要按照上面代码的顺序，如果不注意加载的顺序，可能会导致失败，原因请看本人的：网页中代码的顺序是不可忽略的细节。
+				可以把这段代码放在文档的底部来缩短加载网页内容的时间。这里使用了 Google 的 CDN 加速服务来加载 jQuery 和 jQuery UI，当然你也可以把这两个库上传到自己的服务器上。另外注意下 jQuery UI 这个插件被作者精简了，只包含这个插件必须的模块，大小也只有 43KB。
+				如果当你在使用类似 Google 或者 Sina 的常用 Javascript 库的加速服务的话，更推荐采用下面的这种 fallback 的写法，如果 CDN 的 JavaScript 代码没有加载成功，就会引用本地的库，而不会导致插件无法使用：
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		function $(id){
+			return document.getElementById(id);
+		}
+		var rbtn = $("rbtn");
+		var box = $("box");
+		rbtn.onmousedown = function(e){
+			var ev = e || window.event;
+			var sx = ev.clientX - this.offsetLeft;
+			var sy = ev.clientY - this.offsetTop;
+			var mh = this.parentElement.offsetHeight-this.offsetHeight - 2;
+			var ch = box.clientHeight;
+			var sh = box.scrollHeight;
+			var mark = true;
+			var $this = this;
+			document.addEventListener("mousemove",function(e){
+				if(mark){
+					var ev = e || window.event;
+					var ex = ev.clientX;
+					var ey = ev.clientY;
+					var nl = ex - sx;
+					var nt = ey - sy;
+					if(nt<=0)nt=0;
+					if(nt>=mh)nt=mh;
+					var percent = nt/mh;
+					box.scrollTop = (sh-ch)*percent;
+					rbtn.style.top = nt+"px";
+				};
+			},false);
+			document.addEventListener("mouseup",function(){
+				mark = false;
+				document.onmousemove = null;
+				document.onmouseup = null;
+			},false);
+			ev.stopPropagation();
+		}
+	</script>
+</body>
+</html>

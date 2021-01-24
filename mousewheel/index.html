@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<style>
+.mw_slide{width:558px; height:80px; margin-left:auto; margin-right:auto; overflow:hidden; position:relative;}
+.mw_slide_inner{width:2000px; margin:0; padding:0; position:absolute; list-style-type:none;}
+.mw_slide_list{width:140px; float:left;}
+</style>
+</head>
+<body>
+<div class="mw_slide">
+    <ul id="slideBox" class="mw_slide_inner">
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg"></li>
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm3.jpg"></li>
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm4.jpg"></li>
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm6.jpg"></li>
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm7.jpg"></li>
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm8.jpg"></li>
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm10.jpg"></li>
+    </ul>
+</div>
+<script src="sea.js"></script>
+<script src="slide.js"></script>
+<script src="addEvent.js"></script>
+
+<script src="">
+	
+	var $ = function(id) {
+		return document.getElementById(id);
+	};
+	$("slideBox").onmousewheel = function(event){
+		alert(1);
+		var type = event.type;
+		if (type == 'DOMMouseScroll' || type == 'mousewheel') {										/*FireFox浏览器一个人使用DOMMouseScroll*/
+			event.delta = (event.wheelDelta) ? event.wheelDelta / 120 : -(event.detail || 0) / 3;	/*event.wheelDelta判断鼠标滚动方向，event.detail为FireFox浏览器*/
+		}
+		alert(event.delta);
+	};
+
+
+
+window.addEventListener("mousewheel",function(){
+	alert(1);
+})
+
+
+//IE8下如果主体的body上也有滚动条，会hold不住。有个解决方案可供参考。
+if(navigator.userAgent.indexOf(“MSIE 8.0″) > 0){
+	$(document).on(‘scroll mousewheel’, function(event){
+		var event = event || window.event;
+		if(event.target.nodeName !== ‘BODY’){
+			return false;
+		}
+	});
+};
+	
+</script>
+</body>
+</html>

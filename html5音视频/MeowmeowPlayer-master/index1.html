@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Meowmeo Player | HTML5 audio player with spectrum visualizer">
+<meta name="author" content="Wayou Liu">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meowmeow Player | HTML5 audio player with spectrum visualizer</title>
+<link rel="stylesheet" href="style/main.css">
+<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+<div class="wrapper">
+	<div class="add" title="add files to list, you can also drag files to the page">
+		<label for="addFiles" >Add </label>
+		<input type="file" id="addFiles" multiple /><!--multiple="multiple"可以多选的意思 size="n" 可以多选的个数-->
+	</div>
+	<div id="visualizer">
+		<canvas width="800" height="350" id="canvas">!Canvas not supported by your browser :(</canvas>
+		<div id="mirrorWrapper">
+		<canvas width="800" height="250" id="mirror"></canvas>
+		</div>
+	</div>
+</div>
+<script>
+
+	window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext;
+	window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame;
+	window.cancelAnimationFrame = window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || window.msCancelAnimationFrame;	
+
+	var music = document.getElementById("music"),
+		canvas = document.getElementById("cas"),
+		ctx=canvas.getContext("2d");
+	window.RAF =  (function(){
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {window.setTimeout(callback, 1000 / 60); };
+	})();
+
+	var audioContext,
+		audioInput = document.getElementById('addFiles'),
+		playBtn = document.getElementById('playBtn'),
+		closeBtn = document.getElementById('close');
+
+	try {
+		audioContext = new AudioContext();
+	} catch (e) {
+		this._updateTitle('!Your browser does not support AudioContext', false);
+		console.log(e);
+	}
+
+	//文件得到了，但首先需要将获取的文件转换为ArrayBuffer格式，才能够传递给AudioContext进行解码
+	function changeBuffer(file){
+	  //实例化一个FileReader用于读取文件
+      var fr = new FileReader();
+	  //文件读取完后调用此函数
+      fr.onload = function(e){
+		//这是读取成功得到的结果ArrayBuffer数据
+        var fileResult = e.target.result;
+		/*decodeAudioData方法有三个参数：第一个是音频ArrayBuffer对象，第二个是成功解码完毕后的回调，第三个是解码失败后的回调*/
+        AC.decodeAudioData(fileResult , function(buffer){//解码成功则调用此函数，参数buffer为解码后得到的结果
+          playMusic(buffer)
+        }, function(e){//这个是解码失败会调用的函数
+          console.log(e)
+          alert("文件解码失败")
+        })
+      }
+      //将上一步获取的文件传递给FileReader从而将其读取为ArrayBuffer格式
+	  fr.readAsArrayBuffer(file);
+    }
+	
+	//file变化时获取选择的文件
+	music.onchange = function(){
+		if(music.files.length!==0){
+			changeBuffer(music.files[0]);
+		}
+	}
+
+	audioInput.onchange = function() {
+		if (audioInput.files.length !== 0) {
+			// var files = that._convertFileListToArray(audioInput.files);
+			if (that.status === 1) {
+				//if a song is playing, jsut add the new files to the list,else add files and start to play
+				that.addToList(audioInput.files);
+				audioInput.value='';
+			} else {
+				that._updateTitle('Uploading', true);
+				that.addToList(audioInput.files);
+				audioInput.value='';
+				that._getFilesAndRun();
+			}
+		};
+	};
+
+
+</script>
+</body>
+</html>

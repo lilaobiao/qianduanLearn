@@ -1,0 +1,219 @@
+	<!doctype html>
+	<html lang="en">
+	 <head>
+	  <meta charset="UTF-8">
+	  <meta name="Generator" content="EditPlus®">
+	  <meta name="Author" content="">
+	  <meta name="Keywords" content="">
+	  <meta name="Description" content="">
+	  <title>Document</title>
+	<style>
+		*{padding:0;margin:0}
+		ul,li{list-style:none;}
+		.hover{color:red}
+		.content{width:560px;height:360px;border:1px solid red;overflow:auto;padding:10px;}
+	</style>
+	 </head>
+	 <body>
+
+	<audio id="audio" src="01.mp3" controls="controls"></audio>
+	<div id="timer"></div>
+
+	<div class="content">
+		<ul id="lrc_list">
+			加载歌词……
+		</ul>
+	</div>
+	<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+			window.onload = function(){
+				var audioDom = document.getElementById("audio");
+				var contentDom = document.getElementsByClassName("content")[0];
+				lrc.init($('lrcnt').value);	
+				audioDom.ontimeupdate = function(){
+					var timer = this.currentTime;
+					lrc.start(function(){
+						return timer;
+					});
+
+					var p = timer / this.duration;
+					var ch = (contentDom.scrollHeight - contentDom.clientHeight) * p + 18;
+					var cch = contentDom.clientHeight/2;
+					if(ch >=cch){
+						contentDom.scrollTop = ch;
+					}else{
+						contentDom.scrollTop = 0;
+					}
+				};
+
+			};
+
+			function  $(id){
+				return document.getElementById(id);
+			};
+
+			var lrc = {
+				handle: null, /* 定时执行句柄 */
+				list: [], /* lrc歌词及时间轴数组 */
+				regex: /^[^\[]*((?:\s*\[\d+\:\d+(?:\.\d+)?\])+)([\s\S]*)$/, /* 提取歌词内容行 */
+				regex_time: /\[(\d+)\:((?:\d+)(?:\.\d+)?)\]/g, /* 提取歌词时间轴 */
+				regex_trim: /^\s+|\s+$/, /* 过滤两边空格 */
+				callback: null, /* 定时获取歌曲执行时间回调函数 */
+				interval: 0.3, /* 定时刷新时间，单位：秒 */
+				format: '<li>{html}</li>', /* 模板 */
+				prefixid: 'lrc', /* 容器ID */
+				hoverClass: 'hover', /* 选中节点的className */
+				//初始化歌词 
+				init: function(txt){
+				if(typeof(txt) != 'string' || txt.length < 1) return;
+					var item = null, item_time = null, html = '';
+					/* 分析歌词的时间轴和内容 */
+					//先按行拆分歌词
+					txt = txt.split("\n");
+					//对拆分的每行进行提取时间和歌词内容
+					for(var i = 0; i < txt.length; i++) {
+						//获取一行并去掉两端的空格 [00:11.38]如果你眼神能够为我片刻的降临
+						item = txt[i].replace(this.regex_trim, '');
+						//然后取出歌词信息
+						if(item.length < 1 || !(item = this.regex.exec(item))) continue;
+						while(item_time = this.regex_time.exec(item[1])) {
+							this.list.push([parseInt(item_time[1])*60+parseInt(item_time[2]), item[2]]);
+						}
+						this.regex_time.lastIndex = 0;
+					}
+					/* 有效歌词 */
+					if(this.list.length > 0) {
+						this.hasLrc =1;
+						/* 对时间轴排序 */
+						this.list.sort(function(a,b){ return a[0]-b[0]; });
+						if(this.list[0][0] >= 0.1) this.list.unshift([this.list[0][0]-0.1, '']);
+						this.list.push([this.list[this.list.length-1][0]+1, '']);
+						for(var i = 0; i < this.list.length; i++){
+							var txt = this.list[i][1];
+							if(txt!=""){
+								html+="<li id='t_"+this.list[i][0]+"'>"+txt+"</li>";
+							}
+						}
+						/* 赋值到指定容器 */
+						$(this.prefixid+'_list').innerHTML = html;
+						/* 定时调用回调函数，监听歌曲进度 */
+						//this.handle = setInterval('lrc.jump(lrc.callback());', this.interval*1000);
+					}else{ /* 没有歌词 */
+						this.hasLrc =0;
+						$(this.prefixid+'_list').style.display = "none";
+					}
+				},
+				/* 歌词开始自动匹配 跟时间轴对应 */
+				/**callback时间 jplayer的当前播放时间**/
+				start: function(callback) {
+					this.callback = callback;
+					/* 有歌词则跳转到歌词时间轴 */
+					if(this.hasLrc == 1) {
+						//this.handle = setInterval('lrc.jump(lrc.callback());', this.interval*1000);
+						this.handle = lrc.jump(lrc.callback());
+					}
+				},
+				/* 跳到指定时间的歌词 */
+				jump: function(duration) {
+					var t = parseInt(duration);
+					var max = this.getMax(t);
+					var dom = document.getElementById("t_"+max);
+					if(dom){
+						var arr = this.siblings(dom);
+						for(var i=0;i<arr.length;i++){
+							arr[i].className = "";
+						}
+						dom.className = this.hoverClass;
+
+						//歌词跳动
+						/*var sh = dom.parentElement.parentElement.scrollHeight;
+						var h = this.indexof(dom) * 18;
+						dom.parentElement.style.marginTop = -1*h+"px";*/
+					}
+					
+				},
+
+				getMax:function(timer){
+					var v = this.list[0][0];
+					var index = 0;
+					for(var i=1;i<this.list.length;i++){
+						if(timer < this.list[i][0]){
+							v = this.list[i-1][0];
+							index = i;
+							break;
+						}
+					}
+					return v;
+				},
+
+				indexof:function(dom){
+					var doms = dom.parentElement.children;
+					var index = -1;
+					for(var i=0;i<doms.length;i++){
+						if(doms[i]==dom){
+							index = i;
+							break;
+						}
+					}
+					return index;
+				},
+				
+				siblings:function(dom){
+					var doms = dom.parentElement.children;
+					var arr = [];
+					for(var i=0;i<doms.length;i++){
+						if(doms[i]!=dom){
+							arr.push(doms[i]);
+						}
+					}
+					return doms;
+				},
+			};
+	</script>
+
+	<textarea id="lrcnt" style="width:640px;height:240px;display:none;" >[ver:v1.0]
+	[offset:1200]
+	[00:03.30]稻香 - 周杰伦
+	[00:05.63]作词 周杰伦 作曲 周杰伦
+	[00:31.99]对这个世界如果你有太多的抱怨
+	[00:35.13]跌倒了就不敢继续往前走
+	[00:38.13]为什么人要这么的脆弱堕落
+	[00:42.07]请你打开电视看看
+	[00:44.07]多少人为生命在努力勇敢的走下去
+	[00:47.90]我们是不是该知足
+	[00:50.61]珍惜一切就算没有拥有
+	[00:54.87]还记得你说家是唯一的城堡
+	[00:58.60]随着稻香河流继续奔跑
+	[01:01.49]微微笑小时候的梦我知道
+	[01:06.69]不要哭让萤火虫带着你逃跑
+	[01:10.11]乡间的歌谣永远的依靠
+	[01:13.19]回家吧回到最初的美好
+	[01:41.75]不要这么容易就想放弃就像我说的
+	[01:45.25]追不到的梦想换个梦不就得了
+	[01:48.41]为自己的人生鲜艳上色
+	[01:50.76]先把爱涂上喜欢的颜色
+	[01:53.81]笑一个吧功成名就不是目的
+	[01:56.54]让自己快乐快乐这才叫做意义
+	[01:59.61]童年的纸飞机现在终于飞回我手里
+	[02:05.34]所谓的那快乐赤脚在田里追蜻蜓追到累了
+	[02:09.52]偷摘水果被蜜蜂给叮到怕了
+	[02:12.33]谁在偷笑呢
+	[02:14.20]我靠着稻草人吹着风唱着歌睡着了
+	[02:17.56]哦哦午后吉它在虫鸣中更清脆
+	[02:20.56]哦哦阳光洒在路上就不怕心碎
+	[02:23.82]珍惜一切就算没有拥有
+	[02:28.76]还记得你说家是唯一的城堡
+	[02:32.08]随着稻香河流继续奔跑
+	[02:35.38]微微笑小时候的梦我知道
+	[02:40.50]不要哭让萤火虫带着你逃跑
+	[02:43.71]乡间的歌谣永远的依靠
+	[02:46.72]回家吧回到最初的美好
+	[02:51.99]还记得你说家是唯一的城堡
+	[02:55.92]随着稻香河流继续奔跑
+	[02:58.62]微微笑小时候的梦我知道
+	[03:04.07]不要哭让萤火虫带着你逃跑
+	[03:07.26]乡间的歌谣永远的依靠
+	[03:10.31]回家吧回到最初的美好
+	</textarea>
+ </body>
+</html>

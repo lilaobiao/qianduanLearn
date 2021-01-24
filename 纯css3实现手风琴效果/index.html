@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<style>
+	* {margin: 0;padding: 0;}
+	body {background: #ccc;font-family: arial, verdana, tahoma;}
+
+	/*
+	手风琴的参数规划
+	图像宽度=640px
+	图片总数= 5
+	hover触发的宽度=640px
+	hover以外的图片=40px的宽度 – 设置任意宽度
+	手风琴的总宽度= 640+ 40 *4 =800px;
+	默认宽度= 800/5=160px;
+	*/
+	.accordian {
+		width: 805px; 
+		height: 320px;
+		overflow: hidden;
+		margin: 100px auto;
+		box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+		-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+		-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	}
+
+	/*加上一些hack防止某些浏览器出现闪烁问题*/
+	.accordian ul {
+		width: 2000px;
+		/*设置足够的宽度，以便于整体图片的来回移动.*/
+	}
+
+	.accordian li {
+		position: relative;
+		display: block;
+		width: 160px;
+		height:320px;
+		float: left;
+		border-left: 1px solid #888;
+		box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+		-webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+		-moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+		/*动画转换效果*/
+		transition: all 1s;
+		-webkit-transition: all 1s;
+		-moz-transition: all 1s;
+		/*现在把鼠标悬停在图像上，可以看到基本的手风琴效果了*/
+	}
+
+	.accordian ul:hover li {width: 40px;}
+	.accordian ul li:hover {width: 640px;}
+	.accordian li img {display: block;}
+
+	/*Image title styles*/
+	.accordian li .image_title {
+		position: absolute;
+		left: 0; 
+		bottom:0;
+		width: 640px;
+		height:30px;
+		line-height:30px;
+		background: rgba(0, 0, 0, 0.5);
+	}
+	.accordian li .image_title a {
+		color: #fff;
+		text-decoration: none;
+		font-size: 16px;
+	}
+</style>
+</head>
+<body>
+<div class="accordian">
+	<ul>
+		<li>
+			<div class="image_title"><a href="#">KungFu Panda</a></div>
+			<a href="#"><img src="1.jpg"/></a>
+		</li>
+		<li>
+			<div class="image_title"><a href="#">KungFu Panda</a></div>
+			<a href="#"><img src="2.jpg"/></a>
+		</li>
+		<li>
+			<div class="image_title"><a href="#">KungFu Panda</a></div>
+			<a href="#"><img src="5.jpg"/></a>
+		</li>
+		<li>
+			<div class="image_title"><a href="#">KungFu Panda</a></div>
+			<a href="#"><img src="4.jpg"/></a>
+		</li>
+		<li>
+			<div class="image_title"><a href="#">KungFu Panda</a></div>
+			<a href="#"><img src="5.jpg"/></a>
+		</li>
+	</ul>
+</div>
+</body>
+</html>

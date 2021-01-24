@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+  /*
+	span{font-size:34px;}
+	a{font-size:34px}
+	*/
+	
+
+  </style>
+
+ </head>
+ <body>
+	<span>sdfsdfsd</span>
+	<a>sdfsdfsd</a>
+
+
+	<div>父亲
+		给元素定义id和class说白就是可以通过定义可以找到我们所要操作的元素,
+		<p id="xiaohong" class=""> 
+			jquery是对javascript的封装,它主要是对javascript中dom元素的操作，事件，异步，动画进行封装.
+		</p>
+		<span id="keke" class=""> 
+			kekek 
+		</span>
+	</div>
+
+    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		/*
+			学习js也好，还是jquery也好，定义问题就是怎么获取对象
+
+			//js怎么找到元素，
+			1:通过标签定义元素
+			document.getElementsByTagName
+			2:通过id选择器定位元素
+			document.getElementById(id)/docuemnt.querySelector("#id")
+			3:通过class定位元素
+			document.getElementsByClassName("className")/document.querySelectorAll(".className")
+
+
+
+			//jquery怎么找到元素,如果要调用jquery里面的方法和属性的，前提是一个jquery对象，
+			永远明白一个道理：只有对象才能调用方法和属性.
+
+			语法格式：$(元素/id/class)
+			id选择器 $("#id") ==document.getElementById(id)
+			class选择器 $(".className")=== document.getElementsByClassName("className")
+			标签选这器:$("div")==document.getElementsByTagName("div")
+
+
+		
+		*/
+
+		//var xiaohongDom = document.getElementById("xiaohong");
+		//xiaohongDom.style.fontSize = "34px";
+		//xiaohongDom.setAttribute("")
+
+
+		$(function(){
+
+			//var $xiao = $("p");//等价于 document.getElementsByTagName("*")
+			//$xiao.css("fontSize",54)
+
+			//组合选择器
+			//$("span,p,a").css("fontSize",54)
+			
+			//js原理
+			var txt = "span,p,a";
+			var arr = txt.split(",");
+			for(var i=0;i<arr.length;i++){
+				var doms = document.getElementsByTagName(arr[i]);
+				for(var j=0;j<doms.length;j++){
+					doms[j].style.fontSize = "54px";
+				}
+			}
+
+			//form元素是什么 elements
+			input text/password/radio/checkbox/select
+
+
+			//等价于
+			//$("span").css("fontSize",54)
+			//$("p").css("fontSize",54);
+			//$("a").css("fontSize",54);
+
+
+		});
+
+		
+	</script>
+
+ </body>
+</html>

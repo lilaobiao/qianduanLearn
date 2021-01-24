@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery弹出框插件</title>
+<style>
+*{margin:0px;padding:0px;list-style-type:none;font-family:"微软雅黑";color:#fff;}
+a{text-decoration:none;}
+#dialog{width:260px;background:#33ccff;position:fixed;z-index:100;}
+#dialog .title{height:30px;padding-left:10px;line-height:30px;font-size:16px;border-bottom:2px solid #fff;cursor:move;}
+#dialog .close{font-size:22px;position:absolute;top:0px;right:10px;}
+#dialog .content{padding:20px 10px;}
+#dialog p{display:block;width:100%;text-align:center;padding-bottom:10px;position:absolute;bottom:0px;}
+#dialog .btn{height:30px;padding:0 5px;line-height:30px;margin:0 20px;background:rgba(0,0,0,.3);}
+.overlay{width:100%;height:100%;position:fixed;background:rgba(0,0,0,.3);}
+</style>
+</head>
+<body>
+<script src="jquery-1.11.1.min.js"></script>
+<script src="dialog.js"></script>
+<script>
+	$.dialog.init({
+		width:260,
+		height:150,
+		callback:function(ok){
+			if(ok){
+				alert("您点击的是确定按钮哦");
+			}else{
+				alert("您点击的是取消按钮哦");
+			};
+		}
+	});
+</script>
+<!--代码部分end-->
+</body>
+</html>

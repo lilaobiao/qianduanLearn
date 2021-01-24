@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+ <html lang="en">
+  <meta charset="utf-8">
+  <head><title>Draw a Circle</title>
+   <style type="text/css">
+    body {
+      background-color: #000000;
+      margin: 0px;
+      overflow: hidden;
+    }
+   </style>
+  </head>
+ <body>
+<script>
+	//获取上下文
+	var canvas = document.createElement( 'canvas' ),
+	context = canvas.getContext( '2d' );
+	var ww = window.innerWidth; 
+	wh = window.innerHeight;
+
+	//初始化圆点数组
+	var particles = [];
+	init();
+
+	//设置上下文宽高
+	function init() { 
+		document.body.appendChild(canvas); 
+		canvas.width =ww;
+		canvas.height = wh;
+		//循环Loop画圆点
+		setInterval(loop, 1000/30);
+	}
+
+	function loop(){
+		context.fillStyle = "rgba(0,0,0,1)";
+		context.fillRect(0,0, ww, wh); 
+		//随机产生一个粒子
+		var particle = new Particle(ww*.5, wh*.5);
+		particles.push(particle); 
+		//开始绘画和更新
+		for (i=0; i<particles.length; i++) {
+			var particle = particles[i]; 
+			particle.render(context); 
+			particle.update(); 
+		}
+		if (particles.length>1000){
+			particles.shift();
+		}
+	}
+
+	//粒子类 
+	function Particle (xPos, yPos) {
+		//初始数据
+		this.xPos = xPos;
+		this.yPos = yPos;
+		this.yVel = -9;//y上的初始加速度
+		this.xVel = Math.random()*4-2;//x上的初始加速度
+		this.gravity = 0.1;//重力影响
+		this.counter = 0;//影响颜色
+		//画一个"粒子"
+		this.render = function(c){
+			//注意这里啦
+			c.fillStyle = "hsl("+this.counter+", 100%, 50%)";
+			c.beginPath();
+			c.arc(this.xPos, this.yPos, 5, 0, Math.PI*2, true);
+			c.fill(); 
+		}
+		//更新一个"粒子"
+		this.update = function(){
+			//加速度递减
+			this.yVel += this.gravity;
+			this.yPos += this.yVel;
+			this.xPos += this.xVel;
+			//颜色变化
+			this.counter +=2;
+		}
+	}
+</script>
+</body>
+</html>

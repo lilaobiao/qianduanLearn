@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	*{padding:0px;margin: 0px;}
+	li{
+		margin-right: 10px;
+		float:left;
+		list-style: none;
+	}
+	li p{
+		width:160px;
+		height:160px;
+		border:1px solid #ccc;
+		vertical-align: middle;
+		text-align: center;
+		display: table-cell;
+	}
+	/*兼容IE7及以下*/
+	li span{
+		*+height: 100%;
+		*+writing-mode:tb-rl;
+	}
+	li img{
+		vertical-align: middle;
+		border: 0;
+	}
+</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<p><span><img src="http://n66.o73o.com/A_PH/32587/1-300x300.jpg" alt="" width="160" height="160"></span></p>
+		</li>
+		<li>
+			<p><span><img src="http://n66.o73o.com/A_PH/32587/1-300x300.jpg" alt="" width="160" height="50"></span></p>
+		</li>
+		<li>
+			<p><span><img src="http://n66.o73o.com/A_PH/32587/1-300x300.jpg" alt="" width="50" height="160"></span></p>
+		</li>
+		<li>
+			<p><span><img src="http://n66.o73o.com/A_PH/32587/1-300x300.jpg" alt="" width="100" height="80"></span></p>
+		</li>
+	</ul>
+</body>
+</html>

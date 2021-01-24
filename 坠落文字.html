@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	/*basic reset*/
+	* {margin: 0; padding: 0;}
+	/*adding a black bg to the body to make things clearer*/
+	body {background: black;}
+	canvas {display: block;}
+  </style>
+ </head>
+ <body>
+<canvas id="canvas"></canvas>
+
+<script type="text/javascript">
+window.onload = function(){
+// var colors = ['#f00','#0f0','#00f',false];
+// var count = 0;
+// var textColor = '#f00'
+// setInterval(function(){
+// 	count+=1;
+// 	var c = count%4;
+// 	textColor = colors[c] ? colors[c] : randColor();
+// 	console.log(textColor)
+// },1500)
+
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+var chinese = "0123456789";
+var colunms =  0;
+var fontSize = 14;
+var drops = [];
+//设置画布的宽度和高度
+function init(){
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+	colunms = canvas.width/fontSize;
+	for(var i=0;i<colunms;i++){
+		drops[i] = 1;
+	}
+	draw();
+};
+
+function draw(){
+	context.fillStyle = "rgba(0, 0, 0, 0.05)";
+	context.fillRect(0,0,canvas.width,canvas.height); //绘制一个矩形边框
+	context.fillStyle = '#0f0' //设置字体颜色
+	//context.fillStyle = textColor; 
+	//context.fillStyle = randColor(); //context.font = (Math.random()*400+400)+" "+(Math.random()*10+10)+"px 微软雅黑";
+	context.font = "400 12px 微软雅黑";
+	for(var i=0;i<colunms;i++){
+		var text = chinese[Math.floor(Math.random() * chinese.length)];
+		context.fillText(text,i*fontSize,drops[i]*fontSize);
+		if(drops[i]*fontSize > canvas.height && Math.random() > 0.975){
+			drops[i] = 0;
+		}
+		drops[i]++;
+	}
+};
+function randColor(){
+	var r = Math.floor(Math.random() * 256);
+	var g = Math.floor(Math.random() * 256);
+	var b = Math.floor(Math.random() * 256);
+	return "rgb("+r+","+g+","+b+")";
+}
+init();
+var timer = setInterval(draw,30);
+window.onresize = function(){
+	init();
+};
+};
+</script>
+</body>
+</html>

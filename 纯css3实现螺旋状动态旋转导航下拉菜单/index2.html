@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>纯css3实现螺旋状动态旋转导航下拉菜单</title>
+<style type = "text/css">
+* {	margin: 0;padding: 0;}
+html {background-color: #CCC;}
+.lanrenzhijia {margin: 30px auto;width: 960px;}
+
+
+/* 需要的css样式 */
+.menu, .menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.menu {
+	height: 58px;
+}
+.menu li {
+	background: -webkit-linear-gradient(#292929, #252525);
+	background: -moz-linear-gradient(#292929, #252525);
+	background: -ms-linear-gradient(#292929, #252525);
+	background: -o-linear-gradient(#292929, #252525);
+	background: linear-gradient(#292929, #252525);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #292929), color-stop(100%, #252525));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525');/*激活虐镜*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525')";
+	border-bottom: 2px solid #181818;
+	border-top: 2px solid #303030;
+	min-width: 160px;
+}
+.menu > li {
+	display: block;
+	float: left;
+	position: relative;
+}
+.menu > li:first-child {
+	border-radius: 5px 0 0;
+}
+.menu a {
+	border-left: 3px solid rgba(0, 0, 0, 0);
+	color: #808080;
+	display: block;
+	font-family: 'Lucida Console';
+	font-size: 18px;
+	line-height: 54px;
+	padding: 0 25px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.menu li:hover {
+	background-color: #1c1c1c;
+	background: -moz-linear-gradient(#1c1c1c, #1b1b1b);
+	background: -ms-linear-gradient(#1c1c1c, #1b1b1b);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1c1c1c), color-stop(100%, #1b1b1b));
+	background: -webkit-linear-gradient(#1c1c1c, #1b1b1b);
+	background: -o-linear-gradient(#1c1c1c, #1b1b1b);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b')";
+	background: linear-gradient(#1c1c1c, #1b1b1b);
+	border-bottom: 2px solid #222222;
+	border-top: 2px solid #1B1B1B;
+}
+.menu li:hover > a {
+	border-radius: 5px 0 0 0;
+	border-left: 3px solid #C4302B;
+	color: #C4302B;
+}
+.submenu { 
+	position:absolute;
+	left:0;
+	top:100%;
+	z-index:0;
+	max-height:0;
+	-webkit-perspective:400px;
+	-moz-perspective:400px;
+	-ms-perspective:400px;
+	-o-perspective:400px;
+	perspective:400px;
+}
+.submenu li {
+	opacity:0;
+	transform:rotateY(90deg);
+	transition:opacity .4s,transform .5s;
+}
+.submenu li:nth-child(2){
+	transition-delay:50ms;
+}
+.submenu li:nth-child(3){
+	transition-delay:100ms;
+}
+.submenu li:nth-child(4){
+	transition-delay:150ms;
+}
+.submenu li:nth-child(5){
+	transition-delay:200ms;
+}
+.submenu li:nth-child(6){
+	transition-delay:250ms;
+}
+.submenu li:nth-child(7){
+	transition-delay:300ms;
+}
+.submenu li:nth-child(8){
+	transition-delay:350ms;
+}
+.menu > li:hover .submenu, .menu > li:focus .submenu {
+	max-height: 2000px;
+	z-index: 10;
+}
+.menu > li:hover .submenu li, .menu > li:focus .submenu li {
+	opacity: 1;
+	transform: none;
+}
+.menu li:hover .submenu li:nth-child(2){
+	transition-delay:50ms;
+}
+.menu li:hover .submenu li:nth-child(3){
+	transition-delay:100ms;
+}
+.menu li:hover .submenu li:nth-child(4){
+	transition-delay:150ms;
+}
+.menu li:hover .submenu li:nth-child(5){
+	transition-delay:200ms;
+}
+.menu li:hover .submenu li:nth-child(6){
+	transition-delay:250ms;
+}
+.menu li:hover .submenu li:nth-child(7){
+	transition-delay:300ms;
+}
+.menu li:hover .submenu li:nth-child(8){
+	transition-delay:350ms;
+}
+</style>
+</head>
+<body>
+
+<!--代码部分begin-->
+<div class="lanrenzhijia">
+	<ul class="menu">
+		<li><a href="#">主页</a></li>
+		<li><a href="#">菜单一</a>
+			<ul class="submenu">
+				<li><a href="#">子菜单A</a></li>
+				<li><a href="#">子菜单B</a></li>
+				<li><a href="#">子菜单C</a></li>
+				<li><a href="#">子菜单D</a></li>
+				<li><a href="#">子菜单E</a></li>
+				<li><a href="#">子菜单F</a></li>
+				<li><a href="#">子菜单G</a></li>
+				<li><a href="#">子菜单H</a></li>
+			</ul>
+		</li>
+		<li class="active"><a href="#s2">菜单二</a>
+			<ul class="submenu">
+				<li><a href="#">子菜单A</a></li>
+				<li><a href="#">子菜单B</a></li>
+				<li><a href="#">子菜单C</a></li>
+				<li><a href="#">子菜单D</a></li>
+				<li><a href="#">子菜单E</a></li>
+				<li><a href="#">子菜单F</a></li>
+				<li><a href="#">子菜单G</a></li>
+				<li><a href="#">子菜单H</a></li>
+			</ul>
+		</li>
+		<li><a href="#">菜单三</a>
+			<ul class="submenu">
+				<li><a href="#">子菜单A</a></li>
+				<li><a href="#">子菜单B</a></li>
+				<li><a href="#">子菜单C</a></li>
+				<li><a href="#">子菜单D</a></li>
+				<li><a href="#">子菜单E</a></li>
+				<li><a href="#">子菜单F</a></li>
+				<li><a href="#">子菜单G</a></li>
+				<li><a href="#">子菜单H</a></li>
+			</ul>
+		</li>
+		<li><a href="#">菜单四</a></li>
+	</ul>
+</div>
+<div class="menu">
+	<ul class="menu">
+		<li><a href="#">主页</a></li>
+		<li><a href="#">菜单一</a></li>
+		<li><a href="#">菜单二</a></li>
+		<li><a href="#">菜单三</a></li>
+		<li><a href="#">菜单四</a></li>
+		<li><a href="#">主页</a></li>
+		<li><a href="#">菜单一</a></li>
+		<li><a href="#">菜单二</a></li>
+		<li><a href="#">菜单三</a></li>
+		<li><a href="#">菜单四</a></li>
+	</ul>
+</div>
+<!--代码部分end-->
+
+</body>
+</html>

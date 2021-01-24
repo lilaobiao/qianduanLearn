@@ -1,0 +1,28 @@
+@charset "utf-8";
+.article .main{width:1200px;}
+
+.pagelist {
+  margin: 20px auto;
+  text-align: center;
+  font: 12px/20px 'microsoft yahei';
+}
+.pagelist > * {
+  margin: 0 2px;
+}
+.pagelist span {
+  color: #666;
+  margin-right: 10px;
+}
+.pagelist a {
+  border: solid 1px #dbe5ee;
+  color: #333;
+  text-decoration: none;
+  padding: 2px 8px;
+}
+.pagelist strong,
+.pagelist a:hover {
+  background: #07519a;
+  color: #fff;
+  padding: 2px 8px;
+  border: 1px solid #07519a;
+}

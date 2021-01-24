@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<link rel="stylesheet" href="css/style.css" />
+<style>
+	*{padding:0;margin:0;border:0;}
+</style>
+</head>
+<body>
+	<div class="zd-video-container" id="myvideo" style="width: 940px;">
+		<div class="zd-video">
+			<div class="zd-video-control zd-video-big-play hide"></div>
+			<video id="video" width="940" height="520" src="11.mkv"></video>
+			<div class="zd-video-controls">                
+				<div class="zd-video-progress">                  
+					<div class="zd-video-progress-bar"></div>
+					<div class="zd-video-progress-hasdown"></div>
+					<a class="zd-video-progress-drag" href="javascript:void(0);"></a>
+				</div>               
+				<div class="zd-controls-body">                  
+					<div class="zd-controls-left">                    
+						<span class="zd-video-play zd-video-control"></span>                    
+						<span class="zd-video-pause zd-video-control hide"></span>                    
+						<span class="zd-video-time">00:00</span> -- <span class="zd-video-alltime">00:00</span>
+					</div>                  
+					<div class="zd-controls-right">                    
+						<span class="zd-video-control zd-video-mute"></span>
+						<span class="zd-video-control zd-video-unmute hide"></span>
+						<div class="zd-video-volume">                      
+							<div class="zd-video-volume-bar"></div>
+							<a class="zd-video-volume-drag" href="javascript:void(0);"></a>
+						</div>                    
+						<span class="zd-video-control zd-video-fullscreen"></span>                  
+					</div>                
+				</div>              
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		(function($, root) {
+		  // init video object
+		  function ZdVideo(opts) {
+			opts = opts || {};
+			if (!opts.container || !$('#' + opts.container)) {
+			  throw new Error('video container not found!')
+			}
+			this.opts = opts;
+			this.container = $('#' + this.opts.container); //jquery obj
+			this.tpl = null;
+			this.init();
+		  }
+
+		  // 找到适合浏览器的全屏方法  
+		  function launchFullScreen(elem) {
+			var requestFullScreen = elem.requestFullscreen || elem.msRequestFullscreen || elem.mozRequestFullScreen || elem.webkitRequestFullscreen;
+			requestFullScreen.call(elem);
+		  }
+
+		  //按尺寸切割video
+		  ZdVideo.prototype.setVideotDimensions = function() {
+			if (!this.video) {
+			  this.video = this.container.find('video')[0];
+			}
+			var width = this.video.width;
+			var height = this.video.height;
+			this.container.css('width', width);
+
+			if (!this.controls) {
+			  this.controls = this.container.find('.zd-video-controls');
+			}
+
+			this.controls.css('width', width - 0);
+		  };
+
+		  /*ZdVideo.prototype.setAllTime = function(){
+			if (!this.video) {
+			  this.video = this.container.find('video')[0];
+			}
+			var allTime = this.video.duration;
+			var allTimeSpan = this.container.find('.zd-video-controls');
+			allTimeSpan.html(allTime);
+		  }*/
+		  ZdVideo.prototype.setFullScreenStyle = function() {
+			if (!this.video) {
+			  this.video = this.container.find('video')[0];
+			}
+			this.container.css({width: '100%', height: '100%'});
+			this.video.setAttribute('width', '100%');
+			this.video.setAttribute('height', '100%');
+			this.controls.css('width', '90%');
+		  };
+
+		  ZdVideo.prototype.addEvents = function() {
+			var self = this;
+			var hoverTimeout = null;
+			var obj = {};
+			obj.video = this.container.find('video')[0];
+			this.video = obj.video;
+			obj.controls = this.container.find('.zd-video-controls');
+			this.controls = obj.controls;
+			obj.bigPlayBtn = this.container.find('.zd-video-big-play');//
+			obj.playBtn =  obj.controls.find('.zd-video-play');//播放
+			obj.pauseBtn = obj.controls.find('.zd-video-pause');//暂停
+			obj.progress = obj.controls.find('.zd-video-progress');//总进度条
+			obj.progressBar = obj.controls.find('.zd-video-progress-bar');//已播放进度
+			obj.progressDrag = obj.controls.find('.zd-video-progress-drag');//播放进度拖动按钮
+			obj.volumeCon = obj.controls.find('.zd-video-volume');//
+
+			obj.volumeMute = obj.controls.find('.zd-video-mute');//静音
+			obj.volumeUnMute = obj.controls.find('.zd-video-unmute');//关闭静音
+
+			obj.volumeBar = obj.controls.find('.zd-video-volume-bar');//已开启音量大小
+			obj.volumeDrag = obj.controls.find('.zd-video-volume-drag');//播放音量大小按钮
+			obj.fullScreenBtn = obj.controls.find('.zd-video-fullscreen');//全屏
+			obj.videoTime = obj.controls.find('.zd-video-time');//已播放时间
+			obj.videoAllTime = obj.controls.find('.zd-video-alltime');//总时间
+			
+
+			//play
+			var playHandle = function(e) {
+			  obj.video.play();
+			  obj.playBtn.addClass('hide');
+			  obj.pauseBtn.removeClass('hide');
+			}
+			obj.playBtn.on('click', playHandle);
+			obj.bigPlayBtn.on('click', playHandle);
+
+			//pause
+			obj.pauseBtn.on('click', function(e) {
+			  obj.video.pause();
+			  obj.playBtn.removeClass('hide');
+			  obj.pauseBtn.addClass('hide');
+			});
+
+			//静音
+			obj.volumeMute.on('click', function(e) {
+			  obj.video.muted = true;
+			  obj.volumeMute.addClass('hide');
+			  obj.volumeUnMute.removeClass('hide');
+			});
+			
+			//关闭静音
+			obj.volumeUnMute.on('click', function(e) {
+			  obj.video.muted = false;
+			  obj.volumeUnMute.addClass('hide');
+			  obj.volumeMute.removeClass('hide');
+			});
+
+
+			//播放时监听事件
+			obj.video.addEventListener('timeupdate', function() {
+			  //time change
+			  obj.secs = parseInt(obj.video.currentTime % 60, 10);
+			  obj.mins = parseInt((obj.video.currentTime/60) % 60, 10);
+			  obj.secs = ('0' + obj.secs).slice(-2);
+			  obj.mins = ('0' + obj.mins).slice(-2);
+			  obj.videoTime.text(obj.mins + ':' + obj.secs);
+
+			  //改变进度条
+			  obj.percent = (obj.video.currentTime / obj.video.duration);
+			  if (obj.percent > 0) {
+				var w = obj.progress.width() - obj.progressDrag.width(),
+				left = obj.percent*w;
+				obj.progressBar.width(left);
+				obj.progressDrag.css('left',left+'px');
+			  }
+			}, false);
+			
+
+			//拖动控制播放进度
+			obj.progressDrag.on('mousedown',function(e){
+				var ev = e || window.event;
+				var $this = $(this);
+				var mw = $this.parent().width() - $this.width();
+				var ox = ev.clientX - parseInt($this.css('left'));
+				var mark = true;
+				document.addEventListener("mousemove",function(e){
+					if(mark){
+						var ev = e || window.event;
+						var ex = e.clientX;
+						var nl = ex-ox;
+						if (nl<=0) nl=0;
+						if(nl>=mw)nl=mw;
+						var per = nl/mw *100 +'%';
+						$this.css('left',nl+'px');
+						obj.progressBar.width(per);
+						obj.video.currentTime = obj.video.duration*(nl/mw);
+					}
+				});
+				document.addEventListener("mouseup",function(){
+					mark = false;
+					document.onmousemove = null;
+					document.onmouseup = null;
+				},false);
+				ev.stopPropagation();
+			});
+
+			//拖动控制音量大小
+			obj.volumeDrag.on('mousedown',function(e){
+				var ev = e || window.event;
+				var $this = $(this);
+				var mw = $this.parent().width() - $this.width();
+				var ox = ev.clientX - parseInt($this.css('left'));
+				var mark = true;
+				document.addEventListener("mousemove",function(e){
+					if(mark){
+						var ev = e || window.event;
+						var ex = e.clientX;
+						var nl = ex-ox;
+						if (nl<=0) nl=0;
+						if(nl>=mw)nl=mw;
+						var per = nl/mw *100 +'%';
+						$this.css('left',nl+'px');
+						obj.volumeBar.width(per);
+						obj.video.volume = (nl/mw);
+					}
+				});
+				document.addEventListener("mouseup",function(){
+					mark = false;
+					document.onmousemove = null;
+					document.onmouseup = null;
+				},false);
+				ev.stopPropagation();
+			});
+
+
+
+
+
+
+
+
+
+			obj.video.addEventListener('playing', function() {
+			  self.container.removeClass('zd-video-ispause');
+			  obj.playBtn.css('display', 'none');
+			  obj.pauseBtn.css('display', 'inline-block');
+			}, false);
+
+			obj.video.addEventListener('pause', function() {
+			  self.container.addClass('zd-video-ispause');
+			  obj.controls.addClass('show');
+			  obj.pauseBtn.css('display', 'none');
+			  obj.playBtn.css('display', 'inline-block');
+			}, false);
+
+			obj.video.addEventListener('click', function() {
+			  if (obj.video.paused) {
+				obj.video.play();
+			  } else {
+				obj.video.pause();
+			  }
+			}, false);
+
+			obj.video.addEventListener('mouseover', function() {
+			  obj.controls.addClass('show');
+			}, false);
+
+			obj.video.addEventListener('mouseout', function() {
+			  //如果正在播放
+			  if (!obj.video.paused) {
+				 hoverTimeout = setTimeout(function() {
+				  obj.controls.fadeIn("slow",function(){
+					obj.controls.removeClass('show');
+				  });
+				}, 1000);
+			  }
+			}, false);
+
+			obj.controls.on('mouseover', function(e) {
+			  e.preventDefault();
+			  e.stopPropagation();
+			  if (hoverTimeout) {
+				clearTimeout(hoverTimeout);
+			  }
+			  if (!obj.controls.hasClass('show')) {
+				obj.controls.addClass('show');
+			  }
+			});
+
+			//volume set
+			obj.volumeCon.on('click', function(e) {
+			  var x = e.clientX;
+			  var offset = obj.volumeCon.offset();
+			  var width = obj.volumeCon.width();
+			  var ratio = (x-offset.left)/width;
+			  obj.video.volume = ratio;
+			  obj.volumeBar.css('width', (ratio * 100) + '%');
+			  obj.volumeDrag.css('left',(ratio * 100) + '%')
+			});
+
+			//full screen
+			obj.fullScreenBtn.on('click', function(e) {
+			  launchFullScreen(self.video);
+			});
+		  };
+
+		  ZdVideo.prototype.init = function() {
+			//this.setTpl();
+			//this.setAllTime();
+			this.addEvents();
+			this.setVideotDimensions();
+		  }
+
+		  ZdVideo.VERSION = '0.0.1';
+
+		  root.ZdVideo = ZdVideo;
+
+		})(jQuery, this);
+
+
+		
+    var video = new ZdVideo({
+      container: 'myvideo'
+      //poster: './media/head.png'
+    });
+  
+	</script>
+</body>
+</html>

@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+            珠峰架构师成长计划
+        
+    </div>
+<ul><li><a href="../index.html">0.Async</a></li><li><a href="../html/0.editor.html">0.editor</a></li><li><a href="../html/0.module.html">0.module</a></li><li><a href="../html/1.ES2015.html">1.ES2015</a></li><li><a href="../html/2.Promise.html">2.Promise</a></li><li><a href="../html/3.Node.html">3.Node</a></li><li><a href="../html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="../html/5.REPL.html">5.REPL</a></li><li><a href="../html/6.NodeCore.html">6.NodeCore</a></li><li><a href="../html/7.module&NPM.html">7.module&NPM</a></li><li><a href="../html/8.Encoding.html">8.Encoding</a></li><li><a href="../html/9.Buffer.html">9.Buffer</a></li><li><a href="../html/10.fs.html">10.fs</a></li><li><a href="../html/11.Stream-1.html">11.Stream-1</a></li><li><a href="../html/11.Stream-2.html">11.Stream-2</a></li><li><a href="../html/11.Stream-3.html">11.Stream-3</a></li><li><a href="../html/11.Stream-4.html">11.Stream-4</a></li><li><a href="../html/12-Network-2.html">12-Network-2</a></li><li><a href="../html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="../html/12.Network-1.html">12.Network-1</a></li><li><a href="../html/13.tcp.html">13.tcp</a></li><li><a href="../html/14.http-1.html">14.http-1</a></li><li><a href="../html/14.http-2.html">14.http-2</a></li><li><a href="../html/15.compress.html">15.compress</a></li><li><a href="../html/16.crypto.html">16.crypto</a></li><li><a href="../html/17.process.html">17.process</a></li><li><a href="../html/18.yargs.html">18.yargs</a></li><li><a href="../html/19.cache.html">19.cache</a></li><li><a href="../html/20.action.html">20.action</a></li><li><a href="../html/21.https.html">21.https</a></li><li><a href="../html/22.cookie.html">22.cookie</a></li><li><a href="../html/23.session.html">23.session</a></li><li><a href="../html/24.express-1.html">24.express-1</a></li><li><a href="../html/24.express-2.html">24.express-2</a></li><li><a href="../html/24.express-3.html">24.express-3</a></li><li><a href="../html/24.express-4.html">24.express-4</a></li><li><a href="../html/25.koa-1.html">25.koa-1</a></li><li><a href="../html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="../html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="../html/26.webpack-3.tapable.html">26.webpack-3.tapable</a></li><li><a href="../html/26.webpack-4-AST.html">26.webpack-4-AST</a></li><li><a href="../html/26.webpack-5-source.html">26.webpack-5-source</a></li><li><a href="../html/26.webpack-6-loader.html">26.webpack-6-loader</a></li><li><a href="../html/26.webpack-7-plugin.html">26.webpack-7-plugin</a></li><li><a href="../html/26.webpack-8-hand.html">26.webpack-8-hand</a></li><li><a href="../html/27.react-1.html">27.react-1</a></li><li><a href="../html/27.react-2.html">27.react-2</a></li><li><a href="../html/27.react-3.html">27.react-3</a></li><li><a href="../html/27.react-4-immutable.html">27.react-4-immutable</a></li><li><a href="../html/27.react-5-react-dom-diff.html">27.react-5-react-dom-diff</a></li><li><a href="../html/27.react-6.html">27.react-6</a></li><li><a href="../html/28.react-mobx.html">28.react-mobx</a></li><li><a href="../html/28.redux-0.html">28.redux-0</a></li><li><a href="../html/28.redux-1.html">28.redux-1</a></li><li><a href="../html/28.redux-2-中间件.html">28.redux-2-中间件</a></li><li><a href="../html/28.redux-3-saga.html">28.redux-3-saga</a></li><li><a href="../html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="../html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="../html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="../html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="../html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="../html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="../html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="../html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="../html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="../html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="../html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="../html/30.cms-4-egg.html">30.cms-4-egg</a></li><li><a href="../html/30.cms-5-api.html">30.cms-5-api</a></li><li><a href="../html/30.cms-6-roadhog.html">30.cms-6-roadhog</a></li><li><a href="../html/30.cms-7-umi.html">30.cms-7-umi</a></li><li><a href="../html/30.cms-8-dva.html">30.cms-8-dva</a></li><li><a href="../html/30.cms-9-dva.html">30.cms-9-dva</a></li><li><a href="../html/30.cms-10-dva.html">30.cms-10-dva</a></li><li><a href="../html/30.cms-11-front.html">30.cms-11-front</a></li><li><a href="../html/31.cms-12-api.html">31.cms-12-api</a></li><li><a href="../html/31.cms-13-front.html">31.cms-13-front</a></li><li><a href="../html/31.cms-14-deploy.html">31.cms-14-deploy</a></li><li><a href="../html/32.ant.html">32.ant</a></li><li><a href="../html/33.redis.html">33.redis</a></li><li><a href="../html/34.unittest.html">34.unittest</a></li><li><a href="../html/35.jwt.html">35.jwt</a></li><li><a href="../html/36.websocket-1.html">36.websocket-1</a></li><li><a href="../html/36.websocket-2.html">36.websocket-2</a></li><li><a href="../html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="../html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="../html/38.chat-3.html">38.chat-3</a></li><li><a href="../html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="../html/38.chat.html">38.chat</a></li><li><a href="../html/38.chat2.html">38.chat2</a></li><li><a href="../html/38.chat2.html">38.chat2</a></li><li><a href="../html/39.crawl-0.html">39.crawl-0</a></li><li><a href="../html/39.crawl-1.html">39.crawl-1</a></li><li><a href="../html/39.crawl-2.html">39.crawl-2</a></li><li><a href="../html/40.deploy.html">40.deploy</a></li><li><a href="../html/41.safe.html">41.safe</a></li><li><a href="../html/42.test.html">42.test</a></li><li><a href="../html/43.nginx.html">43.nginx</a></li><li><a href="../html/44.enzyme.html">44.enzyme</a></li><li><a href="../html/45.docker.html">45.docker</a></li><li><a href="../html/46.elastic.html">46.elastic</a></li><li><a href="../html/47.oauth.html">47.oauth</a></li><li><a href="../html/48.wxpay.html">48.wxpay</a></li><li><a href="../html/49.nunjucks.html">49.nunjucks</a></li><li class="active"><a href="../html/50.ketang.html">50.ketang</a></li><li><a href="../html/index.html">index</a></li><li><a href="../html/51.typescript.html">51.typescript</a></li><li><a href="../html/52.UML.html">52.UML</a></li><li><a href="../html/53.design.html">53.design</a></li><li><a href="../html/index.html">index</a></li></ul></div>
+
+
+<div class="warpper">
+
+    <div class="page-toc">
+        <ul><li><a href="#t01. 初始化项目">1. 初始化项目</a></li><li><a href="#t12. 安装依赖">2. 安装依赖</a></li><li><a href="#t23. 说明">3. 说明</a><ul><li><a href="#t33.1 项目目录结构">3.1 项目目录结构</a></li><li><a href="#t43.2 存入Redux">3.2 存入Redux</a></li><li><a href="#t53.3 样式">3.3 样式</a></li></ul></li><li><a href="#t64.配置webpack.config.js">4.配置webpack.config.js</a></li><li><a href="#t75. 首页导航">5. 首页导航</a><ul><li><a href="#t85.1 index.html">5.1 index.html</a></li><li><a href="#t95.2 index.less">5.2 index.less</a></li><li><a href="#t105.3 src/main.js">5.3 src/main.js</a></li><li><a href="#t115.4 containers/App.js">5.4 containers/App.js</a></li><li><a href="#t125.5 Home/index.js">5.5 Home/index.js</a></li><li><a href="#t135.6 Tab/index.js">5.6 Tab/index.js</a></li><li><a href="#t145.7 Tab/index.less">5.7 Tab/index.less</a></li></ul></li><li><a href="#t156. 下拉菜单动画">6. 下拉菜单动画</a><ul><li><a href="#t166.1  /Home/index.js">6.1  /Home/index.js</a></li><li><a href="#t176.2 HomeHeader/index.js">6.2 HomeHeader/index.js</a></li><li><a href="#t186.3 HomeHeader/index.less">6.3 HomeHeader/index.less</a></li></ul></li><li><a href="#t197. 使用redux修改状态">7. 使用redux修改状态</a><ul><li><a href="#t207.1 Home/index.js">7.1 Home/index.js</a></li><li><a href="#t217.2 containers/App.js">7.2 containers/App.js</a></li><li><a href="#t227.3 Home/index.js">7.3 Home/index.js</a></li><li><a href="#t237.4 store/index.js">7.4 store/index.js</a></li><li><a href="#t247.5 store/action-types.js">7.5 store/action-types.js</a></li><li><a href="#t257.6 actions/home.js">7.6 actions/home.js</a></li><li><a href="#t267.7 reducers/index.js">7.7 reducers/index.js</a></li><li><a href="#t277.8 reducers/home.js">7.8 reducers/home.js</a></li></ul></li><li><a href="#t288.轮播图">8.轮播图</a><ul><li><a href="#t298.1 Home/index.less">8.1 Home/index.less</a></li><li><a href="#t308.2 Home/index.js">8.2 Home/index.js</a></li><li><a href="#t318.3 /Home/index.less">8.3 /Home/index.less</a></li><li><a href="#t328.4 /api/index.js">8.4 /api/index.js</a></li><li><a href="#t338.5 /api/home.js">8.5 /api/home.js</a></li><li><a href="#t348.6 /server/app.js">8.6 /server/app.js</a></li></ul></li><li><a href="#t358. 课程列表">8. 课程列表</a><ul><li><a href="#t368.1 HomeHeader/index.js">8.1 HomeHeader/index.js</a></li><li><a href="#t378.2 Home/index.js">8.2 Home/index.js</a></li><li><a href="#t388.3 store/action-types.js">8.3 store/action-types.js</a></li><li><a href="#t398.4 actions/home.js">8.4 actions/home.js</a></li><li><a href="#t408.5 reducers/home.js">8.5 reducers/home.js</a></li><li><a href="#t418.6 src/utils.js">8.6 src/utils.js</a></li></ul></li><li><a href="#t429. 记录滚动条位置">9. 记录滚动条位置</a><ul><li><a href="#t439.1 src/utils.js">9.1 src/utils.js</a></li><li><a href="#t449.2 containers/Home/index.js">9.2 containers/Home/index.js</a></li></ul></li><li><a href="#t4510.下拉刷新">10.下拉刷新</a><ul><li><a href="#t4610.1 src/utils.js">10.1 src/utils.js</a></li><li><a href="#t4710.2 Home/index.js">10.2 Home/index.js</a></li></ul></li><li><a href="#t4811. 改进Loading">11. 改进Loading</a><ul><li><a href="#t4911.1 Loading/index.js">11.1 Loading/index.js</a></li><li><a href="#t5011.2 Loading/index.less">11.2 Loading/index.less</a></li><li><a href="#t5111.3 containers/Home/index.js">11.3 containers/Home/index.js</a></li><li><a href="#t5211.4 Home/index.less">11.4 Home/index.less</a></li></ul></li><li><a href="#t5312. 课程详情">12. 课程详情</a><ul><li><a href="#t5412.1 containers/Detail/index.js">12.1 containers/Detail/index.js</a></li><li><a href="#t5512.2 Detail/index.less">12.2 Detail/index.less</a></li></ul></li><li><a href="#t5613. 个人中心">13. 个人中心</a><ul><li><a href="#t5713.1 Profile/index.js">13.1 Profile/index.js</a></li><li><a href="#t5813.2 Profile/index.less">13.2 Profile/index.less</a></li><li><a href="#t5913.3 src/main.js">13.3 src/main.js</a></li></ul></li><li><a href="#t6014. 导航菜单">14. 导航菜单</a><ul><li><a href="#t6114.1 NavBar/index.js">14.1 NavBar/index.js</a></li><li><a href="#t6214.2 Login/index.js">14.2 Login/index.js</a></li></ul></li><li><a href="#t6315. 登录">15. 登录</a><ul><li><a href="#t6415.1 Login/index.js">15.1 Login/index.js</a></li><li><a href="#t6515.2 Login/index.less">15.2 Login/index.less</a></li><li><a href="#t6615.3 Reg/index.js">15.3 Reg/index.js</a></li><li><a href="#t6715.4 containers/Reg/index.less">15.4 containers/Reg/index.less</a></li></ul></li><li><a href="#t6816. 实现会话">16. 实现会话</a><ul><li><a href="#t6916.1 server/app.js">16.1 server/app.js</a></li><li><a href="#t7016.2 src/api/index.js">16.2 src/api/index.js</a></li><li><a href="#t7116.3 Login/index.js">16.3 Login/index.js</a></li><li><a href="#t7216.4 Profile/index.js">16.4 Profile/index.js</a></li><li><a href="#t7316.5 Reg/index.js">16.5 Reg/index.js</a></li><li><a href="#t7416.6 src/store/action-types.js">16.6 src/store/action-types.js</a></li><li><a href="#t7516.7 store/index.js">16.7 store/index.js</a></li><li><a href="#t7616.8 reducers/index.js">16.8 reducers/index.js</a></li><li><a href="#t7716.9 api/session.js">16.9 api/session.js</a></li><li><a href="#t7816.10 actions/session.js">16.10 actions/session.js</a></li><li><a href="#t7916.11 history.js">16.11 history.js</a></li><li><a href="#t8016.11 reducers/session.js">16.11 reducers/session.js</a></li></ul></li><li><a href="#t8117.受保护的路由">17.受保护的路由</a><ul><li><a href="#t82PrivateRoute\index.js">PrivateRoute\index.js</a></li></ul></li><li><a href="#t83参考">参考</a></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h2 id="t01. &#x521D;&#x59CB;&#x5316;&#x9879;&#x76EE;">1. &#x521D;&#x59CB;&#x5316;&#x9879;&#x76EE; <a href="#t01. &#x521D;&#x59CB;&#x5316;&#x9879;&#x76EE;"> # </a></h2>
+<pre><code class="lang-js">mkdir zhufeng-app
+cd zhufeng-app
+yarn init -y
+</code></pre>
+<h2 id="t12. &#x5B89;&#x88C5;&#x4F9D;&#x8D56;">2. &#x5B89;&#x88C5;&#x4F9D;&#x8D56; <a href="#t12. &#x5B89;&#x88C5;&#x4F9D;&#x8D56;"> # </a></h2>
+<pre><code class="lang-js">yarn add react react-dom react-router-dom 
+yarn add yarn add babel-loader @babel/core @babel/preset-env @babel/preset-react
+yarn add redux react-redux redux-logger redux-promise redux-thunk react-router-redux
+yarn add  style-loader css-loader less-loader less url-loader
+yarn add webpack webpack-cli webpack-dev-server
+yarn add express body-parser express-session lodash
+</code></pre>
+<h2 id="t23. &#x8BF4;&#x660E;">3. &#x8BF4;&#x660E; <a href="#t23. &#x8BF4;&#x660E;"> # </a></h2>
+<h3 id="t33.1 &#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;">3.1 &#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784; <a href="#t33.1 &#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;"> # </a></h3>
+<ul>
+<li>src &#x9879;&#x76EE;&#x6E90;&#x7801;&#x76EE;&#x5F55;</li>
+<li>main &#x5165;&#x53E3;&#x6587;&#x4EF6;</li>
+<li>containers &#x5BB9;&#x5668;</li>
+<li>components &#x7EC4;&#x4EF6;</li>
+<li>common &#x516C;&#x5171;&#x6837;&#x5F0F;</li>
+</ul>
+<h3 id="t43.2 &#x5B58;&#x5165;Redux">3.2 &#x5B58;&#x5165;Redux <a href="#t43.2 &#x5B58;&#x5165;Redux"> # </a></h3>
+<ul>
+<li>&#x670D;&#x52A1;&#x7AEF;&#x63A5;&#x53E3;</li>
+<li>&#x7528;fetch&#x83B7;&#x53D6;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;</li>
+<li>&#x901A;&#x8FC7;action&#x5C06;&#x83B7;&#x53D6;&#x7684;&#x6570;&#x636E;&#x53D1;&#x9001;&#x5230;reducer</li>
+<li>&#x901A;&#x8FC7;reducer&#x6539;&#x53D8;redux&#x4E2D;&#x7684;&#x72B6;&#x6001;</li>
+</ul>
+<h3 id="t53.3 &#x6837;&#x5F0F;">3.3 &#x6837;&#x5F0F; <a href="#t53.3 &#x6837;&#x5F0F;"> # </a></h3>
+<ul>
+<li><a href="http://at.alicdn.com/t/font_pgg5jafnob51m7vi.css">link</a></li>
+<li>.icon-uilist</li>
+<li>.icon-xiaolian</li>
+<li>.icon-xiugaimima</li>
+<li>.icon-book</li>
+<li>.icon-fanhui</li>
+<li>.icon-guanbi</li>
+<li>.icon-guanyuwomen</li>
+<li>.icon-jianjie</li>
+<li>.icon-renturn</li>
+<li>.icon-xingqiu</li>
+<li>.icon-kecheng-copy</li>
+<li>.icon-common-changjianwenti-copy</li>
+<li>.icon-react</li>
+</ul>
+<p><img src="http://img.zhufengpeixun.cn/iconfont.png" alt="iconfont"></p>
+<h2 id="t64.&#x914D;&#x7F6E;webpack.config.js">4.&#x914D;&#x7F6E;webpack.config.js <a href="#t64.&#x914D;&#x7F6E;webpack.config.js"> # </a></h2>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> {resolve}=<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
+<span class="hljs-keyword">const</span> HtmlWebpackPlugin=<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;html-webpack-plugin&apos;</span>);
+<span class="hljs-built_in">module</span>.exports={
+    <span class="hljs-attr">mode</span>:<span class="hljs-string">&apos;development&apos;</span>,
+    <span class="hljs-attr">entry</span>: <span class="hljs-string">&apos;./src/main.js&apos;</span>,
+    <span class="hljs-attr">output</span>: {
+        <span class="hljs-attr">filename</span>: <span class="hljs-string">&apos;bundle.js&apos;</span>,
+        <span class="hljs-attr">path</span>: resolve(<span class="hljs-string">&apos;./dist&apos;</span>)
+    },
+    <span class="hljs-attr">module</span>: {
+        <span class="hljs-attr">rules</span>: [
+            {
+                <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js$/</span>,
+                <span class="hljs-attr">use</span>: {
+                    <span class="hljs-attr">loader</span>: <span class="hljs-string">&apos;babel-loader&apos;</span>,
+                    <span class="hljs-attr">options</span>: {
+                        <span class="hljs-attr">presets</span>:[<span class="hljs-string">&quot;@babel/preset-env&quot;</span>,<span class="hljs-string">&quot;@babel/preset-react&quot;</span>]
+                    }
+                },
+                <span class="hljs-attr">exclude</span>: <span class="hljs-regexp">/node_modules/</span>,
+
+            },
+            {<span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>,<span class="hljs-attr">use</span>: [<span class="hljs-string">&apos;style-loader&apos;</span>,<span class="hljs-string">&apos;css-loader&apos;</span>]},
+            {<span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.less$/</span>,<span class="hljs-attr">use</span>: [<span class="hljs-string">&apos;style-loader&apos;</span>,<span class="hljs-string">&apos;css-loader&apos;</span>,<span class="hljs-string">&apos;less-loader&apos;</span>]},
+            {<span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.(jpg|png|gif)$/</span>,<span class="hljs-attr">use</span>: <span class="hljs-string">&apos;url-loader&apos;</span>},
+        ]
+    },
+    <span class="hljs-attr">devtool</span>: <span class="hljs-string">&apos;sourcemap&apos;</span>,
+    <span class="hljs-attr">plugins</span>: [
+        <span class="hljs-keyword">new</span> HtmlWebpackPlugin({
+            <span class="hljs-attr">template</span>:<span class="hljs-string">&apos;./src/index.html&apos;</span>
+        })
+    ]
+}
+</code></pre>
+<h2 id="t75. &#x9996;&#x9875;&#x5BFC;&#x822A;">5. &#x9996;&#x9875;&#x5BFC;&#x822A; <a href="#t75. &#x9996;&#x9875;&#x5BFC;&#x822A;"> # </a></h2>
+<h3 id="t85.1 index.html">5.1 index.html <a href="#t85.1 index.html"> # </a></h3>
+<p>/src/index.html</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://at.alicdn.com/t/font_pgg5jafnob51m7vi.css&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#x73E0;&#x5CF0;&#x8BFE;&#x5802;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;root&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="t95.2 index.less">5.2 index.less <a href="#t95.2 index.less"> # </a></h3>
+<pre><code class="lang-less">*{
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+}
+<span class="hljs-selector-tag">ul</span>,<span class="hljs-selector-tag">li</span>{
+    <span class="hljs-attribute">list-style</span>: none;
+}
+<span class="hljs-selector-tag">a</span>{
+    <span class="hljs-attribute">text-decoration</span>: none;
+}
+<span class="hljs-selector-tag">html</span>,<span class="hljs-selector-tag">body</span>{
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">overflow</span>: hidden;
+}
+</code></pre>
+<h3 id="t105.3 src/main.js">5.3 src/main.js <a href="#t105.3 src/main.js"> # </a></h3>
+<p>src/main.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> {render} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom&apos;</span>;
+<span class="hljs-keyword">import</span> {HashRouter <span class="hljs-keyword">as</span> Router,Route,Switch} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>;
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./containers/App&apos;</span>;
+<span class="hljs-keyword">import</span> Home <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./containers/Home&apos;</span>;
+<span class="hljs-keyword">import</span> Lesson <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./containers/Lesson&apos;</span>;
+<span class="hljs-keyword">import</span> Profile <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./containers/Profile&apos;</span>;
+render(&lt;Router&gt;
+    &lt;Switch&gt;
+        &lt;App&gt;
+            &lt;Route exact path=&quot;/&quot; component={Home} /&gt;
+            &lt;Route path=&quot;/lesson&quot; component={Lesson}/&gt;
+            &lt;Route path=&quot;/profile&quot; component={Profile}/&gt;
+        &lt;/App&gt;
+    &lt;/Switch&gt;
+&lt;/Router&gt;,document.querySelector(&apos;#root&apos;));
+</code></pre>
+<h3 id="t115.4 containers/App.js">5.4 containers/App.js <a href="#t115.4 containers/App.js"> # </a></h3>
+<p>containers/App.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> Tab <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../components/Tab&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;../common/index.less&apos;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                {this.props.children}
+                <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span>/&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        );
+    }
+}
+</code></pre>
+<h3 id="t125.5 Home/index.js">5.5 Home/index.js <a href="#t125.5 Home/index.js"> # </a></h3>
+<p>src/containers/Home/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Home</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+</code></pre>
+<h3 id="t135.6 Tab/index.js">5.6 Tab/index.js <a href="#t135.6 Tab/index.js"> # </a></h3>
+<p>components/Tab/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> {NavLink} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tab</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">NavLink</span> <span class="hljs-attr">exact</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">activeClassName</span>=<span class="hljs-string">&quot;active&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;iconfont icon-xingqiu&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+                    &#x9996;&#x9875;
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">NavLink</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">NavLink</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/lesson&quot;</span> <span class="hljs-attr">activeClassName</span>=<span class="hljs-string">&quot;active&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;iconfont icon-react&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+                    &#x6211;&#x7684;&#x8BFE;&#x7A0B;
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">NavLink</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">NavLink</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/profile&quot;</span> <span class="hljs-attr">activeClassName</span>=<span class="hljs-string">&quot;active&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;iconfont icon-xiaolian&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+                    &#x4E2A;&#x4EBA;&#x4E2D;&#x5FC3;<span class="hljs-tag">&lt;/<span class="hljs-name">NavLink</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></span>
+        );
+    }
+}
+</code></pre>
+<h3 id="t145.7 Tab/index.less">5.7 Tab/index.less <a href="#t145.7 Tab/index.less"> # </a></h3>
+<p>components/Tab/index.less</p>
+<pre><code class="lang-less"><span class="hljs-selector-class">.footer</span> {
+    <span class="hljs-attribute">position</span>:fixed;
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">53px</span>;
+    <span class="hljs-attribute">bottom</span>:<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">display</span>:flex;
+    <span class="hljs-attribute">background</span>:<span class="hljs-number">#FFF</span>;
+    <span class="hljs-attribute">border-top</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#D5D5D5</span>;
+    <span class="hljs-selector-tag">a</span>{
+        <span class="hljs-attribute">display</span>: flex;
+        <span class="hljs-attribute">flex</span>:<span class="hljs-number">1</span>;
+        <span class="hljs-attribute">justify-content</span>: center;
+        <span class="hljs-attribute">align-items</span>: center;
+        <span class="hljs-attribute">color</span>:<span class="hljs-number">#b5b5b6</span>;
+        <span class="hljs-attribute">flex-direction</span>: column;
+        <span class="hljs-selector-tag">i</span>{
+            <span class="hljs-attribute">font-size</span>:<span class="hljs-number">20px</span>;
+        }
+        <span class="hljs-selector-tag">&amp;</span><span class="hljs-selector-class">.active</span>{
+            <span class="hljs-attribute">color</span>:<span class="hljs-number">#198ae4</span>;
+        }
+    }
+}
+</code></pre>
+<h2 id="t156. &#x4E0B;&#x62C9;&#x83DC;&#x5355;&#x52A8;&#x753B;">6. &#x4E0B;&#x62C9;&#x83DC;&#x5355;&#x52A8;&#x753B; <a href="#t156. &#x4E0B;&#x62C9;&#x83DC;&#x5355;&#x52A8;&#x753B;"> # </a></h2>
+<h3 id="t166.1  /Home/index.js">6.1  /Home/index.js <a href="#t166.1  /Home/index.js"> # </a></h3>
+<p>src/containers/Home/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> HomeHeader <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/HomeHeader&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Home</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">HomeHeader</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HomeHeader</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+</code></pre>
+<h3 id="t176.2 HomeHeader/index.js">6.2 HomeHeader/index.js <a href="#t176.2 HomeHeader/index.js"> # </a></h3>
+<p> src/components/HomeHeader/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> logo <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../common/images/logo.png&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>
+<span class="hljs-keyword">import</span> {CSSTransition,TransitionGroup} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-transition-group&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HomeHeader</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    <span class="hljs-keyword">constructor</span>(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state={
+            <span class="hljs-attr">showList</span>:<span class="hljs-literal">false</span>
+        }
+    }
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;home-header&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;header-menu&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{logo}</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;logo&quot;</span> /&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> this.setState({showList:!this.state.showList})}&gt;
+                        {
+                            this.state.showList?<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;iconfont icon-guanbi&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>:<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;iconfont icon-uilist&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+                        }
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">TransitionGroup</span>&gt;</span>
+                        {
+                            this.state.showList&amp;&amp;<span class="hljs-tag">&lt;<span class="hljs-name">CSSTransition</span>
+                            <span class="hljs-attr">timeout</span>=<span class="hljs-string">{500}</span>
+                            <span class="hljs-attr">classNames</span>=<span class="hljs-string">&quot;fade&quot;</span>
+                              &gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;menu-list&quot;</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>Node&#x8BFE;&#x7A0B;&#x57F9;&#x8BAD;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>HTML&#x8BFE;&#x7A0B;&#x57F9;&#x8BAD;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;3&quot;</span>&gt;</span>&#x89C6;&#x9891;&#x8BFE;&#x7A0B;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;4&quot;</span>&gt;</span>&#x6587;&#x6863;&#x8BFE;&#x4EF6;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">CSSTransition</span>&gt;</span>
+                        }
+                <span class="hljs-tag">&lt;/<span class="hljs-name">TransitionGroup</span>&gt;</span>    
+
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        );
+    }
+}
+</span></code></pre>
+<h3 id="t186.3 HomeHeader/index.less">6.3 HomeHeader/index.less <a href="#t186.3 HomeHeader/index.less"> # </a></h3>
+<p> src/components/HomeHeader/index.less</p>
+<pre><code class="lang-less"><span class="hljs-selector-class">.home-header</span>{
+    <span class="hljs-attribute">background</span>:<span class="hljs-number">#2A2A2A</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">56px</span>;
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">position</span>:fixed;
+    <span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;
+    <span class="hljs-selector-class">.header-menu</span>{
+        <span class="hljs-attribute">display</span>:flex;
+        <span class="hljs-attribute">height</span>:<span class="hljs-number">56px</span>;
+        <span class="hljs-attribute">justify-content</span>: space-between;
+        <span class="hljs-attribute">align-items</span>: center;
+        <span class="hljs-selector-tag">img</span>{
+            <span class="hljs-attribute">height</span>:<span class="hljs-number">30px</span>;
+            <span class="hljs-attribute">width</span>:<span class="hljs-number">105px</span>;
+            <span class="hljs-attribute">margin-left</span>:<span class="hljs-number">10px</span>;
+        }
+        <span class="hljs-selector-tag">i</span>{
+            <span class="hljs-attribute">color</span>:<span class="hljs-number">#FFF</span>;
+            <span class="hljs-attribute">margin-right</span>:<span class="hljs-number">10px</span>;
+        }
+    }
+    <span class="hljs-selector-class">.menu-list</span>{
+        <span class="hljs-attribute">position</span>: absolute;
+        <span class="hljs-attribute">top</span>:<span class="hljs-number">56px</span>;
+        <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">background-color</span>:<span class="hljs-number">#000</span>;
+        <span class="hljs-selector-tag">li</span>{
+            <span class="hljs-attribute">border-top</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#464646</span>;
+            <span class="hljs-attribute">height</span>:<span class="hljs-number">43px</span>;
+            <span class="hljs-attribute">line-height</span>:<span class="hljs-number">43px</span>;
+            <span class="hljs-attribute">text-align</span>: center;
+            <span class="hljs-attribute">color</span>:<span class="hljs-number">#FFF</span>;
+            <span class="hljs-attribute">border-top</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#464646</span>;
+            <span class="hljs-selector-tag">&amp;</span><span class="hljs-selector-class">.active</span>{
+                <span class="hljs-attribute">color</span>:green;
+            }
+        }
+    }
+}
+<span class="hljs-selector-class">.fade-enter</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.01</span>;
+}
+<span class="hljs-selector-class">.fade-enter-active</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+    <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">500ms</span> ease-in;
+}
+<span class="hljs-selector-class">.fade-exit</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+}
+<span class="hljs-selector-class">.fade-exit-active</span> {
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.01</span>;
+    <span class="hljs-attribute">transition</span>: opacity <span class="hljs-number">500ms</span> ease-in;
+}
+</code></pre>
+<h2 id="t197. &#x4F7F;&#x7528;redux&#x4FEE;&#x6539;&#x72B6;&#x6001;">7. &#x4F7F;&#x7528;redux&#x4FEE;&#x6539;&#x72B6;&#x6001; <a href="#t197. &#x4F7F;&#x7528;redux&#x4FEE;&#x6539;&#x72B6;&#x6001;"> # </a></h2>
+<h3 id="t207.1 Home/index.js">7.1 Home/index.js <a href="#t207.1 Home/index.js"> # </a></h3>
+<p>src/containers/Home/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> HomeHeader <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/HomeHeader&apos;</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>;
+<span class="hljs-keyword">import</span> actions <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../store/actions/home&apos;</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Home</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">HomeHeader</span>
+                    <span class="hljs-attr">currentCategory</span>=<span class="hljs-string">{this.props.currentCategory}</span>
+                    <span class="hljs-attr">setCurrentCategory</span>=<span class="hljs-string">{this.props.setCurrentCategory}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HomeHeader</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> connect(<span class="hljs-function"><span class="hljs-params">state</span> =&gt;</span> state.home,actions)(Home);
+</code></pre>
+<h3 id="t217.2 containers/App.js">7.2 containers/App.js <a href="#t217.2 containers/App.js"> # </a></h3>
+<p>src/containers/App.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component,Fragment} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> Tab <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../components/Tab&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;../common/index.less&apos;</span>
+<span class="hljs-keyword">import</span>  {Provider} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>;
+<span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../store&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">{store}</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Fragment</span>&gt;</span>
+                  {this.props.children}
+                  <span class="hljs-tag">&lt;<span class="hljs-name">Tab</span>/&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Fragment</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span></span>
+        );
+    }
+}
+</code></pre>
+<h3 id="t227.3 Home/index.js">7.3 Home/index.js <a href="#t227.3 Home/index.js"> # </a></h3>
+<p>src/containers/Home/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> HomeHeader <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/HomeHeader&apos;</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>;
+<span class="hljs-keyword">import</span> actions <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../store/actions/home&apos;</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Home</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">HomeHeader</span>
+                    <span class="hljs-attr">currentCategory</span>=<span class="hljs-string">{this.props.currentCategory}</span>
+                    <span class="hljs-attr">setCurrentCategory</span>=<span class="hljs-string">{this.props.setCurrentCategory}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HomeHeader</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> connect(<span class="hljs-function"><span class="hljs-params">state</span> =&gt;</span> state.home,actions)(Home);
+</code></pre>
+<h3 id="t237.4 store/index.js">7.4 store/index.js <a href="#t237.4 store/index.js"> # </a></h3>
+<p>store/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {createStore} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux&apos;</span>;
+<span class="hljs-keyword">import</span> reducers <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./reducers&apos;</span>;
+<span class="hljs-keyword">let</span> store=createStore(reducers);
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> store;
+</code></pre>
+<h3 id="t247.5 store/action-types.js">7.5 store/action-types.js <a href="#t247.5 store/action-types.js"> # </a></h3>
+<p>store/action-types.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> SET_CURRENT_CATEGORY=<span class="hljs-string">&apos;SET_CURRENT_CATEGORY&apos;</span>;
+</code></pre>
+<h3 id="t257.6 actions/home.js">7.6 actions/home.js <a href="#t257.6 actions/home.js"> # </a></h3>
+<p>store/actions/home.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> types <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../action-types&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    setCurrentCategory(currentCategory) {
+        <span class="hljs-keyword">return</span> {<span class="hljs-attr">type</span>:types.SET_CURRENT_CATEGORY,currentCategory};
+    }
+}
+</code></pre>
+<h3 id="t267.7 reducers/index.js">7.7 reducers/index.js <a href="#t267.7 reducers/index.js"> # </a></h3>
+<p>store/reducers/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> home <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./home&apos;</span>;
+<span class="hljs-keyword">import</span> {combineReducers} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> combineReducers({
+    home
+});
+</code></pre>
+<h3 id="t277.8 reducers/home.js">7.8 reducers/home.js <a href="#t277.8 reducers/home.js"> # </a></h3>
+<p>store/reducers/home.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> types <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../action-types&apos;</span>;
+<span class="hljs-keyword">let</span> initState={
+    <span class="hljs-attr">currentCategory</span> : <span class="hljs-number">0</span>
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state=initState,action</span>) </span>{
+    <span class="hljs-keyword">switch</span> (action.type) {
+        <span class="hljs-keyword">case</span> types.SET_CURRENT_CATEGORY:
+            <span class="hljs-keyword">return</span> {...state,<span class="hljs-attr">currentCategory</span>:action.currentCategory};
+    }
+    <span class="hljs-keyword">return</span> state;
+}
+</code></pre>
+<h2 id="t288.&#x8F6E;&#x64AD;&#x56FE;">8.&#x8F6E;&#x64AD;&#x56FE; <a href="#t288.&#x8F6E;&#x64AD;&#x56FE;"> # </a></h2>
+<h3 id="t298.1 Home/index.less">8.1 Home/index.less <a href="#t298.1 Home/index.less"> # </a></h3>
+<p>src/containers/Home/index.less</p>
+<pre><code class="lang-js">.home{
+    .main-content{
+        <span class="hljs-attr">position</span>: fixed;
+        top:<span class="hljs-number">56</span>px;
+        bottom:<span class="hljs-number">54</span>px;
+        overflow: hidden;
+        overflow-y: scroll;
+        width:<span class="hljs-number">100</span>%;
+    }
+}
+</code></pre>
+<h3 id="t308.2 Home/index.js">8.2 Home/index.js <a href="#t308.2 Home/index.js"> # </a></h3>
+<p>containers/Home/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> ReactSwipe <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-swipe&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Swiper</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    <span class="hljs-keyword">constructor</span>(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state={<span class="hljs-attr">index</span>:<span class="hljs-number">0</span>};
+    }
+    render() {
+        <span class="hljs-keyword">let</span> options={
+            <span class="hljs-attr">continuous</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">callback</span>:<span class="hljs-function">(<span class="hljs-params">index</span>)=&gt;</span> {
+                <span class="hljs-keyword">this</span>.setState({index});
+            }
+        }
+        <span class="hljs-keyword">let</span> swiper=(
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ReactSwipe</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;carousel&quot;</span> <span class="hljs-attr">swipeOptions</span>=<span class="hljs-string">{options}</span>&gt;</span>
+                        {this.props.sliders.map((item,index) =&gt; (
+                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{index}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{item}/</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                        ))}
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ReactSwipe</span>&gt;</span>
+        )
+        return (
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;home-sliders&quot;</span>&gt;</span>
+                {this.props.sliders.length&gt;0? swiper:null}
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;dots&quot;</span>&gt;</span>
+                    {
+                        this.props.sliders.map((item,index) =&gt; (
+                            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{index}</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{</span>`<span class="hljs-attr">dot</span> ${<span class="hljs-attr">this.state.index</span> ==<span class="hljs-string">index?</span>&apos;<span class="hljs-attr">active</span>&apos;<span class="hljs-attr">:</span>&apos;&apos;}`}&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                        ))
+                    }
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        );
+    }
+}
+</span></code></pre>
+<h3 id="t318.3 /Home/index.less">8.3 /Home/index.less <a href="#t318.3 /Home/index.less"> # </a></h3>
+<p>containers/Home/index.less</p>
+<pre><code class="lang-less"><span class="hljs-selector-class">.home-sliders</span>{
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-selector-tag">img</span>{
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+    }
+    <span class="hljs-selector-class">.dots</span>{
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">position</span>: absolute;
+        <span class="hljs-attribute">bottom</span>:<span class="hljs-number">7px</span>;
+        <span class="hljs-attribute">display</span>: flex;
+        <span class="hljs-attribute">justify-content</span>: center;
+        <span class="hljs-attribute">align-items</span>: center;
+        <span class="hljs-selector-class">.dot</span>{
+            <span class="hljs-attribute">width</span>:<span class="hljs-number">8px</span>;
+            <span class="hljs-attribute">height</span>:<span class="hljs-number">8px</span>;
+            <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+            <span class="hljs-attribute">background-color</span>:<span class="hljs-number">#FFF</span>;
+            <span class="hljs-attribute">margin-left</span>:<span class="hljs-number">5px</span>;
+            <span class="hljs-selector-tag">&amp;</span><span class="hljs-selector-class">.active</span>{
+                <span class="hljs-attribute">background-color</span>:salmon;
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="t328.4 /api/index.js">8.4 /api/index.js <a href="#t328.4 /api/index.js"> # </a></h3>
+<p>/api/index.js</p>
+<pre><code class="lang-less">const API_HOST=&apos;http://localhost:3000&apos;;
+export const get=(url) =&gt; {
+    return fetch(API_HOST+url,{
+        method: &apos;GET&apos;,
+        credentials: &apos;include&apos;,//&#x8DE8;&#x57DF;&#x643A;&#x5E26;cookie
+        headers: {
+            accept:&apos;application/json&apos;
+        }
+    }).then(res=&gt;res.json());
+}
+export const post=(url,data) =&gt; {
+    return fetch(API_HOST+url,{
+        method: &apos;POST&apos;,
+        body: JSON.stringify(data),
+        headers: {
+            &apos;Content-Type&apos;: &apos;application/json&apos;,
+            &apos;Accept&apos;:&apos;application/json&apos;
+        }
+    });
+}
+</code></pre>
+<h3 id="t338.5 /api/home.js">8.5 /api/home.js <a href="#t338.5 /api/home.js"> # </a></h3>
+<p>/api/home.js</p>
+<pre><code class="lang-less">import {get} from &apos;./index&apos;;
+export const getSliders=() =&gt; {
+    return get(&apos;/sliders&apos;);
+}
+</code></pre>
+<h3 id="t348.6 /server/app.js">8.6 /server/app.js <a href="#t348.6 /server/app.js"> # </a></h3>
+<p>/server/app.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> express=<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;express&apos;</span>);
+<span class="hljs-keyword">let</span> app=express();
+app.use(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req,res,next</span>) </span>{
+    res.header(<span class="hljs-string">&apos;Access-Control-Allow-Methods&apos;</span>,<span class="hljs-string">&apos;PUT,POST,GET,DELETE,OPTIONS&apos;</span>);
+    res.header(<span class="hljs-string">&apos;Access-Control-Allow-Origin&apos;</span>,<span class="hljs-string">&apos;http://localhost:8080&apos;</span>);
+    res.header(<span class="hljs-string">&apos;Access-Control-Allow-Credentials&apos;</span>,<span class="hljs-string">&apos;true&apos;</span>);
+    <span class="hljs-keyword">if</span> (req.method === <span class="hljs-string">&apos;OPTIONS&apos;</span>) {
+        <span class="hljs-keyword">return</span> res.sendStatus(<span class="hljs-number">200</span>);
+    }
+    next();
+});
+app.listen(<span class="hljs-number">3000</span>);
+<span class="hljs-keyword">let</span> sliders=<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./mock/sliders&apos;</span>);
+app.get(<span class="hljs-string">&apos;/sliders&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req,res</span>) </span>{
+    res.json(sliders);
+});
+</code></pre>
+<h2 id="t358. &#x8BFE;&#x7A0B;&#x5217;&#x8868;">8. &#x8BFE;&#x7A0B;&#x5217;&#x8868; <a href="#t358. &#x8BFE;&#x7A0B;&#x5217;&#x8868;"> # </a></h2>
+<h3 id="t368.1 HomeHeader/index.js">8.1 HomeHeader/index.js <a href="#t368.1 HomeHeader/index.js"> # </a></h3>
+<p>/components/HomeHeader/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> logo <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../common/images/logo.png&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>
+<span class="hljs-keyword">import</span> {CSSTransition,TransitionGroup} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-transition-group&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HomeHeader</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    <span class="hljs-keyword">constructor</span>(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state={
+            <span class="hljs-attr">showList</span>:<span class="hljs-literal">false</span>
+        }
+    }
+    setCurrentCategory=<span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+        <span class="hljs-keyword">let</span> type = event.target.dataset.type;
+        <span class="hljs-keyword">this</span>.setState({
+            <span class="hljs-attr">showList</span>:<span class="hljs-literal">false</span>
+        },() =&gt; {
+            <span class="hljs-keyword">this</span>.props.setCurrentCategory(type);
+            <span class="hljs-keyword">this</span>.props.fetchLessons();
+        });
+    }
+    render() {
+        <span class="hljs-keyword">let</span> currentCategory=<span class="hljs-keyword">this</span>.props.currentCategory;
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;home-header&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;header-menu&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{logo}</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;logo&quot;</span> /&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> this.setState({showList:!this.state.showList})}&gt;
+                        {
+                            this.state.showList?<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;iconfont icon-guanbi&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>:<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;iconfont icon-uilist&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+                        }
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">TransitionGroup</span>&gt;</span>
+                        {
+                            this.state.showList&amp;&amp;<span class="hljs-tag">&lt;<span class="hljs-name">CSSTransition</span>
+                                    <span class="hljs-attr">timeout</span>=<span class="hljs-string">{500}</span>
+                                    <span class="hljs-attr">classNames</span>=<span class="hljs-string">&quot;fade&quot;</span>
+                        &gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;menu-list&quot;</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{event</span>=&gt;</span>this.setCurrentCategory(event)}&gt;
+                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-type</span>=<span class="hljs-string">&quot;react&quot;</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{currentCategory</span> == <span class="hljs-string">&quot;react&quot;</span>?&quot;<span class="hljs-attr">active</span>&quot;<span class="hljs-attr">:</span>&quot;&quot;}&gt;</span>React&#x8BFE;&#x7A0B;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-type</span>=<span class="hljs-string">&quot;vue&quot;</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{currentCategory</span>==<span class="hljs-string">&quot;vue&quot;</span>? &quot;<span class="hljs-attr">active</span>&quot;<span class="hljs-attr">:</span>&quot;&quot;}&gt;</span>Vue&#x8BFE;&#x7A0B;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">CSSTransition</span>&gt;</span>
+                        }
+                <span class="hljs-tag">&lt;/<span class="hljs-name">TransitionGroup</span>&gt;</span>    
+
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        );
+    }
+}
+</span></code></pre>
+<h3 id="t378.2 Home/index.js">8.2 Home/index.js <a href="#t378.2 Home/index.js"> # </a></h3>
+<p>src/containers/Home/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> HomeHeader <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/HomeHeader&apos;</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>;
+<span class="hljs-keyword">import</span> actions <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../store/actions/home&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>;
+<span class="hljs-keyword">import</span> Swiper <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/Swiper&apos;</span>;
+<span class="hljs-keyword">import</span> Loading <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/Loading&apos;</span>;
+<span class="hljs-keyword">import</span> {upLoadMore} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../utils&apos;</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Home</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    componentDidMount() {
+        <span class="hljs-keyword">this</span>.props.getSliders();
+        <span class="hljs-keyword">this</span>.props.getLessons();
+        upLoadMore(<span class="hljs-keyword">this</span>.mainContent,<span class="hljs-keyword">this</span>.props.getLessons);
+    }
+    render() {
+        <span class="hljs-keyword">const</span> {currentCategory,setCurrentCategory,fetchLessons,<span class="hljs-attr">lessons</span>:{list,loading,hasMore}}=<span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">return</span> (
+            &lt;div className=&quot;home&quot;&gt;
+                &lt;HomeHeader
+                    currentCategory={currentCategory}
+                    fetchLessons={fetchLessons}
+                    setCurrentCategory={setCurrentCategory} /&gt;
+                &lt;div className=&quot;main-content&quot; ref={ref=&gt;this.mainContent = ref}&gt;
+                    &lt;Swiper sliders={this.props.sliders} /&gt;
+                    &lt;div className=&quot;lesson-list&quot; &gt;
+                        &lt;div&gt;&lt;i className=&quot;iconfont icon-kecheng-copy&quot;&gt;&lt;/i&gt;&#x5168;&#x90E8;&#x8BFE;&#x7A0B;&lt;/div&gt;
+                        {
+                            list.map(lesson =&gt; (
+                                &lt;div key={lesson.id} className=&quot;lesson&quot;&gt;
+                                    &lt;img src={lesson.poster} /&gt;
+                                    &lt;p&gt;{lesson.title}&lt;/p&gt;
+                                    &lt;p&gt;{lesson.price}&lt;/p&gt;
+                                &lt;/div&gt;
+                            ))
+                        }
+                    &lt;/div&gt;
+                    {
+                        loading? &lt;Loading /&gt;:(hasMore?&lt;div className=&quot;load-more&quot; onClick={this.props.getLessons}&gt;{hasMore?&apos;&#x70B9;&#x51FB;&#x52A0;&#x8F7D;&#x66F4;&#x591A;&apos;:&apos;&#x5230;&#x5E95;&#x4E86;&apos;}&lt;/div&gt;:null)
+                    }
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+        )
+    }
+}
+export default connect(state =&gt; state.home,actions)(Home);
+</code></pre>
+<h3 id="t388.3 store/action-types.js">8.3 store/action-types.js <a href="#t388.3 store/action-types.js"> # </a></h3>
+<p>src/store/action-types.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> SET_CURRENT_CATEGORY=<span class="hljs-string">&apos;SET_CURRENT_CATEGORY&apos;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> SET_SLIDERS=<span class="hljs-string">&apos;SET_SLIDERS&apos;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> SET_LOADING_LESSONS = <span class="hljs-string">&apos;SET_LOADING_LESSONS&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> SET_LESSONS=<span class="hljs-string">&apos;SET_LESSONS&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> FETCH_LESSONS=<span class="hljs-string">&apos;FETCH_LESSONS&apos;</span>;
+</code></pre>
+<h3 id="t398.4 actions/home.js">8.4 actions/home.js <a href="#t398.4 actions/home.js"> # </a></h3>
+<p>src/store/actions/home.js</p>
+<pre><code class="lang-js">fetchLessons() {
+        <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">dispatch,getState</span>) =&gt;</span> {
+            <span class="hljs-keyword">let</span> {currentCategory,<span class="hljs-attr">lessons</span>: {limit,loading}}=getState().home;
+            <span class="hljs-keyword">if</span> (!loading) {
+                dispatch({<span class="hljs-attr">type</span>:types.SET_LOADING_LESSONS,<span class="hljs-attr">payload</span>:<span class="hljs-literal">true</span>});
+                getLessons(currentCategory,<span class="hljs-number">0</span>,limit).then(<span class="hljs-function"><span class="hljs-params">payload</span> =&gt;</span> {
+                    dispatch({
+                        <span class="hljs-attr">type</span>: types.FETCH_LESSONS,
+                        payload
+                    });
+                });
+            }
+
+        }
+    }
+</code></pre>
+<h3 id="t408.5 reducers/home.js">8.5 reducers/home.js <a href="#t408.5 reducers/home.js"> # </a></h3>
+<p>src/store/reducers/home.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">case</span> types.FETCH_LESSONS:
+            <span class="hljs-built_in">console</span>.log(action.payload);
+            <span class="hljs-keyword">return</span> {
+                ...state,
+                <span class="hljs-attr">lessons</span>: {
+                    ...state.lessons,
+                    <span class="hljs-attr">loading</span>: <span class="hljs-literal">false</span>,
+                    <span class="hljs-attr">hasMore</span>:action.payload.hasMore,
+                    <span class="hljs-attr">list</span>: action.payload.list,
+                    <span class="hljs-attr">offset</span>:action.payload.list.length
+                }
+            };
+</code></pre>
+<h3 id="t418.6 src/utils.js">8.6 src/utils.js <a href="#t418.6 src/utils.js"> # </a></h3>
+<p>src/utils.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">upLoadMore</span>(<span class="hljs-params">domEle,loadMore</span>) </span>{
+    <span class="hljs-keyword">let</span> timer;
+    domEle.addEventListener(<span class="hljs-string">&apos;scroll&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">if</span> (timer) clearInterval(timer);
+        timer=setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">let</span> height=domEle.clientHeight;
+            <span class="hljs-keyword">let</span> scrollHeight=domEle.scrollHeight;
+            <span class="hljs-keyword">let</span> scrollTop=domEle.scrollTop;
+            <span class="hljs-keyword">if</span> (scrollTop + height + <span class="hljs-number">10</span> &gt; scrollHeight) {
+                loadMore();
+            }
+        },<span class="hljs-number">100</span>);
+    });
+}
+</code></pre>
+<h2 id="t429. &#x8BB0;&#x5F55;&#x6EDA;&#x52A8;&#x6761;&#x4F4D;&#x7F6E;">9. &#x8BB0;&#x5F55;&#x6EDA;&#x52A8;&#x6761;&#x4F4D;&#x7F6E; <a href="#t429. &#x8BB0;&#x5F55;&#x6EDA;&#x52A8;&#x6761;&#x4F4D;&#x7F6E;"> # </a></h2>
+<h3 id="t439.1 src/utils.js">9.1 src/utils.js <a href="#t439.1 src/utils.js"> # </a></h3>
+<p>src/utils.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> store =  {
+    set(key,val) {
+        sessionStorage.setItem(key,val);
+    },
+    get(key) {
+        <span class="hljs-keyword">return</span> sessionStorage.getItem(key);
+    }
+}
+</code></pre>
+<h3 id="t449.2 containers/Home/index.js">9.2 containers/Home/index.js <a href="#t449.2 containers/Home/index.js"> # </a></h3>
+<p>containers/Home/index.js</p>
+<pre><code class="lang-js">componentDidMount() {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.props.lessons.list.length == <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">this</span>.props.getSliders();
+            <span class="hljs-keyword">this</span>.props.getLessons();
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.mainContent.scrollTop=store.get(<span class="hljs-string">&apos;scrollTop&apos;</span>);
+        }
+        upLoadMore(<span class="hljs-keyword">this</span>.mainContent,<span class="hljs-keyword">this</span>.props.getLessons);
+    }
+    componentWillUnmount() {
+        store.set(<span class="hljs-string">&apos;scrollTop&apos;</span>,<span class="hljs-keyword">this</span>.mainContent.scrollTop);
+    }
+</code></pre>
+<h2 id="t4510.&#x4E0B;&#x62C9;&#x5237;&#x65B0;">10.&#x4E0B;&#x62C9;&#x5237;&#x65B0; <a href="#t4510.&#x4E0B;&#x62C9;&#x5237;&#x65B0;"> # </a></h2>
+<h3 id="t4610.1 src/utils.js">10.1 src/utils.js <a href="#t4610.1 src/utils.js"> # </a></h3>
+<p>src/utils.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">downRefresh</span>(<span class="hljs-params">domEle,callback</span>) </span>{
+    <span class="hljs-keyword">let</span> startY;<span class="hljs-comment">//&#x5F00;&#x59CB;&#x7684;&#x7EB5;&#x5750;&#x6807;</span>
+    <span class="hljs-keyword">let</span> distance;<span class="hljs-comment">//&#x7EB5;&#x5750;&#x6807;&#x79FB;&#x52A8;&#x7684;&#x8DDD;&#x79BB;</span>
+    <span class="hljs-keyword">let</span> originTop=domEle.offsetTop;<span class="hljs-comment">//&#x521A;&#x5F00;&#x59CB;&#x7684;&#x8DDD;&#x79BB;&#x9876;&#x90E8;&#x7684;&#x504F;&#x79FB;&#x91CF;</span>
+    domEle.addEventListener(<span class="hljs-string">&apos;touchstart&apos;</span>,touchStart);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">touchStart</span>(<span class="hljs-params">event</span>) </span>{
+        startY=event.touches[<span class="hljs-number">0</span>].pageY;<span class="hljs-comment">//&#x6309;&#x4E0B;&#x7684;&#x90A3;&#x4E2A;&#x70B9;&#x7684;&#x521D;&#x59CB;&#x503C;</span>
+        <span class="hljs-comment">//&#x4E0D;&#x662F;&#x5904;&#x4E8E;&#x56DE;&#x5F39;&#x4E2D;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x5411;&#x4E0A;&#x6EDA;&#x52A8;&#x7684;&#x8DDD;&#x79BB;</span>
+        <span class="hljs-keyword">if</span> (domEle.offsetTop == originTop &amp;&amp; domEle.scrollTop == <span class="hljs-number">0</span>) {
+            domEle.addEventListener(<span class="hljs-string">&apos;touchmove&apos;</span>,touchMove);
+            domEle.addEventListener(<span class="hljs-string">&apos;touchend&apos;</span>,touchEnd);
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">touchMove</span>(<span class="hljs-params">event</span>) </span>{
+            <span class="hljs-keyword">let</span> pageY=event.touches[<span class="hljs-number">0</span>].pageY;
+            <span class="hljs-keyword">if</span> (pageY &gt; startY) {<span class="hljs-comment">//&#x5982;&#x679C;&#x662F;&#x4E0B;&#x62C9;</span>
+                distance=pageY-startY;<span class="hljs-comment">//&#x8BA1;&#x7B97;&#x8DDD;&#x79BB;</span>
+                <span class="hljs-comment">//&#x65B0;&#x7684;top&#x503C;&#x7B49;&#x4E8E;&#x6700;&#x539F;&#x59CB;&#x7684;top+&#x89E6;&#x6478;&#x79FB;&#x52A8;&#x7684;&#x8DDD;&#x79BB;</span>
+                domEle.style.top=originTop+distance+<span class="hljs-string">&apos;px&apos;</span>;
+            } <span class="hljs-keyword">else</span> {
+                domEle.removeEventListener(<span class="hljs-string">&apos;touchmove&apos;</span>,touchMove);
+                domEle.removeEventListener(<span class="hljs-string">&apos;touchend&apos;</span>,touchEnd);
+            }
+        }
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">touchEnd</span>(<span class="hljs-params">event</span>) </span>{
+            domEle.removeEventListener(<span class="hljs-string">&apos;touchmove&apos;</span>,touchMove);
+            domEle.removeEventListener(<span class="hljs-string">&apos;touchend&apos;</span>,touchEnd);
+            <span class="hljs-keyword">let</span> timer = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+                domEle.style.top=originTop+(--distance)+<span class="hljs-string">&apos;px&apos;</span>;
+                <span class="hljs-keyword">if</span> (distance&lt;<span class="hljs-number">1</span>) {
+                    domEle.style.top=originTop+<span class="hljs-string">&apos;px&apos;</span>;
+                    clearInterval(timer);
+                }
+            },<span class="hljs-number">14</span>);
+            <span class="hljs-keyword">if</span> (distance &gt; <span class="hljs-number">50</span>) {
+                callback();
+            }
+        }
+
+    }
+}
+</code></pre>
+<h3 id="t4710.2 Home/index.js">10.2 Home/index.js <a href="#t4710.2 Home/index.js"> # </a></h3>
+<p>src/containers/Home/index.js</p>
+<pre><code class="lang-diff"><span class="hljs-addition">+ downRefresh(this.mainContent,this.props.fetchLessons);</span>
+</code></pre>
+<h2 id="t4811. &#x6539;&#x8FDB;Loading">11. &#x6539;&#x8FDB;Loading <a href="#t4811. &#x6539;&#x8FDB;Loading"> # </a></h2>
+<h3 id="t4911.1 Loading/index.js">11.1 Loading/index.js <a href="#t4911.1 Loading/index.js"> # </a></h3>
+<p>components/Loading/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React, {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Loading</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;loading&quot;</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;bars&quot;</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;bar&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;bar&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;bar&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;bar&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;bar&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;bar&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;cover&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    )
+  }
+}
+</code></pre>
+<h3 id="t5011.2 Loading/index.less">11.2 Loading/index.less <a href="#t5011.2 Loading/index.less"> # </a></h3>
+<p>Loading/index.less</p>
+<pre><code class="lang-js">.loading{
+    position: relative;
+    .bars{
+      width:43px;
+      height:43px;
+      position: relative;
+      margin:0 auto;
+      .bar{
+        position: absolute;
+        top:0;
+        left:20px;
+        width:3px;
+        height:43px;
+        &amp;::before{
+          width:3px;
+          content:&apos;&apos;;
+          display:block;
+          height:21.5px;
+          background-color: #000;
+          border-radius: 10px;
+        }
+        &amp;::after{
+          width:3px;
+          content:&apos;&apos;;
+          display:block;
+          height:21.5px;
+          background-color: #000;
+          border-radius: 10px;
+        }
+        &amp;:nth-child(2){
+          transform: rotate(30deg);
+        }
+        &amp;:nth-child(3){
+          transform: rotate(60deg);
+        }
+        &amp;:nth-child(4){
+          transform: rotate(90deg);
+        }
+        &amp;:nth-child(5){
+          transform: rotate(120deg);
+        }
+        &amp;:nth-child(6){
+          transform: rotate(150deg);
+        }
+        &amp;:nth-child(1):before{
+          animation: fade 1.2s 0s infinite;
+        }
+        &amp;:nth-child(2):before{
+          animation: fade 1.2s .1s infinite;
+        }
+        &amp;:nth-child(3):before{
+          animation: fade 1.2s .2s infinite;
+        }
+        &amp;:nth-child(4):before{
+          animation: fade 1.2s .3s infinite;
+        }
+        &amp;:nth-child(5):before{
+          animation: fade 1.2s .4s infinite;
+        }
+        &amp;:nth-child(6):before{
+          animation: fade 1.2s .5s infinite;
+        }
+        &amp;:nth-child(1):after{
+          animation: fade 1.2s .6s infinite;
+        }
+        &amp;:nth-child(2):after{
+          animation: fade 1.2s .7s infinite;
+        }
+        &amp;:nth-child(3):after{
+          animation: fade 1.2s .8s infinite;
+        }
+        &amp;:nth-child(4):after{
+          animation: fade 1.2s .9s infinite;
+        }
+        &amp;:nth-child(5):after{
+          animation: fade 1.2s 1.0s infinite;
+        }
+        &amp;:nth-child(6):after{
+          animation: fade 1.2s 1.1s infinite;
+        }
+      }
+      .cover{
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-left:-10px;
+            margin-top:-10px;
+            width:20px;
+            height:20px;
+            border-radius: 50%;
+            background-color: #FFF;
+      }
+    }
+  }
+  @keyframes fade {
+    0%{opacity:.1}
+    100%{opacity: 1}
+  }
+</code></pre>
+<h3 id="t5111.3 containers/Home/index.js">11.3 containers/Home/index.js <a href="#t5111.3 containers/Home/index.js"> # </a></h3>
+<p>containers/Home/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> HomeHeader <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/HomeHeader&apos;</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>;
+<span class="hljs-keyword">import</span> actions <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../store/actions/home&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>;
+<span class="hljs-keyword">import</span> Swiper <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/Swiper&apos;</span>;
+<span class="hljs-keyword">import</span> Loading <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/Loading&apos;</span>;
+<span class="hljs-keyword">import</span> {upLoadMore,store,downRefresh} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../utils&apos;</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Home</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    componentDidMount() {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.props.lessons.list.length == <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">this</span>.props.getSliders();
+            <span class="hljs-keyword">this</span>.props.getLessons();
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.mainContent.scrollTop=store.get(<span class="hljs-string">&apos;scrollTop&apos;</span>);
+        }
+        upLoadMore(<span class="hljs-keyword">this</span>.mainContent,<span class="hljs-keyword">this</span>.props.getLessons);
+        downRefresh(<span class="hljs-keyword">this</span>.mainContent,<span class="hljs-keyword">this</span>.props.fetchLessons);
+    }
+    componentWillUnmount() {
+        store.set(<span class="hljs-string">&apos;scrollTop&apos;</span>,<span class="hljs-keyword">this</span>.mainContent.scrollTop);
+    }
+    render() {
+        <span class="hljs-keyword">const</span> {currentCategory,setCurrentCategory,fetchLessons,<span class="hljs-attr">lessons</span>:{list,loading,hasMore}}=<span class="hljs-keyword">this</span>.props;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;loading&apos;</span>,loading,hasMore,<span class="hljs-string">&apos;hasMore&apos;</span>);
+        <span class="hljs-keyword">return</span> (
+            &lt;div className=&quot;home&quot;&gt;
+                &lt;HomeHeader
+                    currentCategory={currentCategory}
+                    fetchLessons={fetchLessons}
+                    setCurrentCategory={setCurrentCategory} /&gt;
+                &lt;div className=&quot;main-content&quot; ref={ref=&gt;this.mainContent = ref}&gt;
+                    &lt;Swiper sliders={this.props.sliders} /&gt;
+                    &lt;div className=&quot;lesson-list&quot; &gt;
+                        &lt;div&gt;&lt;i className=&quot;iconfont icon-kecheng-copy&quot;&gt;&lt;/i&gt;&#x5168;&#x90E8;&#x8BFE;&#x7A0B;&lt;/div&gt;
+                        {
+                            list.map(lesson =&gt; (
+                                &lt;div key={lesson.id} className=&quot;lesson&quot;&gt;
+                                    &lt;img src={lesson.poster} /&gt;
+                                    &lt;p&gt;{lesson.title}&lt;/p&gt;
+                                    &lt;p&gt;{lesson.price}&lt;/p&gt;
+                                &lt;/div&gt;
+                            ))
+                        }
+                    &lt;/div&gt;
+                    {
+                        loading? &lt;Loading /&gt;:&lt;div className=&quot;load-more&quot; onClick={this.props.getLessons}&gt;{hasMore?&apos;&#x70B9;&#x51FB;&#x52A0;&#x8F7D;&#x66F4;&#x591A;&apos;:&apos;&#x5230;&#x5E95;&#x4E86;&apos;}&lt;/div&gt;
+                    }
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+        )
+    }
+}
+export default connect(state =&gt; state.home,actions)(Home);
+</code></pre>
+<h3 id="t5211.4 Home/index.less">11.4 Home/index.less <a href="#t5211.4 Home/index.less"> # </a></h3>
+<p>containers/Home/index.less</p>
+<pre><code class="lang-less"><span class="hljs-selector-class">.home</span>{
+    <span class="hljs-selector-class">.main-content</span>{
+        <span class="hljs-attribute">position</span>: fixed;
+        <span class="hljs-attribute">top</span>:<span class="hljs-number">56px</span>;
+        <span class="hljs-attribute">bottom</span>:<span class="hljs-number">54px</span>;
+        <span class="hljs-attribute">overflow</span>: hidden;
+        <span class="hljs-attribute">overflow-y</span>: scroll;
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+        <span class="hljs-selector-class">.lesson-list</span>{
+            <span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">7.5px</span>;
+            <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span> auto;
+            <span class="hljs-selector-class">.lesson</span>{
+                <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+                <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">1px</span> <span class="hljs-number">1px</span> <span class="hljs-number">2px</span> <span class="hljs-number">1px</span> <span class="hljs-number">#c5c5c5</span>,-<span class="hljs-number">1px</span> -<span class="hljs-number">1px</span> <span class="hljs-number">2px</span> <span class="hljs-number">1px</span> <span class="hljs-number">#c5c5c5</span>;
+                <span class="hljs-attribute">overflow</span>: hidden;
+                <span class="hljs-attribute">text-align</span>:center;
+                <span class="hljs-attribute">margin</span>:<span class="hljs-number">18px</span> <span class="hljs-number">0</span>;
+                <span class="hljs-selector-tag">img</span>{
+                    <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+                    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">0px</span> <span class="hljs-number">0px</span>;
+                }
+                <span class="hljs-selector-tag">p</span>{
+                    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">200%</span>;
+                }
+                <span class="hljs-attribute">p</span>:nth-child(<span class="hljs-number">2</span>){
+                    <span class="hljs-attribute">color</span>:<span class="hljs-number">#bbbbbb</span>;
+                }
+                <span class="hljs-attribute">p</span>:nth-child(<span class="hljs-number">3</span>){
+                    <span class="hljs-attribute">color</span>:<span class="hljs-number">#ed3a3a</span>;
+                }
+            }
+        }
+        <span class="hljs-selector-class">.load-more</span>{
+            <span class="hljs-attribute">height</span>:<span class="hljs-number">30px</span>;
+            <span class="hljs-attribute">line-height</span>:<span class="hljs-number">30px</span>;
+            <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+            <span class="hljs-attribute">text-align</span>:center;
+            <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+            <span class="hljs-attribute">background-color</span>:green;
+        }
+    }
+}
+</code></pre>
+<h2 id="t5312. &#x8BFE;&#x7A0B;&#x8BE6;&#x60C5;">12. &#x8BFE;&#x7A0B;&#x8BE6;&#x60C5; <a href="#t5312. &#x8BFE;&#x7A0B;&#x8BE6;&#x60C5;"> # </a></h2>
+<h3 id="t5412.1 containers/Detail/index.js">12.1 containers/Detail/index.js <a href="#t5412.1 containers/Detail/index.js"> # </a></h3>
+<p>containers/Detail/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> {Redirect} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Detail</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.props.location.state?&lt;div class=&quot;lesson-detail&quot;&gt;
+            &lt;img src={this.props.location.state.poster} /&gt;
+            &lt;video src={this.props.location.state} poster={this.props.location.state.poster} controls&gt;&lt;/video&gt;
+            &lt;p&gt;{this.props.location.state.title}&lt;/p&gt;
+            &lt;p&gt;{this.props.location.state.price}&lt;/p&gt;
+        &lt;/div&gt;:&lt;Redirect to=&quot;/&quot;/&gt;
+    }
+}
+</code></pre>
+<h3 id="t5512.2 Detail/index.less">12.2 Detail/index.less <a href="#t5512.2 Detail/index.less"> # </a></h3>
+<p>containers/Detail/index.less</p>
+<pre><code class="lang-less"><span class="hljs-selector-class">.lesson-detail</span>{
+    <span class="hljs-selector-tag">img</span>,<span class="hljs-selector-tag">video</span>{
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+    }
+    <span class="hljs-selector-tag">p</span>{
+        <span class="hljs-attribute">text-align</span>: center;
+        <span class="hljs-attribute">line-height</span>: <span class="hljs-number">200%</span>;
+        <span class="hljs-selector-tag">&amp;</span><span class="hljs-selector-pseudo">:nth-of-type(1)</span>{
+            <span class="hljs-attribute">color</span>:<span class="hljs-number">#CCC</span>;
+        }
+        <span class="hljs-selector-tag">&amp;</span><span class="hljs-selector-pseudo">:nth-of-type(2)</span>{
+            <span class="hljs-attribute">color</span>:red;
+        }
+    }
+}
+</code></pre>
+<h2 id="t5613. &#x4E2A;&#x4EBA;&#x4E2D;&#x5FC3;">13. &#x4E2A;&#x4EBA;&#x4E2D;&#x5FC3; <a href="#t5613. &#x4E2A;&#x4EBA;&#x4E2D;&#x5FC3;"> # </a></h2>
+<h3 id="t5713.1 Profile/index.js">13.1 Profile/index.js <a href="#t5713.1 Profile/index.js"> # </a></h3>
+<p>src/containers/Profile/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>
+<span class="hljs-keyword">import</span> profile <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../common/images/profile.png&apos;</span>;
+<span class="hljs-keyword">import</span> {Link} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Profile</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;profile&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;profile-bg&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{profile}/</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;login-btn&quot;</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/login&quot;</span>&gt;</span>&#x767B;&#x5F55;<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        )
+    }
+}
+</span></code></pre>
+<h3 id="t5813.2 Profile/index.less">13.2 Profile/index.less <a href="#t5813.2 Profile/index.less"> # </a></h3>
+<p>src/containers/Profile/index.less</p>
+<pre><code class="lang-less"><span class="hljs-selector-class">.profile</span>{
+    <span class="hljs-selector-class">.profile-bg</span>{
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">height</span>:<span class="hljs-number">223px</span>;
+        <span class="hljs-attribute">background-image</span>: url(<span class="hljs-string">../../common/images/login_bg.png</span>);
+        <span class="hljs-attribute">background-size</span>:contain;
+        <span class="hljs-attribute">display</span>:flex;
+        <span class="hljs-attribute">flex-direction</span>: column;
+        <span class="hljs-attribute">justify-content</span>: center;
+        <span class="hljs-attribute">align-items</span>: center;
+        <span class="hljs-selector-tag">img</span>{
+            <span class="hljs-attribute">width</span>:<span class="hljs-number">60px</span>;
+            <span class="hljs-attribute">height</span>:<span class="hljs-number">60px</span>;
+            <span class="hljs-attribute">border-radius</span>:<span class="hljs-number">50%</span>;
+        } 
+        <span class="hljs-selector-class">.login-btn</span>{
+            <span class="hljs-attribute">width</span>:<span class="hljs-number">60px</span>;
+            <span class="hljs-attribute">height</span>:<span class="hljs-number">25px</span>;
+            <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;
+            <span class="hljs-attribute">background</span>:<span class="hljs-number">#FFF</span>;
+            <span class="hljs-attribute">color</span>:<span class="hljs-number">#188AE4</span>;
+            <span class="hljs-attribute">line-height</span>:<span class="hljs-number">25px</span>;
+            <span class="hljs-attribute">text-align</span>:center;
+            <span class="hljs-attribute">font-size</span>:<span class="hljs-number">13px</span>;
+            <span class="hljs-attribute">font-weight</span>: bold;
+            <span class="hljs-attribute">margin-top</span>:<span class="hljs-number">10px</span>;
+            <span class="hljs-selector-tag">a</span>{
+                <span class="hljs-attribute">text-decoration</span>: none;
+                <span class="hljs-selector-tag">&amp;</span><span class="hljs-selector-pseudo">:link</span>{
+                    <span class="hljs-attribute">text-decoration</span>: none;
+                    <span class="hljs-attribute">color</span>:<span class="hljs-number">#188AE4</span>;
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="t5913.3 src/main.js">13.3 src/main.js <a href="#t5913.3 src/main.js"> # </a></h3>
+<p>src/main.js</p>
+<pre><code class="lang-js">&lt;Route path=<span class="hljs-string">&quot;/detail&quot;</span> component={Detail} /&gt;
+</code></pre>
+<h2 id="t6014. &#x5BFC;&#x822A;&#x83DC;&#x5355;">14. &#x5BFC;&#x822A;&#x83DC;&#x5355; <a href="#t6014. &#x5BFC;&#x822A;&#x83DC;&#x5355;"> # </a></h2>
+<h3 id="t6114.1 NavBar/index.js">14.1 NavBar/index.js <a href="#t6114.1 NavBar/index.js"> # </a></h3>
+<p>components/NavBar/index.js </p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React, {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>
+<span class="hljs-keyword">import</span> {withRouter} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NavBar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;navbar&quot;</span>&gt;</span>
+            {this.props.title}
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;iconfont icon-fanhui&quot;</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span>=&gt;</span>this.props.history.goBack()}&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    )
+  }
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> withRouter(NavBar);
+</code></pre>
+<h3 id="t6214.2 Login/index.js">14.2 Login/index.js <a href="#t6214.2 Login/index.js"> # </a></h3>
+<p>containers/Login/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>
+<span class="hljs-keyword">import</span> {Link} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>;
+<span class="hljs-keyword">import</span> NavBar <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/NavBar&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Login</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;login-panel&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">NavBar</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;&#x767B;&#x5F55;&quot;</span>/&gt;</span>
+
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        )
+    }
+}
+</span></code></pre>
+<h2 id="t6315. &#x767B;&#x5F55;">15. &#x767B;&#x5F55; <a href="#t6315. &#x767B;&#x5F55;"> # </a></h2>
+<h3 id="t6415.1 Login/index.js">15.1 Login/index.js <a href="#t6415.1 Login/index.js"> # </a></h3>
+<p>src/containers/Login/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>
+<span class="hljs-keyword">import</span> {Link} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>;
+<span class="hljs-keyword">import</span> NavBar <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/NavBar&apos;</span>;
+<span class="hljs-keyword">import</span> profile <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../common/images/profile.png&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Login</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            &lt;div className=&quot;login-panel&quot;&gt;
+                &lt;NavBar title=&quot;&#x767B;&#x5F55;&quot; /&gt;
+                &lt;div className=&quot;login-logo&quot;&gt;
+                  &lt;img  src={profile} /&gt;
+                &lt;/div&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;&#x624B;&#x673A;&#x53F7;&quot; /&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;&#x5BC6;&#x7801;&quot; /&gt;
+                &lt;Link to=&quot;/reg&quot;&gt;&#x524D;&#x5F80;&#x6CE8;&#x518C;&lt;/Link&gt;
+                &lt;button&gt;&#x767B;&amp;nbsp;&#x5F55;&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre>
+<h3 id="t6515.2 Login/index.less">15.2 Login/index.less <a href="#t6515.2 Login/index.less"> # </a></h3>
+<p>src/containers/Login/index.less</p>
+<pre><code class="lang-less"><span class="hljs-selector-class">.login-panel</span>{
+    <span class="hljs-attribute">padding</span>:<span class="hljs-number">56px</span> <span class="hljs-number">17px</span>;
+    <span class="hljs-attribute">display</span>:flex;
+    <span class="hljs-attribute">flex-direction</span>: column;
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">bottom</span>:<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">background</span>:<span class="hljs-number">#FFF</span>;
+    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">20</span>;
+
+    <span class="hljs-selector-class">.login-logo</span>{
+        <span class="hljs-attribute">display</span>:flex;
+        <span class="hljs-attribute">height</span>:<span class="hljs-number">223px</span>;
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">justify-content</span>: center;
+        <span class="hljs-attribute">align-items</span>: center;
+        <span class="hljs-selector-tag">img</span>{
+            <span class="hljs-attribute">height</span>:<span class="hljs-number">62px</span>;
+            <span class="hljs-attribute">width</span>:<span class="hljs-number">62px</span>;
+        }
+    }
+    <span class="hljs-selector-tag">input</span>{
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">outline</span>:none;
+        <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#CCC</span>;
+        <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+        <span class="hljs-attribute">height</span>:<span class="hljs-number">42px</span>;
+        <span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">20px</span>;
+        <span class="hljs-attribute">padding-left</span>:<span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    }
+    <span class="hljs-selector-tag">a</span>{
+        <span class="hljs-attribute">color</span>:<span class="hljs-number">#188AE4</span>;
+        <span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">20px</span>;
+    }
+    <span class="hljs-selector-tag">button</span>{
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#188AE4</span>;
+        <span class="hljs-attribute">color</span>:<span class="hljs-number">#FFF</span>;
+        <span class="hljs-attribute">height</span>:<span class="hljs-number">40px</span>;
+        <span class="hljs-attribute">line-height</span>: <span class="hljs-number">40px</span>;
+        <span class="hljs-attribute">text-align</span>:center;
+        <span class="hljs-attribute">font-size</span>:<span class="hljs-number">16px</span>;
+        <span class="hljs-attribute">border-radius</span>:<span class="hljs-number">5px</span>;
+    }
+}
+</code></pre>
+<h3 id="t6615.3 Reg/index.js">15.3 Reg/index.js <a href="#t6615.3 Reg/index.js"> # </a></h3>
+<p>containers/Reg/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>
+<span class="hljs-keyword">import</span> {Link} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>;
+<span class="hljs-keyword">import</span> NavBar <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/NavBar&apos;</span>;
+<span class="hljs-keyword">import</span> profile <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../common/images/profile.png&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Login</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            &lt;div className=&quot;login-panel&quot;&gt;
+                &lt;NavBar title=&quot;&#x6CE8;&#x518C;&quot; /&gt;
+                &lt;div className=&quot;login-logo&quot;&gt;
+                  &lt;img  src={profile} /&gt;
+                &lt;/div&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;&#x624B;&#x673A;&#x53F7;&quot; /&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;&#x5BC6;&#x7801;&quot; /&gt;
+                &lt;Link to=&quot;/login&quot;&gt;&#x524D;&#x5F80;&#x767B;&#x5F55;&lt;/Link&gt;
+                &lt;button&gt;&#x6CE8;&amp;nbsp;&#x518C;&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre>
+<h3 id="t6715.4 containers/Reg/index.less">15.4 containers/Reg/index.less <a href="#t6715.4 containers/Reg/index.less"> # </a></h3>
+<p>containers/Reg/index.less</p>
+<pre><code class="lang-less"><span class="hljs-selector-class">.login-panel</span>{
+    <span class="hljs-attribute">padding</span>:<span class="hljs-number">56px</span> <span class="hljs-number">17px</span>;
+    <span class="hljs-attribute">display</span>:flex;
+    <span class="hljs-attribute">flex-direction</span>: column;
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">bottom</span>:<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">background</span>:<span class="hljs-number">#FFF</span>;
+    <span class="hljs-attribute">z-index</span>: <span class="hljs-number">20</span>;
+
+    <span class="hljs-selector-class">.login-logo</span>{
+        <span class="hljs-attribute">display</span>:flex;
+        <span class="hljs-attribute">height</span>:<span class="hljs-number">223px</span>;
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">justify-content</span>: center;
+        <span class="hljs-attribute">align-items</span>: center;
+        <span class="hljs-selector-tag">img</span>{
+            <span class="hljs-attribute">height</span>:<span class="hljs-number">62px</span>;
+            <span class="hljs-attribute">width</span>:<span class="hljs-number">62px</span>;
+        }
+    }
+    <span class="hljs-selector-tag">input</span>{
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">outline</span>:none;
+        <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#CCC</span>;
+        <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+        <span class="hljs-attribute">height</span>:<span class="hljs-number">42px</span>;
+        <span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">20px</span>;
+        <span class="hljs-attribute">padding-left</span>:<span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    }
+    <span class="hljs-selector-tag">a</span>{
+        <span class="hljs-attribute">color</span>:<span class="hljs-number">#188AE4</span>;
+        <span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">20px</span>;
+    }
+    <span class="hljs-selector-tag">button</span>{
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#188AE4</span>;
+        <span class="hljs-attribute">color</span>:<span class="hljs-number">#FFF</span>;
+        <span class="hljs-attribute">height</span>:<span class="hljs-number">40px</span>;
+        <span class="hljs-attribute">line-height</span>: <span class="hljs-number">40px</span>;
+        <span class="hljs-attribute">text-align</span>:center;
+        <span class="hljs-attribute">font-size</span>:<span class="hljs-number">16px</span>;
+        <span class="hljs-attribute">border-radius</span>:<span class="hljs-number">5px</span>;
+    }
+}
+</code></pre>
+<h2 id="t6816. &#x5B9E;&#x73B0;&#x4F1A;&#x8BDD;">16. &#x5B9E;&#x73B0;&#x4F1A;&#x8BDD; <a href="#t6816. &#x5B9E;&#x73B0;&#x4F1A;&#x8BDD;"> # </a></h2>
+<h3 id="t6916.1 server/app.js">16.1 server/app.js <a href="#t6916.1 server/app.js"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> express=<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;express&apos;</span>);
+<span class="hljs-keyword">let</span> _=<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;lodash&apos;</span>);
+<span class="hljs-keyword">let</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;body-parser&apos;</span>);
+<span class="hljs-keyword">let</span> session = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;express-session&apos;</span>);
+<span class="hljs-keyword">let</span> app=express();
+
+app.use(session({
+    <span class="hljs-attr">resave</span>:<span class="hljs-literal">true</span>,
+    <span class="hljs-attr">secret</span>:<span class="hljs-string">&apos;zfpx&apos;</span>,
+    <span class="hljs-attr">saveUninitialized</span>:<span class="hljs-literal">true</span>
+}));
+app.use(bodyParser.json());
+app.use(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req,res,next</span>) </span>{
+    res.header(<span class="hljs-string">&apos;Access-Control-Allow-Methods&apos;</span>,<span class="hljs-string">&apos;PUT,POST,GET,DELETE,OPTIONS&apos;</span>);
+    res.header(<span class="hljs-string">&apos;Access-Control-Allow-Origin&apos;</span>,<span class="hljs-string">&apos;http://localhost:8080&apos;</span>);
+    res.header(<span class="hljs-string">&apos;Access-Control-Allow-Headers&apos;</span>,<span class="hljs-string">&apos;Content-Type,Accept&apos;</span>);
+    res.header(<span class="hljs-string">&apos;Access-Control-Allow-Credentials&apos;</span>,<span class="hljs-string">&apos;true&apos;</span>);
+    <span class="hljs-keyword">if</span> (req.method === <span class="hljs-string">&apos;OPTIONS&apos;</span>) {
+        <span class="hljs-keyword">return</span> res.sendStatus(<span class="hljs-number">200</span>);
+    }
+    next();
+});
+app.listen(<span class="hljs-number">3000</span>);
+<span class="hljs-keyword">let</span> sliders=<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./mock/sliders&apos;</span>);
+app.get(<span class="hljs-string">&apos;/sliders&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req,res</span>) </span>{
+    res.json(sliders);
+});
+<span class="hljs-keyword">let</span> lessons=<span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./mock/lessons&apos;</span>);
+app.get(<span class="hljs-string">&apos;/lessons/:type&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req,res</span>) </span>{
+    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">let</span> type=req.params.type;
+        <span class="hljs-keyword">let</span> {offset,limit}=req.query;
+        offset=<span class="hljs-built_in">isNaN</span>(offset)? <span class="hljs-number">0</span>:<span class="hljs-built_in">parseInt</span>(offset);
+        limit=<span class="hljs-built_in">isNaN</span>(limit)? <span class="hljs-number">5</span>:<span class="hljs-built_in">parseInt</span>(limit);
+        <span class="hljs-keyword">let</span> data=_.cloneDeep(lessons);
+        <span class="hljs-keyword">if</span> (type!=<span class="hljs-string">&apos;all&apos;</span>) {
+            data=data.filter(<span class="hljs-function"><span class="hljs-params">lesson</span>=&gt;</span>lesson.type==type);
+        }
+        <span class="hljs-keyword">let</span> list=data.slice(offset,offset+limit);
+        list.forEach(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> {
+            item.title=item.title+<span class="hljs-built_in">Math</span>.random();
+        });
+        <span class="hljs-keyword">let</span> hasMore=offset+limit&lt;data.length;
+        res.json({
+            hasMore,
+            list
+        });
+    },<span class="hljs-number">500</span>);
+
+});
+<span class="hljs-keyword">let</span> users = [];
+<span class="hljs-comment">//users=[{username:&apos;zfpx&apos;,password:&apos;123&apos;}]</span>
+app.post(<span class="hljs-string">&apos;/api/reg&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res</span>)</span>{
+    <span class="hljs-keyword">let</span> user = req.body;<span class="hljs-comment">//&#x53D6;&#x5F97;&#x8BF7;&#x6C42;&#x4F53;</span>
+    <span class="hljs-keyword">let</span> oldUser = users.find(<span class="hljs-function"><span class="hljs-params">item</span>=&gt;</span>item.username == user.username);
+    <span class="hljs-keyword">if</span>(oldUser){
+      <span class="hljs-comment">//&#x4E24;&#x79CD;&#x5F02;&#x5E38; 1.&#x670D;&#x52A1;&#x5F02;&#x5E38; 2.&#x4E1A;&#x52A1;&#x5F02;&#x5E38;</span>
+      res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">error</span>:<span class="hljs-string">&apos;&#x7528;&#x6237;&#x540D;&#x91CD;&#x590D;&apos;</span>});<span class="hljs-comment">//&#x5982;&#x679C;&#x5931;&#x8D25;&#x6709;&#x4E00;&#x4E2A;error</span>
+    }<span class="hljs-keyword">else</span>{
+      users.push(user);
+      <span class="hljs-comment">// code=0&#x8868;&#x793A;&#x4E00;&#x5207;&#x6B63;&#x5E38;&#x6210;&#x529F;&#xFF0C;&#x975E;0&#x8868;&#x793A;&#x5931;&#x8D25;</span>
+      res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">success</span>:<span class="hljs-string">&apos;&#x6CE8;&#x518C;&#x6210;&#x529F;&apos;</span>,user});<span class="hljs-comment">//&#x5982;&#x679C;&#x6210;&#x529F;&#x6709;&#x4E00;&#x4E2A;success</span>
+    }
+  });
+  app.post(<span class="hljs-string">&apos;/api/login&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res</span>)</span>{
+     <span class="hljs-keyword">let</span> user = req.body;<span class="hljs-comment">//&#x53D6;&#x5F97;&#x767B;&#x5F55;&#x7684;&#x8BF7;&#x6C42;&#x4F53;</span>
+     <span class="hljs-keyword">let</span> oldUser = users.find(<span class="hljs-function"><span class="hljs-params">item</span>=&gt;</span>item.username==user.username&amp;&amp;item.password==user.password);
+     <span class="hljs-keyword">if</span>(oldUser){
+       <span class="hljs-comment">//&#x5982;&#x679C;&#x627E;&#x5230;&#x4E86;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x76F8;&#x540C;&#x7684;&#x7528;&#x6237;&#xFF0C;&#x8868;&#x793A;&#x767B;&#x5F55;&#x6210;&#x529F;,&#x628A;&#x7528;&#x6237;&#x5B58;&#x653E;&#x5165;session&#x4E2D;</span>
+       req.session.user = oldUser;
+       res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">success</span>:<span class="hljs-string">&quot;&#x767B;&#x5F55;&#x6210;&#x529F;&quot;</span>,user});
+     }<span class="hljs-keyword">else</span>{
+       res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">error</span>:<span class="hljs-string">&apos;&#x7528;&#x6237;&#x540D;&#x6216;&#x5BC6;&#x7801;&#x9519;&#x8BEF;&apos;</span>});
+     }
+  });
+  app.get(<span class="hljs-string">&apos;/api/logout&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res</span>)</span>{
+     req.session.user = <span class="hljs-literal">null</span>;
+     res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">success</span>:<span class="hljs-string">&apos;&#x9000;&#x51FA;&#x6210;&#x529F;&apos;</span>});
+  });
+  <span class="hljs-comment">//&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#x662F;&#x5426;&#x767B;&#x5F55;</span>
+  app.get(<span class="hljs-string">&apos;/api/validate&apos;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res</span>)</span>{
+     <span class="hljs-keyword">if</span>(req.session.user){
+       res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">user</span>:req.session.user});
+     }<span class="hljs-keyword">else</span>{
+       res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">error</span>:<span class="hljs-string">&apos;&#x6B64;&#x7528;&#x6237;&#x672A;&#x767B;&#x5F55;&apos;</span>});
+     }
+  });
+</code></pre>
+<h3 id="t7016.2 src/api/index.js">16.2 src/api/index.js <a href="#t7016.2 src/api/index.js"> # </a></h3>
+<p>src/api/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> API_HOST=<span class="hljs-string">&apos;http://localhost:3000&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> get=<span class="hljs-function">(<span class="hljs-params">url</span>) =&gt;</span> {
+    <span class="hljs-keyword">return</span> fetch(API_HOST+url,{
+        <span class="hljs-attr">method</span>: <span class="hljs-string">&apos;GET&apos;</span>,
+        <span class="hljs-attr">credentials</span>: <span class="hljs-string">&apos;include&apos;</span>,<span class="hljs-comment">//&#x8DE8;&#x57DF;&#x643A;&#x5E26;cookie</span>
+        headers: {
+            <span class="hljs-attr">accept</span>:<span class="hljs-string">&apos;application/json&apos;</span>
+        }
+    }).then(<span class="hljs-function"><span class="hljs-params">res</span>=&gt;</span>res.json());
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> post=<span class="hljs-function">(<span class="hljs-params">url,data</span>) =&gt;</span> {
+    <span class="hljs-keyword">return</span> fetch(API_HOST+url,{
+        <span class="hljs-attr">method</span>: <span class="hljs-string">&apos;POST&apos;</span>,
+        <span class="hljs-attr">body</span>: <span class="hljs-built_in">JSON</span>.stringify(data),
+        <span class="hljs-attr">headers</span>: {
+            <span class="hljs-string">&apos;Content-Type&apos;</span>: <span class="hljs-string">&apos;application/json&apos;</span>,
+            <span class="hljs-string">&apos;Accept&apos;</span>:<span class="hljs-string">&apos;application/json&apos;</span>
+        }
+    }).then(<span class="hljs-function"><span class="hljs-params">res</span>=&gt;</span>res.json());
+}
+</code></pre>
+<h3 id="t7116.3 Login/index.js">16.3 Login/index.js <a href="#t7116.3 Login/index.js"> # </a></h3>
+<p>src/containers/Login/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>
+<span class="hljs-keyword">import</span> {Link} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>;
+<span class="hljs-keyword">import</span> NavBar <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/NavBar&apos;</span>;
+<span class="hljs-keyword">import</span> profile <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../common/images/profile.png&apos;</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>;
+<span class="hljs-keyword">import</span> actions <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../store/actions/session&apos;</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Login</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    handleLogin = <span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>{
+        <span class="hljs-keyword">let</span> username = <span class="hljs-keyword">this</span>.username.value;
+        <span class="hljs-keyword">let</span> password = <span class="hljs-keyword">this</span>.password.value;
+        <span class="hljs-keyword">this</span>.props.login({username,password});
+      }
+    render() {
+        <span class="hljs-keyword">return</span> (
+            &lt;div className=&quot;login-panel&quot;&gt;
+                &lt;NavBar title=&quot;&#x767B;&#x5F55;&quot; /&gt;
+                &lt;div className=&quot;login-logo&quot;&gt;
+                  &lt;img  src={profile} /&gt;
+                &lt;/div&gt;
+                &lt;input ref={input=&gt;this.username=input}  type=&quot;text&quot; placeholder=&quot;&#x624B;&#x673A;&#x53F7;&quot; /&gt;
+                &lt;input ref={input=&gt;this.password=input} type=&quot;text&quot; placeholder=&quot;&#x5BC6;&#x7801;&quot; /&gt;
+                &lt;Link to=&quot;/reg&quot;&gt;&#x524D;&#x5F80;&#x6CE8;&#x518C;&lt;/Link&gt;
+                &lt;button onClick={this.handleLogin}&gt;&#x767B;&amp;nbsp;&#x5F55;&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+
+export default connect(
+    state=&gt;state.session,
+    actions
+)(Login);
+</code></pre>
+<h3 id="t7216.4 Profile/index.js">16.4 Profile/index.js <a href="#t7216.4 Profile/index.js"> # </a></h3>
+<p>src/containers/Profile/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>
+<span class="hljs-keyword">import</span> profile <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../common/images/profile.png&apos;</span>;
+<span class="hljs-keyword">import</span> {Link} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>;
+<span class="hljs-keyword">import</span> actions <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../store/actions/session&apos;</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Profile</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;profile&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;profile-bg&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{profile}/</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;login-btn&quot;</span>&gt;</span>
+
+                        {this.props.user?this.props.user.username:<span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/login&quot;</span>&gt;</span>&#x767B;&#x5F55;<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>}
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        )
+    }
+}
+export default connect(
+    state=&gt;state.session
+)(Profile);
+</span></code></pre>
+<h3 id="t7316.5 Reg/index.js">16.5 Reg/index.js <a href="#t7316.5 Reg/index.js"> # </a></h3>
+<p>src/containers/Reg/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./index.less&apos;</span>
+<span class="hljs-keyword">import</span> {Link} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>;
+<span class="hljs-keyword">import</span> NavBar <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../components/NavBar&apos;</span>;
+<span class="hljs-keyword">import</span> profile <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../common/images/profile.png&apos;</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>;
+<span class="hljs-keyword">import</span> actions <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../store/actions/session&apos;</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Reg</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    handleReg = <span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>{
+        <span class="hljs-keyword">let</span> username = <span class="hljs-keyword">this</span>.username.value;
+        <span class="hljs-keyword">let</span> password = <span class="hljs-keyword">this</span>.password.value;
+        <span class="hljs-keyword">this</span>.props.reg({username,password});
+      }
+    render() {
+        <span class="hljs-keyword">return</span> (
+            &lt;div className=&quot;login-panel&quot;&gt;
+                &lt;NavBar title=&quot;&#x6CE8;&#x518C;&quot; /&gt;
+                &lt;div className=&quot;login-logo&quot;&gt;
+                  &lt;img  src={profile} /&gt;
+                &lt;/div&gt;
+                &lt;input ref={input=&gt;this.username=input}  type=&quot;text&quot; placeholder=&quot;&#x624B;&#x673A;&#x53F7;&quot; /&gt;
+                &lt;input ref={input=&gt;this.password=input} type=&quot;text&quot; placeholder=&quot;&#x5BC6;&#x7801;&quot; /&gt;
+                &lt;Link to=&quot;/login&quot;&gt;&#x524D;&#x5F80;&#x767B;&#x5F55;&lt;/Link&gt;
+                &lt;button
+                     onClick={this.handleReg}
+                &gt;&#x6CE8;&amp;nbsp;&#x518C;&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+export default connect(
+    state=&gt;state.session,
+    actions
+  )(Reg);
+</code></pre>
+<h3 id="t7416.6 src/store/action-types.js">16.6 src/store/action-types.js <a href="#t7416.6 src/store/action-types.js"> # </a></h3>
+<p>src/store/action-types.js</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> SET_CURRENT_CATEGORY=<span class="hljs-string">&apos;SET_CURRENT_CATEGORY&apos;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> SET_SLIDERS=<span class="hljs-string">&apos;SET_SLIDERS&apos;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> SET_LOADING_LESSONS = <span class="hljs-string">&apos;SET_LOADING_LESSONS&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> SET_LESSONS=<span class="hljs-string">&apos;SET_LESSONS&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> FETCH_LESSONS=<span class="hljs-string">&apos;FETCH_LESSONS&apos;</span>;
+
+<span class="hljs-comment">//&#x6CE8;&#x518C;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> REG = <span class="hljs-string">&apos;REG&apos;</span>;
+<span class="hljs-comment">//&#x767B;&#x5F55;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> LOGIN = <span class="hljs-string">&apos;LOGIN&apos;</span>;
+<span class="hljs-comment">//&#x9000;&#x51FA;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> LOGOUT = <span class="hljs-string">&apos;LOGOUT&apos;</span>;
+
+<span class="hljs-comment">//&#x6E05;&#x7A7A;&#x6D88;&#x606F;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> CLEAR_MESSAGES = <span class="hljs-string">&apos;CLEAR_MESSAGES&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> VALIDATE = <span class="hljs-string">&apos;VALIDATE&apos;</span>;
+</code></pre>
+<h3 id="t7516.7 store/index.js">16.7 store/index.js <a href="#t7516.7 store/index.js"> # </a></h3>
+<p>src/store/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {createStore,applyMiddleware,compose } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux&apos;</span>;
+<span class="hljs-keyword">import</span> reducers <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./reducers&apos;</span>;
+<span class="hljs-keyword">import</span> logger <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-logger&apos;</span>;
+<span class="hljs-keyword">import</span> thunk <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-thunk&apos;</span>;
+<span class="hljs-keyword">import</span> promise <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-promise&apos;</span>;
+<span class="hljs-keyword">import</span> {routerMiddleware} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-redux&apos;</span>;
+<span class="hljs-keyword">import</span> history <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./history&apos;</span>;
+<span class="hljs-keyword">let</span> router = routerMiddleware(history);
+
+<span class="hljs-keyword">let</span> store =applyMiddleware(router,thunk,promise,logger)(createStore)(reducers);
+<span class="hljs-built_in">window</span>.store = store;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> store;
+</code></pre>
+<h3 id="t7616.8 reducers/index.js">16.8 reducers/index.js <a href="#t7616.8 reducers/index.js"> # </a></h3>
+<p>src/store/reducers/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> home <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./home&apos;</span>;
+<span class="hljs-keyword">import</span> session <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./session&apos;</span>;
+<span class="hljs-keyword">import</span> {combineReducers} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> combineReducers({
+    home,
+    session
+});
+</code></pre>
+<h3 id="t7716.9 api/session.js">16.9 api/session.js <a href="#t7716.9 api/session.js"> # </a></h3>
+<p>src/api/session.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {get,post} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./index&apos;</span>;
+<span class="hljs-comment">//&#x6CE8;&#x518C;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reg</span>(<span class="hljs-params">user</span>)</span>{
+  <span class="hljs-keyword">return</span> post(<span class="hljs-string">&apos;/api/reg&apos;</span>,user);<span class="hljs-comment">//{username,password}</span>
+}
+<span class="hljs-comment">//&#x767B;&#x5F55;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">user</span>)</span>{
+  <span class="hljs-keyword">return</span> post(<span class="hljs-string">&apos;/api/login&apos;</span>,user);<span class="hljs-comment">//{username,password}</span>
+}
+<span class="hljs-comment">//&#x9000;&#x51FA;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logout</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">return</span> get(<span class="hljs-string">&apos;/api/logout&apos;</span>);
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validate</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">return</span> get(<span class="hljs-string">&apos;/api/validate&apos;</span>);
+}
+</code></pre>
+<h3 id="t7816.10 actions/session.js">16.10 actions/session.js <a href="#t7816.10 actions/session.js"> # </a></h3>
+<p>src/store/actions/session.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> types <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../action-types&apos;</span>;
+<span class="hljs-keyword">import</span> {reg,login,logout,validate} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../../api/session&apos;</span>;
+<span class="hljs-keyword">import</span> {push} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-redux&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  reg(user){
+   <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">dispatch,getState</span>)</span>{
+     reg(user).then(<span class="hljs-function"><span class="hljs-params">result</span>=&gt;</span>{
+       <span class="hljs-keyword">let</span> {code,success,error} = result;
+       dispatch({
+         <span class="hljs-attr">type</span>:types.REG,
+         <span class="hljs-attr">payload</span>:{success,error}
+       });
+       <span class="hljs-keyword">if</span> (code==<span class="hljs-number">0</span>) {<span class="hljs-comment">//code=0&#x8868;&#x793A;&#x6210;&#x529F; &#x6210;&#x529F;&#x540E;&#x8DF3;&#x5230;&#x767B;&#x5F55;&#x9875;</span>
+         dispatch(push(<span class="hljs-string">&apos;/login&apos;</span>));
+       }
+     })
+   }
+  },
+  login(user){
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">dispatch,getState</span>)</span>{
+      login(user).then(<span class="hljs-function"><span class="hljs-params">result</span>=&gt;</span>{
+        <span class="hljs-keyword">let</span>{code,success,error,user} = result;
+        dispatch({
+          <span class="hljs-attr">type</span>:types.LOGIN,
+          <span class="hljs-attr">payload</span>:{success,error,user}
+        });
+        <span class="hljs-keyword">if</span>(code == <span class="hljs-number">0</span>){
+          dispatch(push(<span class="hljs-string">&apos;/profile&apos;</span>));
+        }
+      })
+    }
+  },
+  logout(){
+     <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">dispatch,getState</span>)</span>{
+        logout().then(<span class="hljs-function"><span class="hljs-params">result</span>=&gt;</span>{
+          <span class="hljs-keyword">let</span> {code,success,error} = result;
+          dispatch({
+            <span class="hljs-attr">type</span>:types.LOGOUT,
+            <span class="hljs-attr">payload</span>:{success,error}
+          });
+          dispatch(push(<span class="hljs-string">&apos;/login&apos;</span>));
+        });
+     }
+  },
+  clearMessages(){
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">type</span>:types.CLEAR_MESSAGES
+    }
+  },
+  validate(){
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">dispatch,getState</span>)</span>{
+      validate().then(<span class="hljs-function"><span class="hljs-params">result</span>=&gt;</span>{
+        <span class="hljs-keyword">let</span> {code,success,error,user}= result;
+        dispatch({
+          <span class="hljs-attr">type</span>:types.VALIDATE,
+          <span class="hljs-attr">payload</span>:{success,error,user}
+        });
+      });
+    }
+  }
+}
+</code></pre>
+<h3 id="t7916.11 history.js">16.11 history.js <a href="#t7916.11 history.js"> # </a></h3>
+<p>src/store/history.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> createHashHistory <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;history/createHashHistory&apos;</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> createHashHistory();
+</code></pre>
+<h3 id="t8016.11 reducers/session.js">16.11 reducers/session.js <a href="#t8016.11 reducers/session.js"> # </a></h3>
+<p> src/store/reducers/session.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> types <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../action-types&apos;</span>;
+<span class="hljs-comment">//&#x4F1A;&#x8BDD;</span>
+<span class="hljs-keyword">let</span> initState = {
+  <span class="hljs-attr">error</span>: <span class="hljs-string">&apos;&apos;</span>,<span class="hljs-comment">//&#x9519;&#x8BEF;&#x6D88;&#x606F;</span>
+  success: <span class="hljs-string">&apos;&apos;</span>,<span class="hljs-comment">//&#x6210;&#x529F;&#x6D88;&#x606F;</span>
+  user:<span class="hljs-literal">null</span>,<span class="hljs-comment">//&#x5982;&#x679C;&#x767B;&#x5F55;&#x6210;&#x529F;&#x7684;&#x8BDD;&#xFF0C;&#x9700;&#x8981;&#x7ED9;&#x6B64;&#x5C5E;&#x6027;&#x8D4B;&#x503C;&#x4E3A;&#x767B;&#x5F55;&#x7528;&#x6237;</span>
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state = initState, action</span>) </span>{
+  <span class="hljs-keyword">switch</span> (action.type) {
+    <span class="hljs-keyword">case</span> types.REG:<span class="hljs-comment">///&#x6CE8;&#x518C;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x5B8C;&#x6210;&#x540E;</span>
+      <span class="hljs-comment">//&#x4E0D;&#x9700;&#x8981;&#x89E3;&#x6784;&#x8001;&#x72B6;&#x6001;</span>
+     <span class="hljs-keyword">return</span> {
+       ...action.payload
+    };
+    <span class="hljs-keyword">case</span> types.LOGIN:<span class="hljs-comment">///&#x6CE8;&#x518C;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x5B8C;&#x6210;&#x540E;</span>
+      <span class="hljs-keyword">return</span> {
+        ...action.payload
+      };
+    <span class="hljs-keyword">case</span> types.LOGOUT:<span class="hljs-comment">///&#x9000;&#x51FA;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x5B8C;&#x6210;&#x540E;</span>
+      <span class="hljs-keyword">return</span> {
+        ...action.payload
+      };
+    <span class="hljs-keyword">case</span> types.CLEAR_MESSAGES:
+      <span class="hljs-keyword">return</span> {
+        ...state,
+        <span class="hljs-attr">error</span>: <span class="hljs-string">&apos;&apos;</span>,
+        <span class="hljs-attr">success</span>:<span class="hljs-string">&apos;&apos;</span>
+      };
+    <span class="hljs-keyword">case</span> types.VALIDATE:
+      <span class="hljs-keyword">return</span> {
+        ...state,
+        ...action.payload
+      };
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-keyword">return</span> state;
+  }
+}
+</code></pre>
+<h2 id="t8117.&#x53D7;&#x4FDD;&#x62A4;&#x7684;&#x8DEF;&#x7531;">17.&#x53D7;&#x4FDD;&#x62A4;&#x7684;&#x8DEF;&#x7531; <a href="#t8117.&#x53D7;&#x4FDD;&#x62A4;&#x7684;&#x8DEF;&#x7531;"> # </a></h2>
+<h3 id="t82PrivateRoute\index.js">PrivateRoute\index.js <a href="#t82PrivateRoute\index.js"> # </a></h3>
+<p>src\containers\PrivateRoute\index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> {Route,Redirect} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-router-dom&apos;</span>;
+<span class="hljs-keyword">import</span> { connect } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PrivateRoute</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    render() {
+        <span class="hljs-keyword">let</span> {path,<span class="hljs-attr">component</span>:Comp,user} = <span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">if</span>(user){
+           <span class="hljs-keyword">return</span> &lt;Route path={path} render={(props) =&gt;user?&lt;Comp {...props}/&gt;:&lt;Redirect to=&quot;/login&quot;/&gt;} /&gt;;
+        }else{
+            return &lt;Redirect to=&quot;/login&quot;/&gt;;
+        }
+    }
+}
+export default connect(
+    state =&gt; state.session
+)(PrivateRoute)
+</code></pre>
+<h2 id="t83&#x53C2;&#x8003;">&#x53C2;&#x8003; <a href="#t83&#x53C2;&#x8003;"> # </a></h2>
+<ul>
+<li><a href="https://reactcommunity.org/react-transition-group/transition-group">transition-group</a></li>
+<li><a href="https://github.com/voronianski/react-swipe">react-swipe</a></li>
+<li><a href="https://gitee.com/zhufengpeixun/zhufeng-app">zhufeng-app</a></li>
+</ul>
+
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+    
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+  // if (!$('.understand-me').length) {
+  //   var bar = $(window).height() - $('.navbar ').height() - $('.page-toc').position().top;
+  //   var count = bar / 26 / 2;
+  //   var barHeight = $('.page-toc').outerHeight();
+  //   $('.page-toc li').eq(0).children('a').addClass('red');
+  //   var arr = [];
+  //   $("h1,h2,h3,h4,h5,h6").each(function () {
+  //     arr.push($(this).position().top);
+  //   });
+  //   var timer
+  //   function dark() {
+  //     clearTimeout(timer)
+  //      timer = setTimeout(function () {
+  //      var top = Math.abs($('.page-toc > ul').position().top);
+  //      var cur = $('.content').scrollTop();
+  //      for (var i = arr.length; i >= 0; i--) {
+  //        if (arr[i] <= cur) {
+  //          break;
+  //        }
+  //      }
+  //      if (i === -1) {
+  //        i = 0;
+  //      }
+  //      $('.page-toc li a').removeClass('red');
+  //      $('.page-toc li').eq(i).children('a').addClass('red');
+  //      let height = $('.page-toc li').eq(i).position().top-$('.page-toc').height(); // 如果当前的offset出去了 回到中间可好？
+  //      $('.page-toc').scrollTop(height+$('.page-toc').height()/2);
+  //    },200)
+  //   }
+
+  //   $('.content').on('scroll', dark);
+  // }
+</script>
+<style>
+
+    /* ::-webkit-scrollbar{width:14px;}
+    ::-webkit-scrollbar-track{background-color:transparent;}
+    ::-webkit-scrollbar-thumb{background-color:transparent;}
+    ::-webkit-scrollbar-thumb:hover {background-color:transparent}
+    ::-webkit-scrollbar-thumb:active {background-color:transparent} */
+
+    .page-toc > ul .red {
+        background: #f3f3f3;
+        z-index: 1;
+        border-left: 3px solid #009a61;
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+        color: #000
+    }
+
+
+
+
+
+</style>
+</body>
+</html>

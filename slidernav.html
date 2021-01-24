@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>模拟keke博客导航条的实现</title>
+   <style type="text/css">
+		ul,li{list-style:none;margin:0;padding:0;}
+		ul{margin:100px auto;width:500px;}
+		li{float:left;width:100px;height:50px;background:#006291;font:bold 16px "微软雅黑";color:#fff;text-align:center;line-height:40px;cursor:pointer;}
+		li .line{height:5px;width:0px;background:#00557d;margin:-4px auto 0;}
+		li:hover .line{animation:mymove 1s ease}
+
+		@keyframes mymove
+		{
+			from {width:0px;}
+			to {width:100px;}
+		}
+   </style>
+</head>
+<body>
+	<ul>
+		<li>首页<div class="line"><div></li>
+		<li>Java<div class="line"><div></li>
+		<li>Java<div class="line"><div></li>
+		<li>Java<div class="line"><div></li>
+		<li>Java<div class="line"><div></li>
+	</ul>
+</body>
+</html>
+
+

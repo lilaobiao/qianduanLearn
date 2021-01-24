@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<style>
+.mw_slide{width:558px; height:80px; margin-left:auto; margin-right:auto; overflow:hidden; position:relative;}
+.mw_slide_inner{width:2000px; margin:0; padding:0; position:absolute; list-style-type:none;}
+.mw_slide_list{width:140px; float:left;}
+</style>
+</head>
+<body>
+<div class="mw_slide">
+    <ul id="slideBox" class="mw_slide_inner">
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg"></li>
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm3.jpg"></li>
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm4.jpg"></li>
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm6.jpg"></li>
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm7.jpg"></li>
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm8.jpg"></li>
+        <li class="mw_slide_list"><img src="http://image.zhangxinxu.com/image/study/s/s128/mm10.jpg"></li>
+    </ul>
+</div>
+
+<script src="">
+	function $(id){
+		return document.getElementById(id);
+	}
+	var addEvent = (function(){
+        if (window.addEventListener) {
+            return function(el, sType, fn, capture) {
+                el.addEventListener(sType, fn, (capture));
+            };
+        } else if (window.attachEvent) {
+            return function(el, sType, fn, capture) {
+                el.attachEvent("on" + sType, fn);
+            };
+        } else {
+            return function(){};
+        }
+    })(),
+    stopEvent = function(event) {
+        if (event.stopPropagation) {
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
+        }
+
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+    },
+    zoomIn = function(delta){
+		var left = $("slideBox").offsetLeft;
+		nl = left+delta*140;
+		if(nl>=0)nl=0;
+		if(nl<=-420)nl=-420;
+		$("slideBox").style.left = nl +"px";
+	},
+    zoomOut = function(delta){
+		var left = $("slideBox").offsetLeft;
+		nl = left+delta*140;
+		if(nl>=0)nl=0;
+		if(nl<=-420)nl=-420;
+		$("slideBox").style.left = nl +"px";
+	};
+    // isFirefox 是伪代码，大家可以自行实现
+    //mousewheel = isFirefox ? "DOMMouseScroll" : "mousewheel";
+
+	// object 是伪代码，你需要注册 Mousewheel 事件的元素
+	addEvent($("slideBox"), "mousewheel", function(event){
+		var delta = 0;
+		event = window.event || event;
+		stopEvent(event);
+		delta = event.wheelDelta ? (event.wheelDelta / 120) : (- event.detail / 3);
+		// zoomIn, zoomOut 是伪代码，需要实现的缩放事件
+		delta > 0 ? zoomIn(delta): zoomOut(delta);
+	} , false);
+	
+</script>
+</body>
+</html>

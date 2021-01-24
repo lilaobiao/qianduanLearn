@@ -1,0 +1,341 @@
+<html class=" os_win7">
+<head>
+	<meta charset="UTF-8">
+	<title>日志</title>
+	<link rel="stylesheet" rev="stylesheet" href="css/qzone35.css" media="screen">
+	<link rel="stylesheet" rev="stylesheet" href="css/qzoneblog_app.css" media="screen">
+	<style>
+		.STATE_GUEST .show_in_owner {display:none;}
+		.STATE_OWNER .show_in_guest {display:none;}
+		.blog_import .support {display:none;}
+		.user-state-vip .showInVip{display:block !important;}
+		.op_more_mouse li a {text-align:left; padding-left:8px;}
+	</style>
+</head>
+<body class="STATE_OWNER user-state-vip">
+	<div class="bg_mode bg">
+		<div class="box_ml bor">
+			<div class="mode_gb">
+				<!--头部导航-->
+				<div class="bor mod-tab">
+					<div class="mod-tab-list">
+						<ul id="main-nav">
+							<li><a href="http://rc.qzone.qq.com/blog" target="_blank" rel="blog-list-link" class="c-tx2 selected"><span class="item-wrap bor-tx"><span class="show_in_owner">我的</span>日志</span></a></li>
+							<li class="show_in_owner"><a href="http://rc.qzone.qq.com/blog?catalog=private" target="_blank" rel="private-blog-link" class="c-tx2"><span class="item-wrap bor-tx">私密日记</span></a></li>
+							<li class="show_in_owner"><a href="http://rc.qzone.qq.com/blog?catalog=ugc" rel="ugc-blog-link" target="_blank" class="c-tx2"><span class="item-wrap bor-tx">生活记录</span></a></li>
+							<li class="show_in_owner"><a href="http://rc.qzone.qq.com/blog?catalog=notepad" rel="notepad-link" target="_blank" class="c-tx2"><span class="item-wrap bor-tx">记事本</span></a></li>
+							<li class="show_in_owner"><a href="http://rc.qzone.qq.com/blog?catalog=friend" rel="friendblog-link" target="_blank" class="c-tx2"><span class="item-wrap bor-tx">好友日志</span></a></li>
+						</ul>
+					</div>
+					<div class="mod-tab-other">
+						<div class="photo-infos">
+							<div class="photo-info-item show_in_owner">
+								<a href="http://rc.qzone.qq.com/blog?catalog=draft" target="_blank" rel="draft-list-link" title="草稿箱"><i class="icon-m icon_draft" rel="draft-list-link"></i>草稿箱</a>
+							</div>
+							<div class="photo-info-item show_in_owner">
+								<a href="http://rc.qzone.qq.com/blog?catalog=recycle" target="_blank" rel="recycle-list-link" class="c-tx3" title="回收站"><i class="icon-m icon_rubbish" rel="recycle-list-link"></i>回收站</a>
+							</div>
+							<div class="photo-info-item show_in_owner">
+								<a href="http://rc.qzone.qq.com/blog?catalog=setting" target="_blank" rel="setting-link" class="c-tx3" title="反馈"><i class="icon-m icon_setting" rel="setting-link"></i>设置</a>
+							</div>
+							<div class="photo-info-item show_in_owner">
+								<a href="http://support.qq.com/portal/discuss_pdt/376_1.html" target="_blank" class="c-tx3" title="建议"><i class="icon-m icon_proposal"></i>建议</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mode_gb_cont">
+					<div id="page-error" style="display:none; position:absolute">
+						当前日志加载遇到了一些问题，您可以尝试通过清除浏览器缓存再试
+					</div>
+					<div class="blog_app" id="app_mod" style="display:none;min-height:400px;"><!-- 提供给其他页面使用 --></div>
+					<div class="blog_app" id="app_mod_blog" style="min-height: 400px;"><!-- 日志页面专用 -->
+						<div class="wrap wrap_aside">
+							<div class="main">
+								<div class="inner_main">
+									<div class="mod_conts">
+										<div class="entry_wrap">
+											<div class="mod_entry show_in_owner" id="blog-top-nav">
+												<div class="exact_entry" id="write-ordinaryblog">
+													<a href="http://rc.qzone.qq.com/blog/add" class="text gb_bt2" title="写日志[alt+1]">
+														<span class="inner_wrap" rel="write-blog-link">
+														<i class="icon_blog_entry" rel="write-blog-link"></i>写日志</span>
+													</a>
+													<div class="mod_themes">
+														<b class="uarr"></b>
+														<b class="uarr_in"></b>
+														<div class="mod_template">
+															<ul id="lead-themeblog">
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="exact_entry" id="write-templateblog">
+													<div class="default_entry">
+														<a href="http://rc.qzone.qq.com/blog/addtemplateblog" class="text gb_bt2">
+															<span class="inner_wrap" rel="write-templateblog-link">
+																<i class="icon_module_entry" rel="write-templateblog-link"></i>模板日志
+															</span>
+														</a>
+														<button class="dorpdown_btn gb_bt2">
+															<span class="mod_arr arr_b"></span>
+														</button>
+													</div>
+													<div class="entry_droplist">
+														<ul>
+															<li>
+																<a class="gb_bt2" href="http://rc.qzone.qq.com/blog/addgrid" target="_blank" rel="write-gridblog-link" title="写魔方日志[alt+3]"><span class="inner_wrap" rel="write-gridblog-link"><i class="icon_magic_entry" rel="write-gridblog-link"></i>魔方日志</span></a>
+															</li>
+															<li>
+																<a class="gb_bt2 last_bt" href="http://rc.qzone.qq.com/blog/addphotoblog" target="_blank" rel="write-photoblog-link"><span class="inner_wrap" rel="write-photoblog-link"><i class="icon_pic_entry" rel="write-photoblog-link"></i>图片日志</span></a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<div class="list_toolbar" id="list-toolbar">
+												<span class="manage">
+													<a id="batchEditHref" href="javascript:;" rel="switch-batch-mode" title="批量管理[ctrl+a]">批量管理</a>
+												</span>
+												<div class="toolbar_other">
+													<a href="javascript:;" id="order-by-sel" class="c_tx" title="按发表时间由新到旧排序">发表时间
+														<span class="mod_arr"></span>
+													</a>
+												</div>
+												<span class="switch" id="toggle-view-mode">
+													<a href="javascript:;" style="display:none">切换到摘要</a>
+													<a href="javascript:;" style="">切换到列表</a>
+													<span class="symbol c_tx3">|</span>
+												</span>
+											</div>
+										</div>
+
+										<!-- 排序菜单 -->
+										<div class="sequence bg bor2" id="order-by-mnu" style="display:none">
+											<ul>
+												<li style="display:none;"><a href="javascript:;" val="0" title="按发表时间由新到旧排序" class="bg3_hover">发表时间</a></li>
+												<li><a href="javascript:;" val="1" title="按最新评论时间由新到旧排序" class="bg3_hover">评论时间</a></li>
+												<li><a href="javascript:;" val="3" title="按最后修改时间由新到旧排序" class="bg3_hover">最新修改</a></li>
+												<li><a href="javascript:;" val="4" title="按评论数目由多到少排序" class="bg3_hover">评论数目</a></li>
+											</ul>
+										</div>
+
+										<!-- 日志操作 -->
+										<div class="tbor2 group_edit" style="display:none" id="batch-op-bar">
+											<input type="checkbox" name="ckeckAll" id="ckeckAll" rel="batch-check-all">
+											<label for="ckeckAll">全选</label>
+											<a style="" href="javascript:;" rel="batch-delete-link">批量删除</a>
+											<a href="javascript:;" rel="batch-change-right-link" style="">权限设置</a>
+											<a href="javascript:;" rel="batch-convert-private-link">转为私密日志</a>
+											<a href="javascript:;" class="modify_type" rel="batch-change-category-menu">修改分类<span class="mod_arr" rel="batch-change-category-menu"></span></a>
+										</div>
+
+										<div id="page-container-blog">
+											<div id="listArea" class="mod_summary_wrap tbor2 ">
+												<a href="javascript:;" rel="current-space-link" class="mod_user_head">
+													<img class="current-space-avatar" _width="50" alt="我的头像" src="http://qlogo4.store.qq.com/qzone/1328560691/1328560691/50" title="我的头像">
+												</a>
+												<div class="mod_summary">
+													<ul>
+														<li>
+															<div class="bor2 mod_article">
+																<div class="hd">
+																	<h4>
+																		<input type="checkbox" rel="batch-blog-select" value="1402476928" style="display:none">
+																		<span class="article_status" id="blog-label-1402476928">
+																		<span class="c_tx4" rel="blog-detail-link" blogid="1402476928">[顶]</span></span>
+																		<a href="http://user.qzone.qq.com/1328560691/blog/1402476928" rel="blog-detail-link" blogid="1402476928" target="_blank" class="c_tx" title="手机免费开钻及代码"><span>手机免费开钻及代码</span></a>
+																	</h4>
+																</div>
+																<div class="bd">
+																	<div class="article_info">
+																		<div class="img_wrap">
+																			<div class="img_show">
+																				<a title="查看全文" href="http://user.qzone.qq.com/1328560691/blog/1402476928" target="_blank" rel="blog-detail-link" blogid="1402476928">
+																					<img src="http://ugc.qpic.cn/adapt/0/d9b4f1c8-5a4d-6cb1-09c1-21fdc57d2443/400?pt=0&amp;ek=1&amp;kp=1&amp;sce=0-12-12" alt="图片" onload="scaleAbsImg(this)" rel="blog-detail-link" blogid="1402476928" style="width: 100px; height: 100px;">
+																				</a>
+																			</div>
+																		</div>
+																		<p>超级qq(普通版)10元/月<br>开通发8647到10661700邦定发q号,q密到1066170015**取消代码：GBHQ到10661700手机暂停连接：http://wap.monternet.com/portal/wap/subscribe.do?operation=pause&amp;cp=1&amp;command=del</p>
+																	</div>
+																</div>
+																<div class="ft">
+																	<div class="scrap_info">
+																		<span title="2014-06-11 16:55" class="c_tx3 pub_time">2014-06-11</span>
+																		<a href="http://user.qzone.qq.com/1328560691/blog/1402476928" target="_blank" rel="blog-detail-link" blogid="1402476928" class="c_tx3" title="查看全文">查看全文</a>
+																		<a href="http://user.qzone.qq.com/1328560691/blog/1402476928" target="_blank" rel="blog-detail-link" blogid="1402476928" class="c_tx3">阅读(<span id="view-cnt-1402476928">336</span>)</a>
+																		<a href="http://user.qzone.qq.com/1328560691/blog/1402476928" target="_blank" rel="blog-detail-link" style="" blogid="1402476928" class="c_tx3">评论(6)
+																		</a>
+																	</div>
+																	<div class="op_lists" id="blog-operation-1402476928">
+																		<ul>
+																			<li class="left">
+																				<a href="javascript:;" class="c_tx3 adjust" rel="blog-edit-link" blogid="1402476928" blogtype="3" title="编辑该日志">编辑</a>
+																			</li>
+																			<li class="left blog-op-container" id="blog-op-1402476928">
+																				<a href="javascript:;" class="c_tx3 arr_wrap" rel="list-more-menu-link" blogid="1402476928" title="更多操作">更多<span class="mod_arr" rel="list-more-menu-link" blogid="1402476928"></span></a>
+																			</li>
+																		</ul>
+																	</div>
+																	<div style="display:none" id="blog-audit-op-1402476928" class="scrap_info">
+																		<a href="javascript:;" class="c_tx3" rel="blog-report-link" blogid="1402476928" title="申诉">申诉</a>
+																		<a href="javascript:;" class="c_tx3" rel="blog-delete-link" blogid="1402476928" title="删除">删除</a>
+																	</div>
+																</div>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="mod_drop_op bg" id="more-tpl-list">
+												<ul class="bor2">
+													<li><a href="javascript:;" rel="blog-delete-link" title="删除该日志" class="bg3_hover">删除日志</a></li>
+													<li style=""><a href="javascript:;" rel="blog-right-setting-link" title="日志权限设置" class="bg3_hover">设置权限</a></li>
+													<li><a href="javascript:;" rel="blog-category-modify-link" title="修改日志分类" class="bg3_hover">修改分类</a></li>
+													<li style=""><a href="javascript:;" rel="blog-set-top-link" title="设置该日志置顶" class="bg3_hover">设为置顶</a></li>
+													<li><a href="javascript:;" rel="blog-convert-private-link" title="转为私密日志" class="bg3_hover">转为私密日志</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 分页器 -->
+								<div class="mod_page tbor2" id="pagination">
+									<div class="mod_pagenav">
+										<p class="mod_pagenav_main">
+											<span class="mod_pagenav_disable "><span>上一页</span></span>
+											<a onclick="QZBlog.Util.PageIndexManager.goPage(-1);return false;" class="c_tx none" href="javascript:;">上一页</a> 
+											<span class="mod_pagenav_count"> 
+												<span class="current"><span>1</span></span> 
+												<a href="javascript:;" class="c_tx" onclick="QZBlog.Util.PageIndexManager.goDirectPage(2);return false;">2</a> 
+												<a href="javascript:;" class="c_tx" onclick="QZBlog.Util.PageIndexManager.goDirectPage(3);return false;">3</a> 
+												<a href="javascript:;" class="c_tx" onclick="QZBlog.Util.PageIndexManager.goDirectPage(4);return false;">4</a> 
+												<a href="javascript:;" class="c_tx" onclick="QZBlog.Util.PageIndexManager.goDirectPage(5);return false;">5</a> 
+											</span> 
+											<span class="mod_pagenav_disable none"><span>下一页</span></span>
+											<a class="c_tx " onclick="QZBlog.Util.PageIndexManager.goPage(1);return false;" href="javascript:;">下一页</a> 
+										</p>
+										<p class="mod_pagenav_option">
+											<span class="mod_pagenav_turn">转到
+												<input class="textinput" type="text" id="pageIndex_input1" value="1"> 页 
+												<button onclick="QZBlog.Util.PageIndexManager.goDirectPage($('pageIndex_input1').value.trim());" type="button" class="bt_tx2">确 定</button>
+											</span>
+										</p>
+									</div>
+								</div>
+							</div>
+							<!-- start aside -->
+							<div class="aside">
+								<div id="side_ad" style="display:none" class="mod_box bbor3"></div>
+								<!-- 分类 -->
+								<div class="mod_box blog_sorts bbor3" id="rightCateArea">
+									<div class="hd">
+										<h4>日志分类</h4>
+										<div class="hd_other show_in_owner">
+											<a class="c_tx" href="javascript:;" title="管理分类" rel="category-manage-link">管理</a>
+										</div>
+									</div>
+									<div class="bd" id="cateListContainer">
+										<div class="mod_list">
+											<ul id="cateList">
+												<li class="bg3_hover"><a class="c_tx" cate="" href="javascript:;" rel="category-select-link" catehex="" title="共63篇日志"><span class="left" cate="" catehex="" rel="category-select-link">全部日志</span><span class="right" cate="" catehex="" rel="category-select-link">(63)</span></a></li>
+												<li class="bg3_hover"><a class="c_tx" href="javascript:;" rel="category-select-link" cate="个人日记" catehex="b8f6c8cbc8d5bcc7" title="55篇日志"><span class="left" rel="category-select-link" cate="个人日记" catehex="b8f6c8cbc8d5bcc7">个人日记</span><span class="right" rel="category-select-link" cate="个人日记" catehex="b8f6c8cbc8d5bcc7">(55)</span></a></li>
+												<li class="bg3_hover"><a class="c_tx" href="javascript:;" rel="category-select-link" cate="手机日志" catehex="cad6bbfac8d5d6be" title="4篇日志"><span class="left" rel="category-select-link" cate="手机日志" catehex="cad6bbfac8d5d6be">手机日志</span><span class="right" rel="category-select-link" cate="手机日志" catehex="cad6bbfac8d5d6be">(4)</span></a></li>
+												<li class="bg3_hover"><a class="c_tx" href="javascript:;" rel="category-select-link" cate="私人禁地" catehex="cbbdc8cbbdfbb5d8" title="3篇日志"><span class="left" rel="category-select-link" cate="私人禁地" catehex="cbbdc8cbbdfbb5d8">私人禁地</span><span class="right" rel="category-select-link" cate="私人禁地" catehex="cbbdc8cbbdfbb5d8">(3)</span></a></li>
+												<li class="bg3_hover"><a class="c_tx" href="javascript:;" rel="category-select-link" cate="情感天地" catehex="c7e9b8d0ccecb5d8" title="1篇日志"><span class="left" rel="category-select-link" cate="情感天地" catehex="c7e9b8d0ccecb5d8">情感天地</span><span class="right" rel="category-select-link" cate="情感天地" catehex="c7e9b8d0ccecb5d8">(1)</span></a></li>
+											</ul>
+										</div>
+										<div class="sort_more">
+											<a href="javascript:;" class="sort_op c_tx" rel="category-toggle-more-panel">其他6项分类<span class="mod_arr arr_r" rel="category-toggle-more-panel"></span></a>
+											<div class="mod_list bg bor3" id="cateListMore" style="display:none">
+												<ul>
+													<li class="bg3_hover"><a class="c_tx" href="javascript:;" inmorenav="1" rel="category-select-link" cate="懶懶dě." catehex="91d091d064a8a72e" title="0篇日志"><span class="left" rel="category-select-link" cate="懶懶dě." catehex="91d091d064a8a72e">懶懶dě.</span><span class="right" rel="category-select-link" cate="懶懶dě." catehex="91d091d064a8a72e">(0)</span></a></li>
+													<li class="bg3_hover"><a class="c_tx" href="javascript:;" inmorenav="1" rel="category-select-link" cate="捡垃圾" catehex="bcf1c0acbbf8" title="0篇日志"><span class="left" rel="category-select-link" cate="捡垃圾" catehex="bcf1c0acbbf8">捡垃圾</span><span class="right" rel="category-select-link" cate="捡垃圾" catehex="bcf1c0acbbf8">(0)</span></a></li>
+													<li class="bg3_hover"><a class="c_tx" href="javascript:;" inmorenav="1" rel="category-select-link" cate="腾讯十周年" catehex="ccdad1b6caaed6dcc4ea" title="0篇日志"><span class="left" rel="category-select-link" cate="腾讯十周年" catehex="ccdad1b6caaed6dcc4ea">腾讯十周年</span><span class="right" rel="category-select-link" cate="腾讯十周年" catehex="ccdad1b6caaed6dcc4ea">(0)</span></a></li>
+													<li class="bg3_hover"><a class="c_tx" href="javascript:;" inmorenav="1" rel="category-select-link" cate="没什么" catehex="c3bbcab2c3b4" title="0篇日志"><span class="left" rel="category-select-link" cate="没什么" catehex="c3bbcab2c3b4">没什么</span><span class="right" rel="category-select-link" cate="没什么" catehex="c3bbcab2c3b4">(0)</span></a></li>
+													<li class="bg3_hover"><a class="c_tx" href="javascript:;" inmorenav="1" rel="category-select-link" cate="游戏人生" catehex="d3cecfb7c8cbc9fa" title="0篇日志"><span class="left" rel="category-select-link" cate="游戏人生" catehex="d3cecfb7c8cbc9fa">游戏人生</span><span class="right" rel="category-select-link" cate="游戏人生" catehex="d3cecfb7c8cbc9fa">(0)</span></a></li>
+													<li class="bg3_hover"><a class="c_tx" href="javascript:;" inmorenav="1" rel="category-select-link" cate="我的图志" catehex="ced2b5c4cdbcd6be" title="0篇日志"><span class="left" rel="category-select-link" cate="我的图志" catehex="ced2b5c4cdbcd6be">我的图志</span><span class="right" rel="category-select-link" cate="我的图志" catehex="ced2b5c4cdbcd6be">(0)</span></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 搜索 -->
+								<div class="mod_box bbor3" id="searchArea">           
+									<div class="hd">            
+										<h4>搜索日志</h4>            
+										<div class="hd_other none ">             
+											<a href="javascript:;" id="blog_search_mag_btn" class="c_tx">设置</a>            
+										</div>           
+									</div>           
+									<div class="bd">            
+										<div class="mod_search bor2 bg">             
+											<label for="search">搜索</label>             
+											<input type="text" name="search" class="c_tx3" id="blog_search_text" value="">             
+											<a href="javascript:;" id="blog_search_btn" class="icon_search">搜索</a>            
+										</div>           
+									</div>          
+								</div>
+
+								<!-- 日历 -->
+								<div class="mod_box" id="calendarArea">           
+									<div class="mod_calendar">            
+										<div class="bor2 bg2 calendar_year">             
+											<a class="c_tx mod_arr arr_back" href="javascript:;" onclick="BlogList.Calendar.showDateInfo(2014);return false;" title="上一年">上一年</a>             
+											<strong class="year" title="4篇日志">2015年</strong>             
+											<a class="c_tx mod_arr arr_pre" href="javascript:;" onclick="BlogList.Calendar.showDateInfo(2016);return false;" title="下一年">下一年</a>            
+										</div>            
+										<ul class="calendar_month lbor2">                                          
+											<li class="bor2"><span class="c_tx2" title="0篇日志">1月</span></li>                                                        
+											<li class="bor2"><span class="c_tx2" title="0篇日志">2月</span></li>                                                        
+											<li class="bor2"><span class="c_tx2" title="0篇日志">3月</span></li>                                                        
+											<li class="bor2"><a class="c_tx" href="javascript:;" onclick="BlogList.Calendar.selectDate(2015, 4);return false;" title="1篇日志">4月</a></li>             <li class="bor2"><span class="c_tx2" title="0篇日志">5月</span></li>                                                        
+											<li class="bor2"><span class="c_tx2" title="0篇日志">6月</span></li>                                                        
+											<li class="bor2"><span class="c_tx2" title="0篇日志">7月</span></li>                                                        
+											<li class="bor2"><a class="c_tx" href="javascript:;" onclick="BlogList.Calendar.selectDate(2015, 8);return false;" title="1篇日志">8月</a></li>             <li class="bor2"><a class="c_tx" href="javascript:;" onclick="BlogList.Calendar.selectDate(2015, 9);return false;" title="1篇日志">9月</a></li>             <li class="bor2"><span class="c_tx2" title="0篇日志">10月</span></li>                                                        
+											<li class="bor2"><a class="c_tx" href="javascript:;" onclick="BlogList.Calendar.selectDate(2015, 11);return false;" title="1篇日志">11月</a></li>           <li class="bor2"><span class="c_tx2" title="0篇日志">12月</span></li>                                       
+										</ul>           
+									</div>          
+								</div>
+
+								<div class="mod_box blog_import show_in_owner">
+									<div class="check" style="">
+										<p><a href="/qzone/newblog/v5/auditcanvas.html#type=blog" class="c_tx">评论审核</a><i class="icon icon_help"></i></p>
+										<div class="bubble_wrap none">
+											<div class="bgr3 mod_bubble arr_t">
+												<div class="bubble_cont">开启评论审核功能后，来自非好友的评论将通过您的审核才能展示。</div>
+												<span class="bor3 mod_arr"><span class="bor_bg3"></span></span>
+											</div>
+										</div>
+									</div>
+									<div class="support" style="">
+										<p><a href="http://n.qzone.qq.com/new/index.html" class="c_tx" id="importArea">日志导入</a><i class="icon icon_help"></i></p>
+										<div class="bubble_wrap none">
+											<div class="bgr3 mod_bubble arr_t">
+												<div class="bubble_cont">使用导入日志功能，可以将您其他地方的文章导入进日志。</div>
+												<span class="bor3 mod_arr"><span class="bor_bg3"></span></span>
+											</div>
+										</div>
+									</div>
+									<p></p>
+								</div>
+							</div><!-- end of aside -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="op_more op_more_mouse" style="display: none;">
+		<ul class="bor2 bg">
+			<li><a href="javascript:;" rel="blog-edit-link" title="编辑日志" class="bg3_hover">编辑</a></li>
+			<li><a href="javascript:;" rel="blog-delete-link" title="删除该日志" class="bg3_hover">删除日志</a></li>
+			<li style=""><a href="javascript:;" rel="blog-right-setting-link" title="日志权限设置" class="bg3_hover">设置权限</a></li>
+			<li><a href="javascript:;" rel="blog-category-modify-link" title="修改日志分类" class="bg3_hover">修改分类</a></li>
+			<li style=""><a href="javascript:;" rel="blog-set-top-link" title="设置该日志置顶" class="bg3_hover">设为置顶</a></li>
+			<li><a href="javascript:;" rel="blog-convert-private-link" title="转为私密日志" class="bg3_hover">转为私密日志</a></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="description" content="倒计时特效"/>
+<meta name="keywords" content="倒计时特效"/>
+<title>倒计时特效</title>
+<style>
+*{margin:0;padding:0;}
+body{margin:0;padding:0;overflow:hidden;color:#FB06A4;}
+.city{width:100%;position:fixed;bottom: 0px;z-index: 5;}
+.city img{width: 100%;}
+.box{position:fixed;left:0;top:0;z-index:10;width:100%;height:100%;background:#33ffff;}
+.box .container{margin:0 auto;padding:50px 0;}
+.box .container h2{text-align:center;}
+.box .container .time{text-align:center;font-size:20px;font-weight:bold;margin-top:20px;}
+.box .container .time span{font-size:12px;color:#000;}
+.box .container .entime{display:block;width:150px;height:30px;line-height:30px;font-size:20px;outline:0;border:1px solid #33ff00;margin:20px auto 0;padding:0px 5px;color:#FB06A4;}
+.box .container .ok{display:block;width:100px;height:30px;line-height:30px;text-align:center;margin:20px auto 0;background:rgba(0,0,0,.3);border-radius:4px;text-decoration:none;color:#FB06A4;}
+.box .container .tx{font-size:12px;margin-top:10px;text-indent:2em;padding:0px 10%;}
+</style>
+<title>模拟放烟花</title>
+</head>
+<body onselectstart="return false">
+	<div class="box">
+		<div class="container">
+			<h2>倒计时</h2>
+			<p class="time">05:30</p>
+			<input type="text" name="" class="entime" placeholder="请输入时间">
+			<a class="ok" href="javascript:void(0);">确&nbsp;认</a>
+			<p class="tx">生日倒计时模拟，输入月份和日期即可，格式为8-24，默认时间为设置日期的00:00，如果本年生日已过，则自动计算到下一年当天的倒计时</p>
+		</div>
+	</div>
+	<canvas id="cas" style="background-color:rgba(0,5,24,1)" width="1366" height="643">浏览器不支持canvas</canvas>
+	<div class="city"><img src="city.png" alt=""></div>
+	<img src="moon.png" alt="" id="moon" style="visibility: hidden;">
+	<div style="display:none">
+		<div class="shape">爽歪歪</div>
+		<div class="shape">你在干嘛</div>
+		<div class="shape">HAPPY吗？</div>
+	</div>
+	<audio src="boom.mp3" preload="auto"></audio>
+	<audio src="boom.mp3" preload="auto"></audio>
+	<audio src="boom.mp3" preload="auto"></audio>
+	<audio src="boom.mp3" preload="auto"></audio>
+	<audio src="boom.mp3" preload="auto"></audio>
+	<audio src="boom.mp3" preload="auto"></audio>
+	<audio src="shotfire.mp3" preload="auto"></audio>
+	<audio src="shotfire.mp3" preload="auto"></audio>
+	<audio src="shotfire.mp3" preload="auto"></audio>
+	<script>
+		var vUtil = {
+			$id:function(id){
+				return document.getElementById(id);
+			},
+			$class:function(classname){
+				return document.getElementsByClassName(classname)[0];
+			},
+			getTimeInText:function(classname){
+				var text = this.$class(classname).value;
+				var month = text.split("-")[0]-1,date = text.split("-")[1];
+				//alert(month+"======="+date);
+				var arr = [month,date];
+				return arr;
+			}
+		};
+		
+		vUtil.$class("ok").onclick = function(){
+			backtime();
+			setInterval(backtime,1000);
+		}
+		var getCountdown = function(month,date){
+			var getWhichYear = function (month,date){
+				var now = new Date();
+				var nowtime = now.getTime();
+				var end = new Date(now.getFullYear(),month,date);
+				var endtime = end.getTime();
+				if(nowtime>endtime){
+					end = new Date(now.getFullYear()+1,month,date);
+				}
+				return end;
+			};
+			var nextBirthday = getWhichYear(month,date);
+			var now = new Date().getTime();
+			var end = nextBirthday.getTime();
+			var time = end - now;
+
+			var sec = time / 1000;
+			var day = Math.floor(sec/(60*60*24));
+			var min = sec / 60;
+			var hour = sec / (60 *60);
+			var lsec = sec % 60;
+			var lmin = min % 60;
+			var lhour = hour % 24;
+			if(day == 0 && Math.floor(lhour) == 0 && Math.floor(lmin) && Math.floor(lsec) == 0){
+				return 0;
+			}else{
+				return day+"<span>天</span> "+Math.floor(lhour)+"<span>时</span> "+Math.floor(lmin)+"<span>分</span> "+Math.floor(lsec)+"<span>秒</span>";
+			}
+		};
+
+		function backtime(){
+			var arr = vUtil.getTimeInText("entime");
+			var html = getCountdown(arr[0],arr[1]);
+			if(html == 0){
+				alert("时间到");
+			}else{
+				vUtil.$class("time").innerHTML = html;
+			}		
+		};
+	</script>
+
+</body>
+</html>

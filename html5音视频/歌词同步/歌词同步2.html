@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	*{padding:0;margin:0}
+	body{padding:10px;font-size:14px;font-family:"微软雅黑"}
+	#lrcbox{width:560px;height:120px;overflow:hidden;background:#111;color:#fff}
+	#lrcbox li{height:24px;transition:all 0.3s ease;padding:8px}
+	#lrcbox li.hover{color:red;font-size:24px;padding:8px;}
+	
+  </style>
+ </head>
+ <body>
+	<textarea id="lrcnt" style="width:640px;height:240px;display:none;" >[ver:v1.0]
+[offset:1200]
+[00:03.30]稻香 - 周杰伦
+[00:05.63]作词 周杰伦 作曲 周杰伦
+[00:31.99]对这个世界如果你有太多的抱怨
+[00:35.13]跌倒了就不敢继续往前走
+[00:38.13]为什么人要这么的脆弱堕落
+[00:42.07]请你打开电视看看
+[00:44.07]多少人为生命在努力勇敢的走下去
+[00:47.90]我们是不是该知足
+[00:50.61]珍惜一切就算没有拥有
+[00:54.87]还记得你说家是唯一的城堡
+[00:58.60]随着稻香河流继续奔跑
+[01:01.49]微微笑小时候的梦我知道
+[01:06.69]不要哭让萤火虫带着你逃跑
+[01:10.11]乡间的歌谣永远的依靠
+[01:13.19]回家吧回到最初的美好
+[01:41.75]不要这么容易就想放弃就像我说的
+[01:45.25]追不到的梦想换个梦不就得了
+[01:48.41]为自己的人生鲜艳上色
+[01:50.76]先把爱涂上喜欢的颜色
+[01:53.81]笑一个吧功成名就不是目的
+[01:56.54]让自己快乐快乐这才叫做意义
+[01:59.61]童年的纸飞机现在终于飞回我手里
+[02:05.34]所谓的那快乐赤脚在田里追蜻蜓追到累了
+[02:09.52]偷摘水果被蜜蜂给叮到怕了
+[02:12.33]谁在偷笑呢
+[02:14.20]我靠着稻草人吹着风唱着歌睡着了
+[02:17.56]哦哦午后吉它在虫鸣中更清脆
+[02:20.56]哦哦阳光洒在路上就不怕心碎
+[02:23.82]珍惜一切就算没有拥有
+[02:28.76]还记得你说家是唯一的城堡
+[02:32.08]随着稻香河流继续奔跑
+[02:35.38]微微笑小时候的梦我知道
+[02:40.50]不要哭让萤火虫带着你逃跑
+[02:43.71]乡间的歌谣永远的依靠
+[02:46.72]回家吧回到最初的美好
+[02:51.99]还记得你说家是唯一的城堡
+[02:55.92]随着稻香河流继续奔跑
+[02:58.62]微微笑小时候的梦我知道
+[03:04.07]不要哭让萤火虫带着你逃跑
+[03:07.26]乡间的歌谣永远的依靠
+[03:10.31]回家吧回到最初的美好</textarea>	
+<!---=
+第一次分隔: arr = split("]")
+[03:10.31,回家吧回到最初的美好
+arr[0] = [03:10.31
+arr[1] = 回家吧回到最初的美好;
+第二步：将时间转换数字
+[条换掉,进行:分隔得到如下
+var ms = 03*60 + 10.31;
+var m = parseInt(ms);
+-->
+
+
+
+
+	<div><audio src="01.mp3" controls="controls" id="audio"/></div>
+	<!--存放歌词-->
+	<div id="lrcbox">
+		<ul id="lrc_list">
+			
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		/*
+			1：解析歌词
+			2: 歌词的运动
+			3:结合音乐播放器进行歌词的驱动
+		*/
+		
+		function $(id){
+			return document.getElementById(id);
+		};
+
+
+		window.onload = function(){
+			//歌词初始化
+			lrc.init($("lrcnt").value);
+			//获取audio对象
+			var audioDom = $("audio");
+			audioDom.ontimeupdate = function(){
+				var t = parseInt(this.currentTime);
+				lrc.jump(t);
+			};
+		};
+
+		var lrc = {
+			cindex:0,
+			list:[],
+			regex_time: /\[(\d+)\:((?:\d+)(?:\.\d+)?)\]/g, /* 提取歌词时间轴 */
+			regex_trim: /^\s+|\s+$/,/*去掉左右空格*/
+			init:function(lrctxt){
+				var txts = lrctxt.split("\n");
+				var html = "";
+				for(var i=0;i<txts.length;i++){
+					//去掉左右空格
+					var item = txts[i].replace(this.regex_trim,'');
+					//歌词和时间分隔
+					var ms =item.split("]");
+					var mt = ms[0].replace("[","").split(":");
+					var m =parseInt(mt[0]*60 + mt[1]*1); 
+					var txt = ms[1];
+					if(txt!=""){
+						this.list.push(m);
+						html +="<li id='t_"+m+"'>"+txt+"</li>";
+					}
+				}
+				$("lrc_list").innerHTML = html;
+			},
+
+			jump:function(duration){
+				var dom = $("t_"+duration);
+				//歌词盒子
+				var lirbox = $("lrc_list");
+				//因为播放过程，可能没有找到对应歌词就是一个null对象
+				if(dom!=null){
+					//拿到同辈对象
+					var arr = this.siblings(dom);
+					//将同辈对象的歌词去掉样式
+					for(var i=0;i<arr.length;i++){
+						arr[i].className = "";
+					}
+					//播放当前本身加上样式hover
+					dom.className = "hover";
+					//dom.style.color = this.randomColor();
+					var text = dom.innerText || dom.textContent;
+					var html = "";
+					for(var i=0;i<text.length;i++){
+						html+="<span style='color:"+this.randomColor()+"'>"+text.charAt(i)+"</span>";
+					}
+					dom.innerHTML = html;
+					//拿到当前播放的索引位置,减去1的目的是为了让高亮歌词放在中间
+					var index = this.indexof(dom)-1;
+					//改变歌词盒子的marginTop,当然你也可以使用像banner一样用定位方式，改变top
+					lirbox.style.marginTop = ( index<0?0:index)* -40+"px";
+				}
+			},
+
+			//查找当前播放的歌词是否没有发生变化
+			indexof:function(dom){
+				var listDoms = dom.parentElement.children;
+				var index = -1;
+				for(var i=0;i<listDoms.length;i++){
+					if(listDoms[i]==dom){
+						index = i;
+						break;
+					}
+				}
+				return index;
+			},
+			randomColor :function(){
+				var r = Math.floor(Math.random()*256);
+				var g = Math.floor(Math.random()*256);
+				var b = Math.floor(Math.random()*256);
+				return "rgb("+r+","+g+","+b+")";
+			},
+			//获取同辈元素
+			siblings:function(dom){//不包含本身
+				var listDoms = dom.parentElement.children;
+				var arr = [];
+				for(var i=0;i<listDoms.length;i++){
+					if(listDoms[i]!=dom){
+						arr.push(listDoms[i]);
+					}
+				}
+				return arr;
+			}
+		};
+
+	</script>
+ </body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+	<style>
+		*{padding:0;margin:0}
+		::selection{background:#111;color:#fff;}
+		body{font-size:14px;font-family:"微软雅黑"}
+		#box span{position:relative;}
+	</style>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body>
+	<div id="box">
+		触雷之殇 曾经的田蓬镇沙仁寨“87个人仅剩78条腿”,如今他们仅剩4人 这是一段正在消逝的历史。因为一群特殊的人，让一切还显得清晰。他们如今已是儿孙绕膝、过着和我们一样普普通通的日子。但他们行走时的嘎吱作响的假肢，却又说明他们曾有过的非同寻常的经历。他们是文山州富宁县田蓬镇沙仁寨村民，因为踩响了中越边境的地雷，落下残疾，因“87名村民被地雷炸得只剩下78条腿”而为人知晓。30多年过去了，曾因“87个人只剩78条腿”为人知晓的田蓬镇沙仁寨村民怎么样了？那些遍布山野的雷区是否威胁依然？请跟随本报记者镜头，一起走进经受地雷之苦的富宁县田蓬镇沙仁寨、山脚寨。12月18日早上7点，文山州富宁县田蓬镇，这个距国境线仅600米的边地重镇从晨雾中苏醒，当地苗族穿上崭新艳丽的服饰，背上背篓出门，一些“异乡客”也从国门的另一端赶来田蓬，镇上的主干道早被小贩们摆的地摊堵得水泄不通。一个老人告诉记者，今天是个重要的日子——“赶街天”。此刻的你也许难以想象，31年前，这里就是战争中的一线阵地尽管中越边界早已停止了枪炮声，两国边民恢复了以前的友好和热闹，但是有些东西却一直没有改变——那就是边境上漫山遍野的地雷。据了解，埋设在中越边境上的地雷有防坦克雷、防步兵雷、松发雷、绊发雷、跳雷、诡计雷等至少数十种。由于埋雷时间长，地形变化大，形成了世界上罕见的地雷密度高、难辨认的混合雷场。从1979年以来，文山州因不慎触雷致伤残人数近6000人，年龄从8岁到84岁，动物牲畜死伤更是无法统计。而云南省文山州富宁县边境的沙仁寨曾经最为“著名”：87名村民被地雷炸得只剩下78条腿。随着时间的推移，当年的87名村民现在只剩了4人。记者在富宁县民政局因战伤残管理股了解到，虽然中越两国实现关系正常化以来都曾组织过多次大面积扫雷行动，也在难以清除的雷区周围设立了围墙和警示牌，但由于各种原因，近年来富宁县每年都还会有1至2名新增触雷者，截至2007年，全县新增触雷者共有8人。按照2006年云南省民政厅印发的《云南省因战伤残亡人员救助资金管理暂行办法》中的相关规定，对战争结束后，由于战争遗留因素致伤致残，但又达不到民政部门评残条件的人员，属于特殊历史条件下受伤致残的临时救济对象可按照“三个类别六个等级”的救助标准，得到最低360元/年至最高5160元/年不等的资金救助（该办法是2010年前的标准）。
+	</div>
+	
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+	(function(){
+		var ww = window.innerWidth;
+		var wh = window.innerHeight;
+		var boxDom = document.getElementById("box");
+		var str = boxDom.innerHTML;
+		var len = str.length;
+		var html="";
+		for (var i=0; i<len; i++ )
+		{
+			html+="<span>"+str.charAt(i)+"</span>"
+		};
+		boxDom.innerHTML = html;
+
+		var spanDoms = boxDom.children;
+		var arr = ["+","-"];
+		$(spanDoms).each(function(){
+			var lrandom = srandom(ww);
+			var trandom = srandom(wh);
+			var op = randomRange(0,1);
+			$(this).css({
+				//left:parseInt(arr[op]+lrandom),
+				//top:parseInt(arr[op]+trandom),
+				top:-200,
+				opacity:0
+			});
+			var wait = Math.floor(Math.random()*3000+1)
+			$(this).delay(wait).animate({opacity:1,top:0,left:0},1000)
+		});
+
+		/*var index = 0;
+		function draw(){
+			index++;
+			var spanDoms = boxDom.children;
+			for (var i=0; i<spanDoms.length; i++)
+			{
+				var l = parseInt(spanDoms[i].style.left);
+				var t = parseInt(spanDoms[i].style.top);
+				spanDoms[i].style.left = -l+index+"px";
+				spanDoms[i].style.top = -t+index+"px";
+				spanDoms[i].style.opacity = 1;
+			}
+
+			setTimeout(draw,17);
+		
+		}
+		draw();*/
+
+		function randomRange(start,end){
+			return Math.floor(Math.random()*(end-start+1))+start;
+		}
+
+		function srandom(num){
+			return Math.floor(Math.random()*num+1);
+		}
+	})();
+	
+	
+</script>
+</body>
+</html>

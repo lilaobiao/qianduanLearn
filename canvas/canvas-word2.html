@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="Styles/Common.css" />
+    <link type="text/css" rel="stylesheet" href="Styles/flow.css" />
+    <style type="text/css">
+        .full-bg-black{
+            position:absolute;
+            left:0;
+            top:0;
+            bottom:0;
+            right:0;
+            background:#000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="full-bg-black">
+        <canvas width="200" height="200" id="myCanvas"></canvas>
+    </div>
+    
+    <!-- <script type="text/javascript" src="Scripts/canvas.js"></script> -->
+    <script type="text/javascript">
+        var canvas = document.getElementById("myCanvas"),
+        ctx = canvas.getContext('2d'),
+        cw = canvas.width,
+        ch = canvas.height;
+
+        var text = "肆",
+        fs = 180;
+
+
+        ctx.fillStyle = "#000000";
+        ctx.fillRect(0,0,cw,ch);
+
+
+        ctx.fillStyle = "#f00";
+
+        var lingrad=ctx.createLinearGradient(0,0,cw,ch);//创建线性渐变
+        lingrad.addColorStop(0,'#ff0000');//上色
+        lingrad.addColorStop(1/7,'#ff9900');
+        lingrad.addColorStop(2/7,'#ffff00');
+        lingrad.addColorStop(3/7,'#00ff00');
+        lingrad.addColorStop(4/7,'#00ffff');
+        lingrad.addColorStop(5/7,'#0000ff');
+        lingrad.addColorStop(6/7,'#ff00ff');
+        lingrad.addColorStop(1,'#ff0000');
+        ctx.fillStyle=lingrad;
+
+        ctx.font = fs+"px Arial";
+        /*ctx.textBaseline = "top";
+        ctx.textAlign = "start";
+        ctx.fillText(text,0,0);*/
+
+        //这比上面的居中更准确
+        ctx.textBaseline = "middle";
+        ctx.textAlign = "center";
+        ctx.fillText(text,Math.floor(cw/2),Math.floor(ch/2));
+
+        //var imgData=ctx.getImageData(10,10,50,50);
+        //ctx.putImageData(imgData,10,70);
+
+        function getXY(ctx,x,y){
+            return ctx.getImageData(x,y,1,1);
+        }
+
+        function getXYdata(data,w,x,y){
+            var start = ((x-1)*w +y-1)*4;
+            var d1 = data[start],
+                d2 = data[start+1],
+                d3 = data[start+2],
+                d4 = data[start+3];
+            return [d1,d2,d3,d4];
+        }
+
+        var imgData = ctx.getImageData(0,0,cw,ch);
+
+        //新建一个画布把之前画布的信息存起来，再清空原画布
+        var canvas2 = document.createElement("canvas");
+            canvas2.width = cw;
+            canvas2.height = ch;
+        var ctx2 = canvas2.getContext('2d');
+            ctx2.putImageData(imgData,0,0);
+
+        //保存设置好的fillstyle
+        //ctx.save();
+        ctx.clearRect(0,0,cw,ch);
+
+        //恢复设置好的fillstyle
+        //ctx.restore();
+        var ball = [];
+
+        for(var i = 1;i <= cw;i += 4){
+            for(var j = 1;j <= ch;j += 4){
+                var data = ctx2.getImageData(i,j,1,1).data;
+                if(data[0]+data[1]+data[2] != 0){
+                    ctx.beginPath();
+                    ctx.arc(i, j, 2, 0, 2 * Math.PI, false);
+                    ctx.fillStyle = "rgba(255,255,255,255)";
+                    //ctx.fillStyle = randomColor();
+                    ctx.fill();
+                    ctx.closePath();
+                    ball.push({px:i,py:j,r:2});
+                }
+            }
+        }
+
+        function randomColor(){
+            var r = Math.floor(Math.random()*200+55),
+                g = Math.floor(Math.random()*200),//让颜色偏向于某一种颜色
+                b = Math.floor(Math.random()*255),
+                a = Math.random()+0.5;
+            return "rgba("+r+","+g+","+b+","+a+")";
+        }
+    </script>
+</body>
+</html>

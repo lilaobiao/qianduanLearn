@@ -1,0 +1,114 @@
+@charset "utf-8";
+.saylist {
+	width:100%;
+}
+.saylist .slist{
+	margin-bottom:20px;
+	border-radius:2px;
+	padding:10px;
+	background:#f1f1f1;
+	border: 1px solid #dadada;
+}
+.saylist .sayuser{
+	height:50px;
+}
+.saylist .sayuser .shead{
+    float:left;
+	width:50px;
+	height:50px;
+	border-radius:2px;
+	overflow:hidden;
+}
+.saylist .sayuser .shead img{
+	width:50px;
+	height:50px;
+}
+.saylist .sayuser .sinfo{
+	float:left;
+	margin-left:15px;
+}
+.saylist .sayuser .sinfo p{
+	font-size:12px;
+	color:#999;
+	margin-bottom:5px;
+}
+.saylist .sayuser .sname{
+	margin-right:10px;
+	font-size:14px;
+}
+.saylist .saycon{
+	margin:5px 0;
+}
+.saylist .saycon p{
+	padding: 10px 0;
+    line-height: 22px;
+    color: #333;
+    font-size: 14px;
+}
+.saylist .saycon .sayimg{
+	width:100%;
+	height:auto;
+	overflow-X:hidden;
+}
+.saylist .saycon .sayimg a {
+	display:inline;
+}
+.saylist .saycon .sayimg a img{
+	max-width:100%;
+	height:auto;
+}
+.saylist .shandle {
+	border-top:1px solid #999;
+	padding:5px 0;
+}
+.saylist .shandle .sinteract{
+	height:30px;
+}
+.saylist .shandle .sinteract li{
+	margin:0 10px;
+	float:left;
+}
+.saylist .shandle .sinteract li a{
+	display: block;
+    padding: 0 10px;
+    height: 20px;
+    line-height: 20px;
+}
+.scomment .scomlist{
+	padding:3px 0;
+}
+.scomment .cuser .chead{
+	width:30px;
+	height:30px;
+	float:left;
+}
+.scomment .cuser .chead img{
+	width:30px;
+	height:30px;
+}
+.scomment .cuser .cinfo{
+	margin-left:10px;
+	float:left;
+	width:638px;
+}
+.scomment .cuser .cinfo p{
+	margin:-4px 0 4px 0;
+	color:#333;
+}
+.scomment .cuser .cinfo .cname{
+	margin-right:10px;
+	color:#1a62d2;
+}
+.scomment .cuser .cinfo .creplay{
+	display:inline;
+	margin:0 10px;
+}
+.scomment .comreplay{
+	padding-left:45px;
+}
+.scomment .comreplay .replist{
+	padding:2px 0;
+}
+.scomment .comreplay .cuser .cinfo{
+	width:592px;
+}

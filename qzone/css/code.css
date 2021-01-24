@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+ +----------------------------------------------------------------------
+ | @Version	core.css[v2013-06-05.beta] 基础核心文件
+ +----------------------------------------------------------------------
+ */
+/* reset */
+html,body,dl,dt,dd,ul,ol,li,pre,form,fieldset,blockquote,p,h1,h2,h3,h4,h5,h6{padding:0;margin:0;}
+body{font:12px/1.6 arial,"\5b8b\4f53";}
+h1,h2,h3,h4,h5,h6{font-weight:normal;font-size:inherit;}
+img,fieldset,abbr,acronym{border:0;}
+ol,ul{ list-style:none;}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal;}
+q:before,q:after{content:'';}
+a{outline:none;/*firefox*/ hide-focus:expression(this.hideFocus=true);/*ie*/}
+a{text-decoration:none; color:#333;}
+a:hover{text-decoration:underline; color:#3399ff;}
+
+
+/* font */
+.fontA{ font-family:Arial;}
+.fontMS{ font-family:"Microsoft YaHei","\5fae\8f6f\96c5\9ed1";}
+
+/* common */
+.tc{text-align:center;}.tl{text-align:left;}.tr{text-align:right;}
+.fb{font-weight:bold;}.fn{font-weight:normal;}
+.left{float:left;}.right{float:right;}
+.show{display:block;}.hide{display:none;}
+.f10px{font-size:10px;}		.f12px{font-size:12px;}		.f14px{font-size:14px;}		.f16px{font-size:16px;}		.f18px{font-size:18px;}
+.f20px{font-size:20px;}		.f22px{font-size:22px;}		.f24px{font-size:24px;}		.f26px{font-size:20px;}		.f28px{font-size:28px;}
+.mt5{margin-top:5px;}		.mt10{margin-top:10px;}		.mt15{margin-top:15px;}		.mt20{margin-top:20px;}
+.mr5{margin-right:5px;} 	.mr10{margin-right:10px;}	.mr15{margin-right:15px;}	.mr20{margin-right:20px;}
+.mb5{margin-bottom:5px;}	.mb10{margin-bottom:10px;}	.mb15{margin-bottom:15px;}	.mb20{margin-bottom:20px;}
+.ml5{margin-left:5px;}		.ml10{margin-left:10px;}	.ml15{margin-left:15px;}	.ml20{margin-left:20px;}
+.mb10_minus{margin-bottom:-10px;}
+.pt5{padding-top:5px;}		.pt10{padding-top:10px;}	.pt15{padding-top:15px;}	.pt20{padding-top:20px;}
+.pr5{padding-right:5px;}	.pr10{padding-right:10px;}	.pr15{padding-right:15px;}	.pr20{padding-right:20px;}
+.pb5{padding-bottom:5px;}	.pb10{padding-bottom:10px;}	.pb15{padding-bottom:15px;}	.pb20{padding-bottom:20px;}
+.pl5{padding-left:5px;}		.pl10{padding-left:10px;}	.pl15{padding-left:15px;}	.pl20{padding-left:20px;}
+.p5{padding:5px;}			.p10{padding:10px;}			.p15{padding:15px;}			.p20{padding:20px;}
+.lh20{line-height:20px;}.lh22{line-height:22px;}.lh24{line-height:24px;}.lh26{line-height:26px;}.lh28{line-height:28px;}
+.lh30{line-height:30px;}.lh32{line-height:32px;}.lh34{line-height:34px;}.lh36{line-height:36px;}.lh38{line-height:38px;}
+
+/* public */
+.em2{text-indent:2em;}
+.ano a:link,.ano a:visited,.ano a:hover,.ano a:active{text-decoration:none;}
+.a333 a,.c333{color:#333;}
+.a666 a,.c666{color:#666;}
+.a999 a,.c999{color:#999;}
+
+.newline{}/*强制换行*//*\5f3a\5236\6362\884c*/
+.newline{white-space:pre-wrap; /*css-3*/ white-space:-moz-pre-wrap; /*Mozilla,since 1999*/ white-space:-pre-wrap; /*Opera 4-6*/ white-space:-o-pre-wrap; /*Opera 7*/ word-wrap:break-word; /*Internet Explorer 5.5+*/ white-space:normal;/*Internet Explorer 5.5+*/}
+.clear{clear:both;}
+.clearfix{}/*清除浮动*//*\6e05\9664\6d6e\52a8*/
+.clearfix{display:block;zoom:1;}
+.clearfix:after{content:".";display:block;visibility:hidden;height:0;clear:both;}
+.c{clear:both;font-size:0;height:0;line-height:0;visibility:hidden;}
+.c5,.c10,.c15,.c20{clear:both;font-size:1px;line-height:0;visibility:hidden;}
+.c5{height:5px;}	.c10{height:10px;}	.c15{height:15px;}	.c20{height:20px;}
+
+.tahomabox{}/*选框对齐*//*\9009\6846\5bf9\9f50*/
+.tahomabox{font-family:tahoma; font-size:12px;}
+.tahomabox label{vertical-align:middle}
+.tahomabox input,.tahomabox select{vertical-align:middle; margin:0;}
+
+.X-other{content:"full corner:<　> | half corner:< >";}/*全角、半角*/

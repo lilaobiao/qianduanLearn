@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<h1>距下一个生日还有:</h1>
+	<h1 id="timer"></h1>
+	<script type="text/javascript">
+		var getCountdown = function(month,date){
+			var getWhichYear = function (month,date){
+				var now = new Date();
+				var nowtime = now.getTime();
+				var end = new Date(now.getFullYear(),month,date);
+				var endtime = end.getTime();
+				if(nowtime>endtime){
+					end = new Date(now.getFullYear()+1,month,date);
+				}
+				return end;
+			};
+			var nextBirthday = getWhichYear(month,date);
+			var now = new Date().getTime();
+			var end = nextBirthday.getTime();
+			var time = end- now;
+
+			var sec = time / 1000;
+			var day = Math.floor(sec/(60*60*24));
+			var min = sec / 60;
+			var hour = sec / (60 *60);
+			var lsec = sec % 60;
+			var lmin = min % 60;
+			var lhour = hour % 24;
+			var dateStr = day+"天："+Math.floor(lhour)+"时："+Math.floor(lmin)+"分："+Math.floor(lsec)+"秒";
+			return dateStr;
+		};
+
+		function backtime(){
+			document.getElementById("timer").innerText = getCountdown(7,24);		
+		};
+		setInterval(backtime,1000);
+	</script>
+ </body>
+</html>

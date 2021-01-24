@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>时钟</title>
+  <style>
+	*{padding:0;margin:0}
+	ul,li{list-style:none;}
+	body{background:#886565;font-family:"微软雅黑"}
+
+	.box{width:200px;height:200px;border-radius:50%;margin:100px auto;position:relative;}
+	/*刻度*/
+	#kedu li{position:absolute;width:2px;height:6px;background:#111;left:99px;top:0px;transform-origin:center 100px}
+	#kedu li:nth-child(5n+1){height:15px;}
+	/*
+	#kedu li:nth-child(1){transform:rotate(0deg)}
+	#kedu li:nth-child(2){transform:rotate(6deg)}
+	#kedu li:nth-child(3){transform:rotate(12deg)}*/
+
+	/*时分秒针*/
+	#hour{width:8px;height:45px;background:#111;position:absolute;top:55px;left:96px;transform-origin:bottom}
+	#min{width:4px;height:55px;background:green;position:absolute;top:45px;left:98px;transform-origin:bottom}
+	#sec{width:2px;height:65px;background:red;position:absolute;top:35px;left:99px;transform-origin:bottom}
+	/*圆心*/
+	.box .radius{width:16px;height:16px;background:#111;position:absolute;top:92px;left:92px;border-radius:50%}
+
+	.cradius{width:100px;height:100px;background:#111;border-radius:50%;color:#fff;text-align:center;line-height:100px;margin-left:200px;transform-origin:top}
+	.cradius:hover{transform:rotate(360deg);transition:all 3s ease;}
+
+  </style>
+ </head>
+ <body>
+	<div class="box">
+		<!--刻度-->
+		<ul id="kedu"></ul>
+		<!--时分秒针-->
+		<div id="hour"></div>
+		<div id="min"></div>
+		<div id="sec"></div>
+		<!--圆心-->
+		<div class="radius"></div>
+	</div>
+
+	<div id="timer"></div>
+	<div id="timer2"></div>
+	<div id="timer3"></div>
+	<div id="timer4"></div>
+
+
+	<div class="cradius">11111</div>	
+	<script type="text/javascript">
+		/*
+			@descrition 时钟和时区
+			@date:2015-08-01 23:66
+			@author:keke
+			知识点:
+				a:javascript 闭包 
+				b:css3圆心和旋转
+				c:border-radius
+				d:定位position
+			辅助知识点：Date类
+
+
+			实现步骤:
+			1:如果画圆
+			2:如果产生时分秒针
+			4:如果产生刻度
+			5:如何让时分秒针进行旋转
+			6:时区时间的计算
+			7:如何封装
+
+			新的知识点:一个表盘360度,分了60个格子，每个格子就是6度
+			每个五个格子就是一个小时:30度=1小时
+		*/
+		
+
+		/**
+		 * 对Date的扩展，将 Date 转化为指定格式的String 月(M)、日(d)、12小时(h)、24小时(H)、分(m)、秒(s)、周(E)、季度(q)
+		 * 可以用 1-2 个占位符 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字) eg: (new
+		 * Date()).format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423 (new
+		 * Date()).format("yyyy-MM-dd E HH:mm:ss") ==> 2009-03-10 二 20:09:04 (new
+		 * Date()).format("yyyy-MM-dd EE hh:mm:ss") ==> 2009-03-10 周二 08:09:04 (new
+		 * Date()).format("yyyy-MM-dd EEE hh:mm:ss") ==> 2009-03-10 星期二 08:09:04 (new
+		 * Date()).format("yyyy-M-d h:m:s.S") ==> 2006-7-2 8:9:4.18
+		 */
+		Date.prototype.format = function(fmt) {
+			var o = {
+				"Y+" : this.getFullYear(),
+				"M+" : this.getMonth() + 1,
+				// 月份
+				"d+" : this.getDate(),
+				// 日
+				"h+" : this.getHours() % 12 == 0 ? 12 : this.getHours() % 12,
+				// 小时
+				"H+" : this.getHours(),
+				// 小时
+				"m+" : this.getMinutes(),
+				// 分
+				"s+" : this.getSeconds(),
+				// 秒
+				"q+" : Math.floor((this.getMonth() + 3) / 3),
+				// 季度
+				"S" : this.getMilliseconds()
+			// 毫秒
+			};
+			var week = {
+				"0" : "/u65e5",
+				"1" : "/u4e00",
+				"2" : "/u4e8c",
+				"3" : "/u4e09",
+				"4" : "/u56db",
+				"5" : "/u4e94",
+				"6" : "/u516d"
+			};
+			if (/(y+)/.test(fmt)) {
+				fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "")
+						.substr(4 - RegExp.$1.length));
+			}
+			if (/(E+)/.test(fmt)) {
+				fmt = fmt
+						.replace(
+								RegExp.$1,
+								((RegExp.$1.length > 1) ? (RegExp.$1.length > 2 ? "/u661f/u671f"
+										: "/u5468")
+										: "")
+										+ week[this.getDay() + ""]);
+			}
+			for ( var k in o) {
+				if (new RegExp("(" + k + ")").test(fmt)) {
+					fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k])
+							: (("00" + o[k]).substr(("" + o[k]).length)));
+				}
+			}
+			return fmt;
+		};
+		
+
+		//时区的换算 offset时区位置	
+		function calcTime(offset) { 
+			// 创建一个本地日期
+			var d = new Date(); 
+			//通过Data()对象的getTimezoneOffset()方法来找出当地时间偏移值。在缺省情况下，此方法以分钟显示时区偏移值结果，因此在早先的计算中要将此值转换成毫秒。 
+			var utc = d.getTime() + (d.getTimezoneOffset() * 60000); 
+			//将本地时间与本地时区偏移值相加得到当前国际标准时间（UTC）。 
+			var nd = new Date(utc + (3600000*offset)); 
+			return nd;
+		};
+
+
+
+		(function(){
+			//刻度对象	
+			var keduDom = document.getElementById("kedu");
+			//产生刻度值
+			var html = "";
+			for(var i=0;i<60;i++){
+				html += "<li style='transform:rotate("+(i * 6)+"deg)'></li>";
+			};
+			keduDom.innerHTML = html;
+			
+			//时分秒针
+			var secDom = $("sec");//1-60
+			var minDom = $("min");//1-60
+			var hourDom = $("hour");//1-12 每个五个格子就是一个小时:30度=1小时
+			var timerDom = $("timer");//北京时间
+			var timer2Dom = $("timer2");//
+			var timer3Dom = $("timer3");
+			function drawDate(){
+				var date = new Date();
+				//秒
+				var sec = date.getSeconds();
+				//分
+				var min = date.getMinutes()+sec/60;
+				//时
+				var hour = date.getHours() + min/60;
+				secDom.style.transform = "rotate("+(sec * 6)+"deg)";
+				minDom.style.transform = "rotate("+(min * 6)+"deg)";
+				hourDom.style.transform = "rotate("+(hour * 30)+"deg)";
+				//时间的设定
+				timerDom.innerText = "北京时间:"+date.format("HH:mm:ss");
+				timer2Dom.innerText = "夏威夷时间:"+calcTime("-10").format("yyyy-MM-dd HH:mm:ss");
+				timer3Dom.innerText = "莫斯科时间:"+calcTime("+5.5").format("yyyy-MM-dd HH:mm:ss");
+			};
+			//初始化当前时间的位置
+			drawDate();
+			//定时任务执行时钟
+			setInterval(drawDate,1000);
+
+			function $(id){
+				return document.getElementById(id);
+			}
+		})();
+	</script>
+ </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<style>
+.box{width:100px;height:100px;background:#000;position:absolute;}
+</style>
+</head>
+<body>
+<div class="box" id="box"></div>
+<p><label for="wheelDelta"> 滚动值:</label>(IE/Opera)<input type="text" id="wheelDelta" /></p> 
+<p><label for="detail"> 滚动值:(Firefox)</label><input type="text" id="detail" /></p> 
+<script>
+	var oTxt=document.getElementById("txt"); 
+	var boxDom = document.getElementById("box");
+	var scrollFunc=function(e){ 
+		var direct=0; 
+		e=e || window.event; 
+		var t1=document.getElementById("wheelDelta"); 
+		var t2=document.getElementById("detail"); 
+		if(e.wheelDelta){//IE/Opera/Chrome 
+			t1.value=e.wheelDelta; 
+			var top = boxDom.offsetTop;
+			boxDom.style.top = top+e.wheelDelta + "px";
+		}else if(e.detail){//Firefox 
+			t2.value=e.detail; 
+			var top = boxDom.offsetTop;
+			boxDom.style.top = top+e.detail + "px";
+		} 
+		//ScrollText(direct); 
+	} 
+	/*注册事件*/ 
+	if(document.addEventListener){ 
+		document.addEventListener('DOMMouseScroll',scrollFunc,false); 
+	}//W3C 
+	window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome/Safari 
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html onselectstart="return false"><head>
+<!--声明当前页面的编码集：charset=gbk,gb2312(中文编码)，utf-8国际编码-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--当前页面的三要素-->
+<title>3D相册拖拽</title>
+<meta name="Keywords" content="关键词,关键词">
+<meta name="description" content="">
+<!--css,js-->
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	*{margin:0;padding:0;}
+	body{background:#111;}
+	#photo{width:160px;height:120px;margin:150px auto;position:relative;transform-style:preserve-3d;
+			-webkit-transform:perspective(800px) rotateX(-8deg) rotateY(0deg);
+			transform:perspective(800px) rotateX(-100deg) rotateY(0deg);transform-origin:50%;
+			animation:rot 9s linear infinite alternate;
+	}
+	#photo img{width:160px;height:120px;position:absolute;top:0;left:0;border-radius:5px;box-shadow:0 0 4px #FFF; 
+				-webkit-box-reflect: below 0 -webkit-linear-gradient(top,rgba(250,250,250,0),rgba(250,250,250,.0) 20%,rgba(250,250,250,0.3));
+						box-reflect: below 0 -webkit-linear-gradient(top,rgba(250,250,250,0),rgba(250,250,250,.0) 80%,rgba(250,250,250,0.3));
+	}
+	@keyframes rot{
+		from{transform:rotateY(0deg);}
+		to{transform:rotateY(-360deg);}
+	}
+</style>
+</head>
+<body>
+	<h1 style="color:#FFF;text-align:center;margin-top:50px;">超级酷炫的3D效果</h1>
+	<div id="photo">
+		<img src="1.jpg">
+		<img src="2.jpg">
+		<img src="3.jpg">
+		<img src="4.jpg">
+		<img src="5.jpg">
+		<img src="6.jpg">
+		<img src="7.jpg">
+		<img src="8.jpg">
+		<img src="9.jpg">
+	</div>
+	[if IE]
+	<p>你在非IE中将看不到我的身影</p>
+	[endif]
+	<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//获取图片旋转的角度，$("#photo img").size()获取图片的个数
+			var Deg=360/$("#photo img").size();
+			var rotatey = 0,rotatex = -10;
+			var jl = 80*(parseInt(Math.tan(Math.PI/9))+3);
+			//alert(jl);
+			//遍历图片
+			$("#photo img").each(function(i){
+				$(this).css({
+					'transform' : 'rotateY('+Deg*i+'deg) translateZ('+jl+'px)'
+				}).attr('ondragstart','return false');
+			});
+			$("#photo img").mousemove(function(){
+					$(this).addClass("animated fadeIn").siblings().removeClass("animated fadeOut");
+			});
+			$(document).mousedown(function(ev){
+				var x_ = ev.clientX;
+				var y_ = ev.clientY;
+				$(this).bind('mousemove',function(ev){
+					var xN = ev.clientX - x_;
+					var yN = ev.clientY - y_;
+					rotatey += xN*0.3;
+					rotatex -= yN*0.3;
+					$('#photo').css({
+						'transform' : 'perspective(800px) rotateX('+rotatex+'deg) rotateY('+rotatey+'deg) scale(1.2)'
+					});
+					x_ = ev.clientX;
+					y_ = ev.clientY;
+				});
+			}).mouseup(function(){
+				$(this).unbind('mousemove');
+			});		
+		});
+
+		//给标题添加个音乐
+		//document.write('<embed src= "'+"mp3/赵雷 - 吉姆餐厅.mp3"+'" autostart=true loop=true hidden=true>')
+	</script>
+	<embed src="mp3/赵雷 - 吉姆餐厅.mp3" autostart="true" loop="true" hidden="true">
+</body>
+</html>

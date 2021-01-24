@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<link rel="stylesheet" href="css/style.css" />
+<style>
+	*{padding:0;margin:0;border:0;}
+	ul,li{list-style:none;}
+	.hover{color:red}
+	.video-box{width:480px;background:#000;margin:20px auto;position:relative;border:3px solid #000;}
+	.video-box video{width:480px;}
+	.video-box .controls{width:100%;height:30px;line-height:30px;background:rgba(0,0,0,.3);position:absolute;left:0;bottom:0;}
+	.video-box .controls a{margin-right:30px;text-decoration:none;color:#fff;font-size:12px;}
+	.video-box .controls a:hover{color:red;}
+	.start{width:300px;float:left;}
+	.volume{width:180px;float:right;}
+</style>
+</head>
+<body>
+	<div class="zd-video-container zd-video-ispause" id="myvideo" style="width: 940px;">
+		<div class="zd-video">
+			<div class="zd-video-control zd-video-big-play hide"></div>
+			<video width="940" height="520" src="11.mkv"></video>
+			<div class="zd-video-controls show" style="width: 940px;">                
+				<div class="zd-video-progress">                  
+					<div class="zd-video-progress-bar" style="width: 3.77726%;"></div>                
+				</div>               
+				<div class="zd-controls-body">                  
+					<div class="zd-controls-left">                    
+						<span class="zd-video-play zd-video-control" style="display: inline-block;"></span>                    
+						<span class="zd-video-pause zd-video-control hide" style="display: none;"></span>                    
+						<span class="zd-video-time">00:03</span>                  
+					</div>                  
+					<div class="zd-controls-right">                    
+						<span class="zd-video-control zd-video-mute"></span>                    
+						<div class="zd-video-volume">                      
+							<div class="zd-video-volume-bar"></div>                    
+						</div>                    
+						<span class="zd-video-control zd-video-fullscreen"></span>                  
+					</div>                
+				</div>              
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<div class="video-box">
+		<video id="video" autoplay="autoplay">
+			<source id="mp4_src" src="11.mkv" type="video/mp4">
+			Your browser does not support HTML5 video.
+		</video>
+		<div class="controls">
+			<div class="start">
+				<a id="play" href="javascript:void(0);">play</a>
+				<div class="jdt">
+					<div class=""></div>
+					<div class=""></div>
+					<a href="javascript:void(0);"></a>
+				</div>
+			</div>
+			<div class="volume">
+				<a id="ov" href="javascript:void(0);">openvolume</a>
+				<div class="jdt">
+					<div class=""></div>
+					<div class=""></div>
+					<a href="javascript:void(0);"></a>
+				</div>
+			</div>
+			
+			<a id="stop" href="javascript:void(0);">stop</a>
+			<a id="ov" href="javascript:void(0);">openvolume</a>
+			<a id="cv" href="javascript:void(0);">closevolume</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="js.js"></script>
+	<script type="text/javascript">
+		var vdom = document.getElementById("video");
+		$("#play").on("click",function(){
+			vdom.play();
+		});
+		$("#stop").on("click",function(){
+			vdom.pause();
+		});
+		$("#ov").on("click",function(){
+			vdom.muted = false;
+		});
+		$("#play").on("click",function(){
+			vdom.muted = true;
+		});
+
+		/*#
+		//audio|video.controls=true|false
+		//audio|video.play()|paused();
+		//currentSrc属性返回当前音频/视频的 URL(完整路径)
+		//currentTime 属性设置或返回音频/视频播放的当前位置（以秒计）,当设置该属性时，播放会跳跃到指定的位置。
+		//defaultMuted 属性设置或返回音频/视频是否默认静音。
+							1.0 正常速度
+							0.5 半速（更慢）
+							2.0 倍速（更快）
+							-1.0 向后，正常速度
+							-0.5 向后，半速
+		networkState 属性返回音频/视频的当前网络状态（activity）
+							0 = NETWORK_EMPTY - 音频/视频尚未初始化
+							1 = NETWORK_IDLE - 音频/视频是活动的且已选取资源，但并未使用网络
+							2 = NETWORK_LOADING - 浏览器正在下载数据
+							3 = NETWORK_NO_SOURCE - 未找到音频/视频来源
+		readyState 属性返回音频/视频的当前就绪状态。
+							0 = HAVE_NOTHING - 没有关于音频/视频是否就绪的信息
+							1 = HAVE_METADATA - 关于音频/视频就绪的元数据
+							2 = HAVE_CURRENT_DATA - 关于当前播放位置的数据是可用的，但没有足够的数据来播放下一帧/毫秒
+							3 = HAVE_FUTURE_DATA - 当前及至少下一帧的数据是可用的
+							4 = HAVE_ENOUGH_DATA - 可用数据足以开始播放
+		*/
+		vdom.onplay = function() {
+			alert("The video has started to play");
+		};
+	</script>
+</body>
+</html>

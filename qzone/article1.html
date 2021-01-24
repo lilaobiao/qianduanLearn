@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="keywords" content="仿QQ空间练习">
+<meta name="Description" content="仿QQ空间练习">
+<title>仿QQ空间练习</title>
+<link rel="stylesheet" href="css/code.css"/>
+<link rel="stylesheet" href="css/main.css"/>
+<link rel="stylesheet" href="css/album.css"/>
+<link rel="stylesheet" href="css/right.css"/>
+<link rel="stylesheet" href="css/icon/iconfont.css"/>
+</head>
+<body>
+	<div class="wrap">
+		<div class="wrap-head">
+			<header>
+				<div class="logo">
+					<a href="javascript:void(0);"><img src="images/logo.png" alt="" /></a>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="javascript:void(0);"><i class="iconfont">&#xe628</i>日志</a></li>
+						<li><a href="javascript:void(0);"><i class="iconfont">&#xe60f</i>相册</a></li>
+						<li><a href="javascript:void(0);"><i class="iconfont">&#xe664</i>视频</a></li>
+						<li><a href="javascript:void(0);"><i class="iconfont">&#xe628</i>音乐</a></li>
+						<li><a href="javascript:void(0);"><i class="iconfont">&#xe624</i>留言板</a></li>
+					</ul>
+				</nav>
+				<div class="user-info">
+                    <a class="user-home" href="http://user.qzone.qq.com/1328560691/main">
+                        <img class="user-avatar" src="http://qlogo4.store.qq.com/qzone/1328560691/1328560691/30?1411835324" alt="您的头像">
+                        <span class="user-name textoverflow">Vezn-Lee</span>
+                    </a>
+					<a id="tb_logout" class="logout-new" href="javascript:;" title="退出"><i class="iconfont">&#xebd9</i></a>  
+                    <div id="tb_setting_li" class="user-setting">
+                        <a href="javascript:;"><i class="iconfont">&#xe611</i></a>
+                        <div class="user-drop-down" id="tb_setting_panel" style="display: none;">
+                            <b class="white-line"></b>
+                            <div class="drop-down-setting">
+                                <a type="info" href="javascript:;">修改资料</a>
+                                <a type="dress" href="javascript:;">主页排版</a>
+                                <a type="set" href="javascript:;">空间设置</a>
+                                <a type="auth" href="javascript:;">权限设置</a>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+				<div class="tmusic-box" id="tmusic-box" style="display:none;">
+                    <a class="tmusic-st play" href="javascript:;"><i class="iconfont">&#xe619</i></a>
+					<span class="tmusic-show" href="javascript:;"><i class="iconfont">&#xe721</i></span>
+					<audio id="taudio" width="480" height="30" src="music/nf.mp3"></audio>
+					<div class="tdrop-music">
+						<ul class="tmusic-list">
+							<li><i></i><a class="active" href="javascript:;">QQ - 13285660691</a></li>
+							<li><i></i><a href="javascript:;">QQ - 13285660691</a></li>
+							<li><i></i><a href="javascript:;">QQ - 13285660691</a></li>
+							<li><i></i><a href="javascript:;">QQ - 13285660691</a></li>
+							<li><i></i><a href="javascript:;">QQ - 13285660691</a></li>
+						</ul>
+					</div>
+                </div>
+			</header>
+		</div>
+		<div class="wrap-main article">
+			<div class="main clearfix">
+				<div class="album">
+					<div class="album-top">
+						<ul class="album-nav">
+							<li><a href="javascript:;">我的日记</a></li>
+							<li><a href="javascript:;">写日记</a></li>
+							<li><a href="javascript:;">草稿箱</a></li>
+							<li><a href="javascript:;">批量管理</a></li>
+							<li><a href="javascript:;">回收站</a></li>
+						</ul>
+					</div>
+					<div class="article-list-container clearfix" id="article-list-container">
+						<div class="plgl-xgcz clearfix">
+							<label class="allselect"><input type="checkbox" name="all"><span>全选</span></label>
+							<label class="backselect"><input type="checkbox" name="back"><span>反选</span></label>
+							<ul class="banner_box_buttons">
+								<li id="banner_sel_type">
+									<span>你想把它们？</span>
+									<i class="active"></i>
+									<dl class="banner_select" style="display:none;">
+										<dd data-code="1">删除</dd>
+										<dd data-code="2">置顶</dd>
+										<dd data-code="3">加精</dd>
+										<dd data-code="4">移动到</dd>
+									</dl>
+								</li>
+							</ul>
+						</div>
+						<div style="clear:both"></div>
+						<div class="article-left">
+							<ul class="list-ul">
+								<li class="article-list">
+									<input type="checkbox" name="articlesel">
+									<a class="lista" href="javascript:void(0);"><span>原</span>【html5多媒体】自定义播放器（弹幕，水印，甚至在视频开头添加封面）</a>
+									<div class="list-more">
+										<time>2015年10月1日</time>
+										<span ><a href="javascript:void(0);"><i class="iconfont">&#xe609;</i></a></span>
+									</div>
+								</li>
+								<li class="article-list">
+									<input type="checkbox" name="articlesel">
+									<a class="lista" href="javascript:void(0);"><span>原</span>【html5多媒体】自定义播放器（弹幕，水印，甚至在视频开头添加封面）</a>
+									<div class="list-more">
+										<time>2015年10月1日</time>
+										<span ><a href="javascript:void(0);"><i class="iconfont">&#xe609;</i></a></span>
+									</div>
+								</li>
+								<li class="article-list">
+									<input type="checkbox" name="articlesel">
+									<a class="lista" href="javascript:void(0);"><span>原</span>【html5多媒体】自定义播放器（弹幕，水印，甚至在视频开头添加封面）</a>
+									<div class="list-more">
+										<time>2015年10月1日</time>
+										<span ><a href="javascript:void(0);"><i class="iconfont">&#xe609;</i></a></span>
+									</div>
+								</li>
+								<li class="article-list">
+									<input type="checkbox" name="articlesel">
+									<a class="lista" href="javascript:void(0);"><span>原</span>自定义播放器（弹幕，水印，甚至在视频开头添加封面）自定义播放器（弹幕，水印，甚至在视频开头添加封面）</a>
+									<div class="list-more">
+										<time>2015年10月1日</time>
+										<span ><a href="javascript:void(0);"><i class="iconfont">&#xe609;</i></a></span>
+									</div>
+								</li>
+								<li class="article-list">
+									<input type="checkbox" name="articlesel">
+									<a class="lista" href="javascript:void(0);"><span>原</span>自定义播放器（弹幕，水印，甚至在视频开头添加封面）自定义播放器（弹幕，水印，甚至在视频开头添加封面）</a>
+									<div class="list-more">
+										<time>2015年10月1日</time>
+										<span ><a href="javascript:void(0);"><i class="iconfont">&#xe609;</i></a></span>
+									</div>
+								</li>
+								<li class="article-list">
+									<input type="checkbox" name="articlesel">
+									<a class="lista" href="javascript:void(0);"><span>原</span>自定义播放器（弹幕，水印，甚至在视频开头添加封面）自定义播放器（弹幕，水印，甚至在视频开头添加封面）</a>
+									<div class="list-more">
+										<time>2015年10月1日</time>
+										<span ><a href="javascript:void(0);"><i class="iconfont">&#xe609;</i></a></span>
+									</div>
+								</li>
+								<li class="article-list">
+									<input type="checkbox" name="articlesel">
+									<a class="lista" href="javascript:void(0);"><span>原</span>自定义播放器（弹幕，水印，甚至在视频开头添加封面）自定义播放器（弹幕，水印，甚至在视频开头添加封面）</a>
+									<div class="list-more">
+										<time>2015年10月1日</time>
+										<span ><a href="javascript:void(0);"><i class="iconfont">&#xe609;</i></a></span>
+									</div>
+								</li>
+								<li class="article-list">
+									<input type="checkbox" name="articlesel">
+									<a class="lista" href="javascript:void(0);"><span>原</span>自定义播放器（弹幕，水印，甚至在视频开头添加封面）自定义播放器（弹幕，水印，甚至在视频开头添加封面）</a>
+									<div class="list-more">
+										<time>2015年10月1日</time>
+										<span ><a href="javascript:void(0);"><i class="iconfont">&#xe609;</i></a></span>
+									</div>
+								</li>
+								<li class="article-list">
+									<input type="checkbox" name="articlesel">
+									<a class="lista" href="javascript:void(0);"><span>原</span>自定义播放器（弹幕，水印，甚至在视频开头添加封面）自定义播放器（弹幕，水印，甚至在视频开头添加封面）</a>
+									<div class="list-more">
+										<time>2015年10月1日</time>
+										<span ><a href="javascript:void(0);"><i class="iconfont">&#xe609;</i></a></span>
+									</div>
+								</li>
+							</ul>
+							<div id="papelist" class="pagelist">
+								<span> 563条数据  共12页</span>
+								<strong>1</strong> 
+								<a href="/cdnight/article/list/2">2</a> 
+								<a href="/cdnight/article/list/3">3</a> 
+								<a href="/cdnight/article/list/4">4</a> 
+								<a href="/cdnight/article/list/5">5</a> 
+								<a href="/cdnight/article/list/6">...</a> 
+								<a href="/cdnight/article/list/2">下一页</a> 
+								<a href="/cdnight/article/list/12">尾页</a> 
+							 </div>
+						</div>
+						<div class="article-right">
+							<ul class="article-class">
+								<li class="article-sclass">
+									<span class="">java</span>
+									<p><a href="javascript:void(0);">子类如何调用父类方法</a><i>(2)</i></p>
+									<p><a href="javascript:void(0);">子类如何调用父类方法(<i>2</i>)</a></p>
+									<p><a href="javascript:void(0);">子类如何调用父类方法(<i>2</i>)</a></p>
+									<p><a href="javascript:void(0);">子类如何调用父类方法(<i>2</i>)</a></p>
+									<p><a href="javascript:void(0);">子类如何调用父类方法(<i>2</i>)</a></p>
+									<p><a href="javascript:void(0);">子类如何调用父类方法(<i>2</i>)</a></p>
+									<p><a href="javascript:void(0);">子类如何调用父类方法(<i>2</i>)</a></p>
+								</li>
+								<li class="article-sclass">
+									<span class="">java</span>
+									<p><a href="javascript:void(0);">子类如何调用父类方法(<i>2</i>)</a></p>
+									<p><a href="javascript:void(0);">子类如何调用父类方法(<i>2</i>)</a></p>
+									<p><a href="javascript:void(0);">子类如何调用父类方法(<i>2</i>)</a></p>
+									<p><a href="javascript:void(0);">子类如何调用父类方法(<i>2</i>)</a></p>
+									<p><a href="javascript:void(0);">子类如何调用父类方法(<i>2</i>)</a></p>
+									<p><a href="javascript:void(0);">子类如何调用父类方法(<i>2</i>)</a></p>
+									<p><a href="javascript:void(0);">子类如何调用父类方法(<i>2</i>)</a></p>
+								</li>
+								<li><a href="javascript:;">jQuery</a></li>
+								<li><a href="javascript:;">hibernate</a></li>
+								<li><a href="javascript:;">回收站</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wrap-foot">
+			<footer>
+				<p class="tc">空间手机版 | 黄钻贵族 | 官方Qzone | QQ互联 | 认证服务 | 腾讯博客 | 腾讯客服 | QQ空间服务协议 | Complaint Guidelines | 粤网文[2011]0483-070号</p>
+			</footer>
+		</div>
+	</div>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script>
+		/*
+		$("input[type='checkbox']").attr('value')
+返回结果：501
+
+$("input[type='checkbox']").is(':checked')
+返回结果：选中=true，未选中=false*/
+		var acon = $("#article-list-container");
+		var list = $(".articlesel");
+		acon.on("click",".allselect",function(e){
+			var check = $(this).children().eq(0);
+			if(check.attr('checked')){
+				alert(1);
+				check.removeAttr("checked",false); 
+				return false;
+			}else{
+				 alert(2);
+				 check.attr("checked",true);  
+				 return false;
+			}
+		});
+
+		var check = acon.find(".allselect").children().eq(0);
+		check.on("click",function(e){
+			if($(this).attr('checked')){
+				alert(1);
+				$(this).removeAttr("checked"); 
+				e.stopPropagation();
+			}else{
+				 alert(2);
+				 $(this).attr("checked","checked");  
+				 e.stopPropagation();
+			}
+		});
+
+	</script>
+</body>
+</html>

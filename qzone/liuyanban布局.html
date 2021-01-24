@@ -1,0 +1,785 @@
+<html>
+<!--留言主版块-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>留言板</title>
+<link rel="stylesheet" rev="stylesheet" href="css/qzoneblog_msgboard.css" media="screen">
+<link rel="stylesheet" rev="stylesheet" href="css/qzone35.css" media="screen">
+<style type="text/css">
+	#authorMsgEditorAnchor .veStatusbarContainer {padding-top:0; padding-bottom:0}
+	#authorMsgEditorAnchor .veIframeContainer {background-color:white;}
+	.veToolbarContainer {border:1px solid #ddd}
+	.veIframeContainer {background-color:white; margin-bottom:5px; border:1px solid #ddd; border-top:none}
+	div.veStatusbarContainer  {padding:0; height:0px}
+	div.veStatusbarContainer .veStatusbarContainer_wrap {display:none}
+
+	.gb_post textarea#maskEditor {height:109px; width:685px;}
+
+	#commentOper {margin-top:5px}
+	.msg_less_tools .veToolbar_group1,
+	.msg_less_tools .veToolbar_group2,
+	.msg_less_tools .veToolbar_group3,
+	.msg_less_tools .veToolbar_group4,
+	.msg_less_tools .veToolbar_group6 {display: none}
+	div.veToolbarContainer .veButton_veRedo,
+	div.veToolbarContainer .veButton_veRemoveFormat {display:block;}
+
+	.gb_post .give_gift {padding-top:1px}
+
+	/** 名博显示名称后的黄钻 **/
+	.gb_comment .userinfo .icon-wrap {display:none;}
+	.gb_comment .list_without_avatar .userinfo .icon-wrap {display:block;}
+
+	/** 顶部分页 隐藏 **/
+	#app_mod #pager_top .mod_pagenav_count,
+	#app_mod #pager_top .mod_pagenav_option {display:none}
+
+	/** 主客人态 菜单项差异 **/
+	.mod_guest_state .gb_comment .toolbar li .line {display:none}
+	.mod_guest_state .comments_set {display:none;}
+
+	.mod_guest_state .show_in_owner {display:none;}
+	.mod_owner_state .show_in_guest {display:none;}
+
+	/** 批量管理 高度不需要 **/
+	.list_batch_processing .gb_comment .cont {min-height:auto}
+
+	/** 批量管理回复线不需要 **/
+	.list_batch_processing .reply_wrap {display:none}
+
+	/** 批量管理评论不需要 **/
+	.list_batch_processing .comment_wrap {display:none}
+
+	/** 批量管理去除黄钻等级 **/
+	.gb_comment .list_batch_processing .icon-wrap {display:none;}
+
+	/** 去除评论背景 **/
+	#app_mod .mod_comment ol li.bg2 {background:none}
+	.mod_comment .mod_comment_post {background:none;}
+
+	/** soso表情去除我的表情 **/
+	ul#soso_exp_myNav {display:none;}
+
+	/** 回复bugfix **/
+	.hide_comment_tip .mod_comment .mod_comment_post {display:none;}
+</style>
+<style type="text/css">
+	.veditor_mention_tips .current {background-color:#CCE5FA} 
+	.veditor_mention_tips img {vertical-align:middle; height:30px; width:30px; margin-right:5px}
+	.veditor_mention_tips li {cursor:pointer;padding:2px 5px; margin:0; white-space:nowrap}
+</style>
+<link rel="stylesheet" type="text/css" media="screen" href="css/qzoneglobal.css">
+<link rel="stylesheet" type="text/css" media="screen" href="css/qzonebase.css">
+<link rel="stylesheet" type="text/css" media="screen" href="css/qzoneadvance.css">
+</head>
+<div class="bg_mode" id="divNoticePre" style="display:none">
+	<div class="box_ml bor">
+		<div class="mode_gb">
+			<div class="bor mod-tab">
+				<div class="mod-tab-list">
+					<ul>
+						<li class="nav_home">
+							<a href="#" class="c-tx2">
+								<span class="item-wrap bor-tx">留言板</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div style="padding:40px 20px;" id="error_notice_cont">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="bg_mode" id="normal_page_container">
+	<div class="box_ml bor">
+		<div class="mode_gb">
+			<div class="bor mod-tab">
+				<div class="mod-tab-list">
+					<ul>
+						<li class="nav_home">
+							<a href="#" class="c-tx2">
+								<span class="item-wrap bor-tx">留言板</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="divNotice" style="padding:10px; display:none">正在加载留言，请稍候……</div>
+			<div class="mode_gb_cont" id="main">
+				<div class="guestbook" id="app_mod">
+					<div class="hint" style="padding-right: 30px; margin-bottom: 10px; display: none;" id="cheatHintArea">
+						<strong class="icon_hint"><span>提示</span></strong>
+						<span>留言板已默认为大家开启主人审核功能，查看、保护隐私都由自己来决定！提高网络安全防范意识，保护号码使用安全，
+							<a href="http://kf.qq.com/faq/120227U7vmAf150429bAZ7fI.html" rel="prevent_cheat" target="_blank">近期安全工作请点此了解！</a>
+						</span>
+						<a href="javascript:;" onclick="$('cheatHintArea').style.display='none';return false;" title="关闭提示" class="hint_close">关闭</a>
+					</div>
+					<div class="gb_own">
+						<div class="mod_clear bor3 mod_tit2">
+							<h4>主人寄语</h4>
+							<span id="divAuthorMsgOper" style="margin-left: 10px; line-height: 18px;">
+								<a id="btnEditAuthorMsg" href="javascript:;" title="编辑您的寄语" class="c_tx">编辑您的寄语</a>
+							</span>
+						</div>
+						<div class="cont_author" id="authorInfo">
+							<table width="100%">
+								<tbody><tr>
+									<td>
+										<div id="author_info_cont">
+											<div style="text-align:center;">
+												<div style="text-align:left;">
+													<div style="text-align:center;">
+														<div style="text-align:left;">
+															<div style="text-align:center;">
+																<div style="text-align:center;"></div>
+																<div style="text-align:center;">
+																<span style="line-height:1.8em;color:#06f940;">╰★★★★╮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╭★★★★╯</span>
+																<wbr><br>
+																<span style="line-height:1.8em;color:#f906e8;">﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌</span><wbr>
+																<span style="line-height:1.8em;font-size:24px;"><span style="line-height:1.8em;font-family:wingdings;color:#f906e8;">{</span><wbr></span><wbr><span style="line-height:1.8em;color:#f906e8;">﹌﹌﹌</span><wbr></div><div style="text-align:center;"><span style="line-height:1.8em;color:#2908f7;">╭&nbsp;不曾拿起，何来放下；执著思念，莫如祝福&nbsp;╮</span><wbr></div><div style="text-align:center;"><br><span style="line-height:1.8em;color:#2908f7;">╰&nbsp;做一个简单的人，踏实而务实，不沉溺幻想，不庸人自扰。偶尔也要现实和虚伪一点，因为不那样做的话，很难混&nbsp;╯</span><wbr></div><div style="text-align:center;"><span style="line-height:1.8em;color:#f906e8;">﹌﹌﹌</span><wbr><span style="line-height:1.8em;font-size:24px;"><span style="line-height:1.8em;font-family:wingdings;color:#f906e8;">{</span><wbr></span><wbr><span style="line-height:1.8em;color:#f906e8;">﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌</span><wbr><div style="text-align:center;"><span style="line-height:1.8em;font-size:32px;"><span style="line-height:1.8em;font-family:wingdings;"><span style="line-height:1.8em;font-family:arial;"><span style="line-height:1.8em;font-size:18px;">写给自己&nbsp;&nbsp;&nbsp;&nbsp;2014.10.9</span><wbr></span><wbr>?</span><wbr></span><wbr></div></div></div></div></div></div></div></div>
+
+									</td>
+								</tr>
+							</tbody></table>
+						</div>
+						<div class="cont_author" id="editAuthorMsgDiv" style="display:none;">
+							<!-- 内容编辑-->
+							<div class="panel_editor" id="authorMsgEditorAnchor"></div>
+							<p class="panel_editor_btn"><button id="btnPostAuthorMsg" type="button" class="bt_tx2">发表</button> <button id="btnCancelAuthorMsg" type="button" class="bt_tx2">取消</button></p>
+						</div>
+					</div>
+					<!-- 好友印象 -->
+					<style type="text/css">
+						.frd-impress .item a.txt {cursor:default}
+					</style>
+					<!--好友印象-->
+					<div class="frd-impress" id="friendImpress">
+						<h3 class="impress-tit">好友印象</h3>
+						<div class="impress-list" id="impressList">
+							<span class="item">
+								<a href="javascript:;" class="bor2 bg2 txt" title="空间好看"><span class="ellipsis">空间好看</span><em class="c_tx2">(6)</em></a>
+								<a href="javascript:;" class="del" rel="delImpress" data="空间好看" title="删除该项描述">✕</a>
+							</span>
+							<span class="item">
+								<a href="javascript:;" class="bor2 bg2 txt" title="空间好看"><span class="ellipsis">空间特别版</span><em class="c_tx2">(6)</em></a>
+								<a href="javascript:;" class="del" rel="delImpress" data="空间好看" title="删除该项描述">✕</a>
+							</span>
+							<span class="item">
+								<a href="javascript:;" class="bor2 bg2 txt" title="空间好看"><span class="ellipsis">歌写得不错很好听</span><em class="c_tx2">(6)</em></a>
+								<a href="javascript:;" class="del none" rel="delImpress" data="空间好看" title="删除该项描述">✕</a>
+							</span>
+							<span class="item">
+								<a href="javascript:;" class="bor2 bg2 txt" title="空间好看"><span class="ellipsis">空间好看</span><em class="c_tx2">(6)</em></a>
+								<a href="javascript:;" class="del none" rel="delImpress" data="空间好看" title="删除该项描述">✕</a>
+							</span>
+							<span class="item">
+								<a href="javascript:;" class="bor2 bg2 txt" title="空间好看"><span class="ellipsis">空间好看</span><em class="c_tx2">(6)</em></a>
+								<a href="javascript:;" class="del none" rel="delImpress" data="空间好看" title="删除该项描述">✕</a>
+							</span>
+							<span class="item">
+								<a href="javascript:;" class="bor2 bg2 txt" title="空间好看"><span class="ellipsis">空间好看</span><em class="c_tx2">(6)</em></a>
+								<a href="javascript:;" class="del none" rel="delImpress" data="空间好看" title="删除该项描述">✕</a>
+							</span>
+						</div>
+						<div class="impress-action none" id="impressAction">
+							<a href="javascript:;" class="btn-add bg6" id="impressActionTriggerBtn"><i class="i-add">✚</i>我要对他进行描述</a>
+							<div class="post-form bor3 none" id="impressActionForm" style="z-index:2">
+								<b class="uarr bor3"></b><b class="uarr-in"></b>
+								<div class="inputer">
+									<input type="text" value="" class="area" id="impressActionInput"><button type="button" id="impressActionBtn" class="btn-done">确定</button>
+								</div>
+								<div class="def-list none">
+									<h4>供你参考的印象词：</h4>
+									<p id="defaultImpressWords"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--朋友留言 访客可见-->
+					<div class="gb_post no_avatar" id="divPostPanel" style="display: none;">
+						<h4 class="gb_post_tit" id="postCommentAnchor">发表您的留言
+							<span id="popupGiftBtn" style="display: none;">
+							<span class="symbol">&nbsp;|&nbsp;</span>
+							<a class="give_gift" id="sendGift" href="javascript:;" title="送个礼物"><span>送个礼物</span></a>
+							</span>
+						</h4>
+						<!--右边表情块-->
+						<div class="editor-expand">
+							<div class="expand-tab">
+								<a href="javascript:;" class="first current" id="funEmoTab"><i class="icon i-face"></i>趣味表情</a><b class="split-line"></b>
+								<a href="javascript:;" id="tiezhiTab"><i class="icon i-sticker"></i><i class="icon i-vip"></i>贴纸</a>
+							</div>
+							<div class="expand-cont">
+								<div class="list funny-emot" id="defFunEmoList">
+									<ul class="clearfix">
+										<li>
+											<a title="撒花啦" href="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/063.gif" target="_blank">
+											<img alt="撒花啦" _width="100" _height="100" _src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/063.gif" src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/063_thumb.gif">
+											</a>
+										</li>
+										<li><a title="福" href="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/002.png" target="_blank"><img alt="福" _width="158" _height="123" _src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/002.png" src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/002_thumb.png"></a></li><li><a title="感动" href="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/145.gif" target="_blank"><img alt="感动" _width="100" _height="100" _src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/145.gif" src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/145_thumb.gif"></a></li><li><a title="抱一下" href="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/032.gif" target="_blank"><img alt="抱一下" _width="100" _height="100" _src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/032.gif" src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/032_thumb.gif"></a></li><li><a title="搞怪" href="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/024.png" target="_blank"><img alt="搞怪" _width="180" _height="180" _src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/024.png" src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/024_thumb.png"></a></li><li><a title="为什么呀" href="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/147.gif" target="_blank"><img alt="为什么呀" _width="100" _height="100" _src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/147.gif" src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/147_thumb.gif"></a></li><li><a title="得瑟" href="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/148.gif" target="_blank"><img alt="得瑟" _width="100" _height="100" _src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/148.gif" src="http://qzonestyle.gtimg.cn/qzone/em/recommendedImages/148_thumb.gif"></a></li><li class="tlink"><a href="javascript:;" id="moreFunnyEmo">更多</a></li>
+									</ul>
+								</div>
+								<div class="list stickers none" id="defTiezhiList">
+									<ul class="clearfix">
+										<li class="reset"><a href="javascript:;" rel="selectTiezhi" data="">无</a></li>
+										<li>
+											<a href="http://qzonestyle.gtimg.cn/qzone_v6/img/msgboard/stickers/1.png" rel="selectTiezhi" data="1">
+												<img src="http://qzonestyle.gtimg.cn/qzone_v6/img/msgboard/stickers/thumb/1.png" rel="selectTiezhi" data="1">
+											</a>
+										</li>
+										<li>
+											<a href="http://qzonestyle.gtimg.cn/qzone_v6/img/msgboard/stickers/2.png" rel="selectTiezhi" data="2">
+												<img src="http://qzonestyle.gtimg.cn/qzone_v6/img/msgboard/stickers/thumb/2.png" rel="selectTiezhi" data="2">
+											</a>
+										</li>
+										<li>
+											<a href="http://qzonestyle.gtimg.cn/qzone_v6/img/msgboard/stickers/3.png" rel="selectTiezhi" data="3">
+												<img src="http://qzonestyle.gtimg.cn/qzone_v6/img/msgboard/stickers/thumb/3.png" rel="selectTiezhi" data="3">
+											</a>
+										</li>
+										<li>
+											<a href="http://qzonestyle.gtimg.cn/qzone_v6/img/msgboard/stickers/4.png" rel="selectTiezhi" data="4">
+												<img src="http://qzonestyle.gtimg.cn/qzone_v6/img/msgboard/stickers/thumb/4.png" rel="selectTiezhi" data="4">
+											</a>
+										</li>
+										<li>
+											<a href="http://qzonestyle.gtimg.cn/qzone_v6/img/msgboard/stickers/5.png" rel="selectTiezhi" data="5">
+												<img src="http://qzonestyle.gtimg.cn/qzone_v6/img/msgboard/stickers/thumb/5.png" rel="selectTiezhi" data="5">
+											</a>
+										</li>
+										<li class="tlink none"><a href="javascript:;" rel="moreTieZhi">更多</a></li>
+									</ul>
+								</div>
+								<div class="viewer none" id="largeFunEmotion">
+									<img src="/ac/b.gif">
+									<span class="name"></span>
+								</div>
+								<div class="more-pop none" id="funEmoCon"></div>
+							</div>
+						</div>
+
+						<div class="author">
+							<a href="javascript:;" class="user_head_100_bg2">
+								<span class="skin_portrait_round"></span>
+								<script type="text/javascript">
+									document.write('<img id="commentAuthorImg" src="'+QZONE.FP.getPURL(SPACE_UIN, 100)+'" alt="" />')
+								</script><img id="commentAuthorImg" src="http://qlogo4.store.qq.com/qzone/1328560691/1328560691/100?1411835324" alt="">
+							</a>
+						</div>
+						<!--留言设置区-->
+						<div class="panel_post">
+							<div class="panel_editor" id="commentEditorAnchor"></div>
+							<textarea name="" id="maskEditor" class="bg3 c_tx3 bor3 none"></textarea>
+							<p id="commentOper">
+								<button type="button" class="gb_bt" id="btnPostMsg">发表</button>
+								<span>
+									<a href="javascript:;" id="cancelEditorHref" class="c_tx" style="display:none">取消</a>
+									<label id="useSign" for="checkSignInput" class="c_tx3"><input id="checkSignInput" type="checkbox" name="Signature">使用签名档</label>
+									<label id="privCheckLbl" for="privCheck" class="c_tx3" style="display:none">
+										<input id="privCheck" type="checkbox" name="privCheck">
+										<span class="icon-vip"></span>
+										私密留言
+									</label>
+								</span>
+						   </p>
+						</div>
+					</div>
+					<!--留言主版块-->
+					<div class="gb_comment">
+						<div id="commentList">
+							<div class="bor3 gb_comment_tit">
+								<!--留言设置 主人可见-->
+								<div class="tit">
+									<h4 id="titleCnt">留言 (<span id="cnt">6725</span>)</h4>
+									<a href="javascript:;" class="show_in_guest" id="signCheckLink">显示签名档</a>
+									<div class="comments_set show_in_owner">
+										<ul>
+											<li class="drop_list">
+											   <a id="btnToSet" href="setting.html" title="留言板设置" class="c_tx">留言板设置 <span class="symbol arrow">▼</span></a>
+											   <ul class="sub_list bg bor" style="display: none;">
+												  <li class=""><a id="btnGotoAudit" href="auditing.html" title="留言审核" class="c_tx none">留言审核(<span id="auditNum">0</span>)</a></li>
+												  <li class=""><a id="btnBatch" href="javascript:;" rel="toggleBatchMode" title="批量管理" class="c_tx">批量管理</a></li>
+												  <li>
+													 <label class="sign c_tx" for="signCheck" id="signCheckLabel" title="勾选后显示用户签名档">
+														 <span>显示签名档</span>
+														 <input type="checkbox" id="signCheck" style="display:inline-block;">
+													 </label>
+												  </li>
+											   </ul>
+											</li>
+										 </ul>
+									</div>
+								</div>
+								
+								<!--分页器-->
+								<div class="op" id="pager_top">
+									<div class="mod_pagenav">
+										<p class="mod_pagenav_main">
+										<span class="mod_pagenav_disable ">
+											<span>上一页</span>
+										</span>
+										<a class="c_tx none" href="javascript:;">上一页</a> 
+										<span class="mod_pagenav_count"> 
+											<span class="current"><span>1</span></span> 
+											<a href="javascript:;" class="c_tx">2</a> 
+											<a href="javascript:;" class="c_tx">3</a>
+											<a href="javascript:;" class="c_tx">4</a>
+											<a href="javascript:;" class="c_tx">5</a>
+											<a href="javascript:;" class="c_tx">6</a>
+											<a href="javascript:;" class="c_tx">2</a>
+											<span class="mod_pagenav_more"><span>…</span></span> 
+											<a href="javascript:;" class="c_tx" onclick="QZBlog.Util.PageIndexManager.goDirectPage(673);return false;">673</a> 
+										</span> 
+										<span class="mod_pagenav_disable none">
+											<span>下一页</span>
+										</span>
+										<a class="c_tx " href="javascript:;">下一页</a> 
+									</p>
+									<p class="mod_pagenav_option">
+										<span class="mod_pagenav_turn">转到
+											<input class="textinput" type="text" id="pageIndex_input1" value="1"> 页 
+											<button onclick="QZBlog.Util.PageIndexManager.goDirectPage($('pageIndex_input1').value.trim());" type="button" class="bt_tx2">确 定</button>
+										</span>
+									</p>
+								</div>
+							</div>
+						</div>
+						<!--留言批量管理 主人可见-->
+						<p class="toolbar_batch_processing" id="divBatchOper" style="display:none;">
+							<label for="chkSelectAll" rel="selectAll"><input type="checkbox" id="chkSelectAll" rel="selectAll">全选</label>
+							<a id="btnDeleteBatchBottom" href="javascript:;" rel="batchDelete" class="c_tx">删除选中的</a>
+							<a id="btnAddEssenceBatch" style="display:none;" href="javascript:;" onclick="MSG.list.addEssenceBatch();return false;" class="c_tx">置顶选中的</a>
+						</p>
+
+						<!--留言列表 主人可见-->
+						<ul id="ulCommentList">
+							<li id="pLi_2000067326" class="bor3">
+								<div class="wrap">
+									<div class="info_guest">
+										<p class="avatar">
+											<a name="link_2000067326" href="http://user.qzone.qq.com/704538658" target="_blank" title="杨婷" class="user_head_50 q_namecard" link="nameCard_704538658">
+												<span class="skin_portrait_round">&nbsp;</span>
+												<img src="http://qlogo3.store.qq.com/qzone/704538658/704538658/50" id="user_head_img_2000067326" style="width:50px; height:50px" alt="head_704538658">
+											</a>
+										</p>
+										<span rel="user_vip_info_704538658" class="icon-wrap">
+											<a href="#" target="_blank" title="点击查看黄钻特权详情" class="qz_vip_icon_l qz_vip_icon_l_5 normal_vip"></a>
+										</span>
+										<p class="checkbox_batch_processing">
+											<input type="checkbox" name="batchItem" value="2000067326" class="item_check_box" commentid="2000067326">
+										</p>
+									</div>
+									<div class="main">
+										<div class="main_bd">
+											<div class="inner">
+												<p class="tit">
+													<span class="userinfo">
+														<span class="username" rel="user_name_info_704538658">
+															<a name="link_2000067326" href="#" target="_blank" title="杨婷" class="c_tx q_namecard" uin="704538658" link="nameCard_704538658">杨婷</a>
+														</span>
+														<span class="userlevel" rel="user_grade_704538658" title="等级:0  积分:0">
+															<a href="javascript:;" onclick="QZONE.FP.toApp('/qzscore');window.TCISD &amp;&amp; window.TCISD.hotClick('point_ic_image', 'flower.qzone.qq.com');return false;" class="qz_qzone_lv_s qz_qzone_lv qz_qzone_lv_0"></a>
+														</span>
+														<span rel="user_vip_info_704538658" class="icon-wrap">
+															<a href="http://pay.qq.com/ipay/index.shtml?n=3&amp;c=xxjzghh,xxjzgw&amp;aid=mingpian_icon&amp;ch=qdqb,kj" target="_blank" title="点击查看黄钻特权详情" class="qz_vip_icon_l qz_vip_icon_l_5 normal_vip"></a>
+														</span>
+													</span>
+													<span class="c_tx3 floor">第6725楼</span>
+													<span class="c_tx3 mode_post"></span>
+												</p>
+												<div class="op">
+													<div class="toolbar">
+														<ul>
+															<li class="drop_list">
+																<span class="line">
+																	<span class="bor"></span>
+																</span>
+																<a href="javascript:;" title="更多选项" class="c_tx drop_list_link">
+																	<span class="symbol arrow">▼</span>
+																</a>
+																<ul class="bg bor" style="width:75px; text-align:center; display:none;">
+																	<li class="none"><a rel="quote" uin="704538658" commentid="2000067326" href="javascript:;" title="引用">引用</a></li>
+																	<li class="none"><a rel="addEssence" uin="704538658" commentid="2000067326" href="javascript:;" title="置顶">置顶</a></li>
+																	<li class="none"><a rel="edit" uin="704538658" commentid="2000067326" href="javascript:;" title="编辑">编辑</a></li>
+																	<li class=""><a rel="delete" uin="704538658" commentid="2000067326" href="javascript:;" title="删除">删除</a></li>
+																	<li class="none"><a rel="sendMsg" uin="704538658" commentid="2000067326" href="javascript:;" title="短消息">短消息</a></li>
+																	<li class="none"><a rel="deleteEssence" uin="704538658" commentid="2000067326" href="javascript:;" title="取消置顶">取消置顶</a></li>
+																	<li class=""><a rel="report" href="javascript:;" uin="704538658" commentid="2000067326" title="举报">举报</a></li>
+																	<li class=""><a rel="moveBlack" href="javascript:;" uin="704538658" commentid="2000067326" title="加黑禁言">加黑禁言</a></li>
+																</ul>
+															</li>
+															<li class="quick_drop_list show_in_owner"><a rel="quote" href="javascript:;" uin="704538658" commentid="2000067326" title="引用" class="c_tx ">引用</a></li>
+														</ul>
+													</div>
+													<p class="op_batch_processing">
+														<a id="btnDeleteOne2_2000067326" href="javascript:;" title="删除" class="c_tx">删除</a>
+													</p>
+												</div>
+												<div id="commentContentDiv_2000067326" class="cont">
+													<table style="width:100%;">
+														<tbody>
+															<tr><td>多年没变的还是一见钟情。</td></tr>
+														</tbody>
+													</table>
+													<p class="reply_wrap">
+														<span class="c_tx3 mode_post">2015-12-04 10:55</span>
+														<a rel="reply" href="javascript:;" title="回复" uin="704538658" commentid="2000067326" class="c_tx ">回复</a>
+														<a rel="sendGift" href="javascript:;" uin="704538658" commentid="2000067326" title="送礼" class="btnSendGift c_tx ">送礼</a>
+													</p>
+												</div>
+												<div id="singleCommentEditorDiv_2000067326" class="panel_editor" style="display:none;">
+													<div id="singleCommentEditorAnchor_2000067326"></div>
+												<div>
+												<button rel="editCommentBtn" type="button" commentid="2000067326" class="bt_tx2">发表</button>&nbsp;        
+												<button rel="cancelEditCommentBtn" type="button" commentid="2000067326" class="bt_tx2">取消</button>
+											</div>
+										</div>
+										<div class="comment_wrap">
+											<div class="bor3" style="border-width:1px 0 0" id="divComment_2000067326_line">
+												<b class="ui_trigbox ui_trigbox_t">
+												<b class="ui_trig bor3"></b>
+												<b class="ui_trig ui_trig_up bor_bg"></b>
+												</b>
+											</div>
+											<div id="divComment_2000067326" style="width: 376px;" class="mod_comment">
+												<span class="mod_comment_arrow">
+													<span class="c_bg2">◆</span>
+												</span>
+												<p id="commentModule2000067326_showAllBlock" class="bg2 mod_comment_info" style="display:none;">
+													<a id="commentModule2000067326_showAllLink" class="c_tx">查看全部<span id="commentModule2000067326_totalNumLabel"></span>条评论<span>&gt;&gt;</span></a>
+												</p>
+												<ol id="commentModule2000067326_commentList" style="">
+													<li id="commentModule2000067326_comment_2000067326_0" class="bg2">
+														<div id="commentModule2000067326_comment_2000067326_0_contentBlock" class="mod_comment_cont">
+															<p class="mod_comment_avatar">
+																<a href="http://user.qzone.qq.com/1328560691" target="_blank" link="nameCard_1328560691" class="q_namecard">
+																	<img src="http://qlogo4.store.qq.com/qzone/1328560691/1328560691/30?1411835324" style="width:35px; height:35px;" name="portraitImg_1328560691" alt="我">
+																</a>
+															</p>
+															<div class="comment_cont">
+																<p>
+																	<span class="mod_comment_authorname">
+																		<a id="commentModule2000067326_comment_2000067326_0_poster_nickname" link="nameCard_1328560691" name="msg_link_1328560691" href="http://user.qzone.qq.com/1328560691" target="_blank" class="c_tx q_namecard">我</a>
+																	</span> 现在跟你男朋友怎么样了
+																</p>
+																<p class="mod_comment_last">
+																	<span class="c_tx3 mod_comment_time">2015-12-04 16:25</span> 
+																	<a id="commentModule2000067326_comment_2000067326_0_replyBoxToggle" href="javascript:;" class="c_tx" style="display:none;">回复</a> 
+																	<a id="commentModule2000067326_comment_2000067326_0_removeButton" href="javascript:;" class="c_tx mod_comment_del" style="display: none;">删除</a>
+																</p>
+															</div>
+														</div>
+														<div id="commentModule2000067326_comment_2000067326_0_replyListContainer" class="mod_comment_reply" style="display:none;">
+															<div id="commentModule2000067326_comment_2000067326_0_replyListWrapper">
+																<ol id="commentModule2000067326_comment_2000067326_0_replyList"></ol>
+																<div id="commentModule2000067326_comment_2000067326_0_replyBox" class="mod_comment_post" style="display:none;">
+																	<p id="commentModule2000067326_comment_2000067326_0_emoticonButtonWrapper">
+																		<a id="commentModule2000067326_comment_2000067326_0_emoticonButton" title="表情" class="bg_img mod_comment_emoticons">表情</a>
+																	</p>
+																	<p class="mod_comment_textarea">
+																		<span>
+																			<textarea id="commentModule2000067326_comment_2000067326_0_content" cols="60" rows="5" class="textarea"></textarea>
+																		</span>
+																	</p>
+																	<p id="commentModule2000067326_comment_2000067326_0_hintBox" class="hint" style="display:none;">
+																		<span class="icon_hint">提示：</span>
+																		<span id="commentModule2000067326_comment_2000067326_0_hint"></span>
+																	</p>
+																	<p class="mod_comment_option">
+																		<span class="mod_comment_sub">
+																			<button type="button" id="commentModule2000067326_comment_2000067326_0_postButton" class="bt_tx2">确定</button>
+																			<a id="commentModule2000067326_comment_2000067326_0_cancelButton" href="javascript:;" title="取消" class="c_tx3">取消</a>
+																		</span>
+																		<span class="c_tx3 mod_comment_other">
+																			<span id="commentModule2000067326_comment_2000067326_0_currentLength">0</span>/
+																			<span id="commentModule2000067326_comment_2000067326_0_maxLength">100</span>
+																		</span>
+																	</p>
+																</div>
+															</div>
+														</div>
+													</li>
+												</ol>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<p class="tbor2 toolbar_batch_processing" id="divBatchOperBottom" style="display:none;">
+						<label for="chkSelectAllBottom" rel="selectAll"><input type="checkbox" id="chkSelectAllBottom" rel="selectAll"> 全选</label>
+						<a id="btnDeleteBatchBottom" href="javascript:;" rel="batchDelete" class="c_tx">删除选中的</a>
+						<a id="btnAddEssenceBatchBottom" style="display:none;" href="javascript:;" onclick="MSG.list.addEssenceBatch();return false;" class="c_tx">置顶选中的</a>
+					</p>
+					<!--底部分页-->
+					<div class="bor other">
+						<p class="op">
+							<a id="btnWantPost" href="javascript:;" onclick="return false;" title="我要留言" class="c_tx">我要留言</a>
+							<a id="btnBatchBottom" href="javascript:;" rel="toggleBatchMode" title="批量管理" class="c_tx">批量管理</a>
+						</p>
+						<div class="pagenav" id="pager_bottom">
+							<div class="mod_pagenav">
+								<p class="mod_pagenav_main">
+									<span class="mod_pagenav_disable "><span>上一页</span></span>
+									<a onclick="QZBlog.Util.PageIndexManager.goPage(-1);return false;" class="c_tx none" href="javascript:;">上一页</a>
+									<span class="mod_pagenav_count">
+										<span class="current"><span>1</span></span> 
+										<a href="javascript:;" class="c_tx" onclick="QZBlog.Util.PageIndexManager.goDirectPage(2);return false;">2</a> 
+										<a href="javascript:;" class="c_tx" onclick="QZBlog.Util.PageIndexManager.goDirectPage(3);return false;">3</a> 
+										<a href="javascript:;" class="c_tx" onclick="QZBlog.Util.PageIndexManager.goDirectPage(4);return false;">4</a> 
+										<a href="javascript:;" class="c_tx" onclick="QZBlog.Util.PageIndexManager.goDirectPage(5);return false;">5</a> 
+										<a href="javascript:;" class="c_tx" onclick="QZBlog.Util.PageIndexManager.goDirectPage(6);return false;">6</a> 
+										<span class="mod_pagenav_more"><span>…</span></span> 
+										<a href="javascript:;" class="c_tx" onclick="QZBlog.Util.PageIndexManager.goDirectPage(673);return false;">673</a> 
+									</span> 
+									<span class="mod_pagenav_disable none"><span>下一页</span></span>
+									<a class="c_tx " onclick="QZBlog.Util.PageIndexManager.goPage(1);return false;" href="javascript:;">下一页</a> 
+								</p>
+								<p class="mod_pagenav_option">
+									<span class="mod_pagenav_turn">转到
+										<input class="textinput" type="text" id="pageIndex_input2" value="1"> 页 
+										<button onclick="QZBlog.Util.PageIndexManager.goDirectPage($('pageIndex_input2').value.trim());" type="button" class="bt_tx2">确 定</button>
+									</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+	document.write(
+		_bJs('/ac/qzone/qzfl/qzfl'+parent.g_V.qz+'.js')+
+		_bJs('/qzone/newblog/v5/script/common.js')+
+		_bJs('/qzone/newblog/v5/script/newubb.js')+
+		_bJs('/qzone/msgboard/script/msgboard.js')+
+		_bJs('/qzone/ping.js')
+	);
+</script>
+<script type="text/javascript" charset="utf-8" src="js/lyb-qzfl-v8-2.1.45.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/lyb-common.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/lyb-newubb.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/lyb-msgboard.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/lyb-ping.js"></script>
+<script type="text/javascript">
+	var speedReport4Ajaxmode = function(oData){
+			var url = "http://isdspeed.qq.com/cgi-bin/r.cgi?flag1=175" + "&flag2=113" + "&flag3=1" +
+				"&flag4=0" + "&flag5=0" + "&uin=" + SPACE_UIN + "&hh=" + Math.random();
+			for(var index in oData) {
+				url += "&" + (parseInt(index,10)+5) + "=" + (oData[index] - parent.mgbBasePoint);
+			}
+			var img = new Image();
+			setTimeout(function(){img.src = url;}, 1000);
+		};
+
+	onLoadMsgFinished(function(){
+		MSG.authorInfo.init();
+		MSG.list.init();
+
+		if(INIT_DATA && INIT_DATA.code == 0){
+			MSG.pageStart(INIT_DATA);
+			QZBlog.Util.NetRequest.addLoginSuccHandler(function(uin){
+				LOGIN_UIN = uin;
+				IS_OWNER = LOGIN_UIN == SPACE_UIN;
+			});
+		}
+		IS_LITE && QZONE.css.addClassName(document.body, 'mod_simple');
+		QZONE.css.addClassName(document.body, IS_OWNER ? 'mod_owner_state' : 'mod_guest_state');
+
+		QZBlog.Util.Statistic.sendRetCodeStatic({
+			domain: CGI_MSGBOARD_DOMAIN,
+			cgiName: '/cgi-bin/new/get_msgb',
+			code: INIT_DATA.code,
+			time: _o_t
+		});
+		//上报测速
+		speedReport4Ajaxmode(parent.mgbSpeedPoint);
+		parent.mgbSpeedPoint = null;
+		  parent.mgbBasePoint = null;
+	});
+</script>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+<div style="display: none; position: absolute; border: 1px solid rgb(153, 153, 153); padding: 3px; font-size: 12px; z-index: 10001; background: rgb(255, 255, 255);" class="qzfl_emotion_panel"></div>
+
+
+<!--选择字体-->
+<div style="position:absolute; display:none" class="veList veList_list veList_FontName_list" id="veditor1_fontname_panel">
+	<div value="-1" class="veList_item_con">
+		<a href="javascript:;" value="-1" class="veListTitle">选择字体</a>
+	</div>
+	<div class="veList_item_con " seq="0" value="宋体">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style=""><b>√</b></span>
+			<span class="item_cont" style="font-family:Simson">宋体</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="1" value="黑体">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style=""><b>√</b></span>
+			<span class="item_cont" style="font-family:Simhei">黑体</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="2" value="仿宋,仿宋_GB2312">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style=""><b>√</b></span>
+			<span class="item_cont" style="font-family:仿宋,仿宋_GB2312">仿宋</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="3" value="楷体,楷体_GB2312">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style=""><b>√</b></span>
+			<span class="item_cont" style="font-family:楷体,楷体_GB2312">楷体</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="4" value="隶书">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style=""><b>√</b></span>
+			<span class="item_cont" style="font-family:隶书">隶书</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="5" value="微软雅黑">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style=""><b>√</b></span>
+			<span class="item_cont" style="font-family:Microsoft Yahei">微软雅黑</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="6" value="幼圆">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style=""><b>√</b></span>
+			<span class="item_cont" style="font-family:幼圆">幼圆</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con current" seq="7" value="Arial">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style=""><b>√</b></span>
+			<span class="item_cont" style="font-family:Arial">Arial</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="8" value="Calibri">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style=""><b>√</b></span>
+			<span class="item_cont" style="font-family:Calibri">Calibri</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="9" value="Tahoma">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style=""><b>√</b></span>
+			<span class="item_cont" style="font-family:Tahoma">Tahoma</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="10" value="Helvetica">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style=""><b>√</b></span>
+			<span class="item_cont" style="font-family:Helvetica">Helvetica</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="11" value="Verdana">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style=""><b>√</b></span>
+			<span class="item_cont" style="font-family:Verdana">Verdana</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+</div>
+<!--选择字号-->
+<div style="position:absolute; display:none" class="veList veList_list veList_FontSize_list" id="veditor1_fontsize_panel">
+	<div value="-1" class="veList_item_con">
+		<a href="javascript:;" value="-1" class="veListTitle">选择字号</a>
+	</div>
+	<div class="veList_item_con " seq="0" value="10px">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style="padding-top:0px"><b>√</b></span>
+			<span class="item_cont" style="font-size:10px">7(10px)</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="1" value="12px">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style="padding-top:0px"><b>√</b></span>
+			<span class="item_cont" style="font-size:12px">6(12px)</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con current" seq="2" value="14px">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style="padding-top:0px"><b>√</b></span>
+			<span class="item_cont" style="font-size:14px">5(14px)</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="3" value="16px">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style="padding-top:2px"><b>√</b></span>
+			<span class="item_cont" style="font-size:16px">4(16px)</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="4" value="18px">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style="padding-top:5px"><b>√</b></span>
+			<span class="item_cont" style="font-size:18px">3(18px)</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="5" value="24px">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style="padding-top:8px"><b>√</b></span>
+			<span class="item_cont" style="font-size:24px">2(24px)</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+	<div class="veList_item_con " seq="6" value="36px">
+		<a href="javascript:;" class="veListItem">
+			<span class="sel_icon sel_icon_hidden" style="padding-top:18px"><b>√</b></span>
+			<span class="item_cont" style="font-size:36px">1(36px)</span>
+			<span class="icon_suffix"></span>
+		</a>
+	</div>
+</div>
+<!--[if !IE]>|xGv00|5621bdb6b1ce799491ce8263b451c32c<![endif]-->
+</body>
+</html>

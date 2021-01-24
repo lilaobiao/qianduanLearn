@@ -1,0 +1,70 @@
+<!doctype html><head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<style>
+body{margin:0;padding:0;overflow: hidden;}
+.city{width:100%;position:fixed;bottom: 0px;z-index: 100;}
+.city img{width: 100%;}
+#ca{display:block;width:100px;height:100px;border:1px solid red;}
+</style>
+<title>getImageData</title>
+</head>
+<body onselectstart="return false">
+	<canvas width="300" height="300" id="myCanvas"></canvas>
+	<img src="moon.png" id="moon" alt="" width="" height="" />
+	<a href="javascript:void(0);" id="ca">点击我反转颜色</a>
+	<script>
+		var ca = document.getElementById("ca");
+		var c = document.getElementById("myCanvas");
+		var ctx=c.getContext("2d");
+		//var img=document.getElementById("moon");
+		var image = new Image();   
+			image.src = "moon.png"; 
+		//ctx.drawImage(image,0,0);
+
+		var imgData=ctx.getImageData(0,0,c.width,c.height);
+		//getImageData.data只是个一维数组！data的元素始终依次是red,green,blue,alpha,red,green,blue。。。一直重复到最后一个。所以，data的length始终是像素个数*4.而在循环data的时候，也是以4为步进。
+		// 反转颜色
+		for (var i=0;i<imgData.data.length;i+=4){
+			imgData.data[i]=255-imgData.data[i];
+			imgData.data[i+1]=255-imgData.data[i+1];
+			imgData.data[i+2]=255-imgData.data[i+2];
+			imgData.data[i+3]=255;
+		}
+		//ctx.putImageData(imgData,0,0);
+
+
+		/*
+		var box=document.getElementById('box');         // 获取元素
+		alert(box.getBoundingClientRect().top);         // 元素上边距离页面上边的距离
+		alert(box.getBoundingClientRect().right);       // 元素右边距离页面左边的距离
+		alert(box.getBoundingClientRect().bottom);      // 元素下边距离页面上边的距离
+		alert(box.getBoundingClientRect().left);        // 元素左边距离页面左边的距离
+		*/
+		ctx.arc(100,100,50,0,Math.PI*2);
+		ctx.fillStyle = "rgba(234,1,1,0.6)";
+		ctx.fill();
+		ctx.beginPath();
+		ctx.fillStyle = 'rgba(1,234,1,0.7)';
+		ctx.fillRect(100,100,70,100);
+		ctx.strokeStyle = 'rgba(1,234,1,0.7)';
+		ctx.strokeRect(10,10,100,100);
+		ca.onclick = function  (e) {
+			var x = e.clientX,
+				y = e.clientY,
+				caL = ca.getBoundingClientRect().left,
+				caT = ca.getBoundingClientRect().top;
+			var X = x-caL, Y = y-caT;
+			// console.log('X:'+X+',Y:'+Y);
+			var imagedata = ctx.getImageData(10,10,100,100);//坐标和宽高
+			for(var i=0,dl = imagedata.data.length;i<dl;i+=4) {
+				imagedata.data[i] = 255-imagedata.data[i];
+				imagedata.data[i+1] = 255-imagedata.data[i];
+				imagedata.data[i+2] = 255-imagedata.data[i];
+			}
+			ctx.putImageData(imagedata,0,0);
+			// jg.innerHTML = data.data;
+			console.log(imagedata);
+		}
+	</script>
+
+</body></html>
